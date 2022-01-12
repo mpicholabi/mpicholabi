@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from '@/app/api/post.service';
-import { PostInterface } from '@/app/types/post';
+import { PostService } from '@/app/services/post.service';
+import { PostInterface } from '@/app/interfaces/post';
 
 @Component({
   selector: 'app-post-page',
