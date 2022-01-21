@@ -1,26 +1,10 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
-
+import { TestBed, async } from '@angular/core/testing';
 import { ComentaryComponent } from './comentary.component';
 
 describe('Test component', () => {
-    
-    let component: ComentaryComponent;
-    let fixture: ComponentFixture<ComentaryComponent>;
-
-    beforeEach(waitForAsync(()=>{
-        TestBed.configureTestingModule({
-            declarations: [ComentaryComponent]
-        }).compileComponents();
-    }));
-
-    beforeEach(()=>{
-        fixture = TestBed.createComponent(ComentaryComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
-    });
-
-
     it(`'app-comentary' is created`, (() => {
-        expect(component).toBeDefined();
+      const fixture = TestBed.createComponent(ComentaryComponent);
+      const app = fixture.debugElement.componentInstance;
+      expect(app).toBeTruthy();
     }))
 })
