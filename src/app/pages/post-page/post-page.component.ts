@@ -13,7 +13,7 @@ export class PostPageComponent implements OnInit {
   constructor(private http: PostService) { }
 
   async getPost():Promise<void> {
-    const response = await this.http.getPostArr();
+    const response = this.http.getPosts();
     console.log('posts', response)
   }
 
