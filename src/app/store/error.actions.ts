@@ -1,4 +1,7 @@
-import { createAction, props } from "@ngrx/store";
-import { ErrorInterface } from "@/app/interfaces/error";
+import { createAction, props } from '@ngrx/store';
+import { ErrorInterface } from '@/app/interfaces/error';
 
-export const ADD_ERROR = createAction('ADD_ERROR', props<{ payload: Array<ErrorInterface> }>());
+export const ADD_ERROR = createAction(
+  'ADD_ERROR',
+  props<{ payload: Array<ErrorInterface> }>()
+);
