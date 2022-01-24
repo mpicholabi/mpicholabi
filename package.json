@@ -8,10 +8,11 @@
     "watch": "ng build --watch --configuration development",
     "test": "jest",
     "test:coverage": "jest --coverage",
+    "test:update": "jest --updateSnapshot",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook",
-    "lint": "ng lint",
+    "lint": "ng lint --fix",
     "prepare": "husky install",
     "commit": "npx cz"
   },
