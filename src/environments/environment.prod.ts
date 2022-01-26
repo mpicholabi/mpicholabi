@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: false,
+  env: {
+    NG_APP_HOST_URL: process.env.NG_APP_HOST_URL
+  }
 };
