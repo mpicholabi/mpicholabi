@@ -11,6 +11,6 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   getPosts ():Observable<Array<PostInterface>> {
-    return this.http.get<Array<PostInterface>>('https://jsonplaceholder.typicode.com/posts2')
+    return this.http.get<Array<PostInterface>>('https://jsonplaceholder.typicode.com/posts')
   }
 }
