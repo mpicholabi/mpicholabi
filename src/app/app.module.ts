@@ -24,7 +24,11 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({ errors: errorReducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.env.storeLog as boolean,
+      autoPause: true
+    }),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
