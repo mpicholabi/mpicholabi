@@ -7,6 +7,8 @@ const config: Config.InitialOptions = {
   },
   verbose: true,
   preset: 'jest-preset-angular',
+  collectCoverage: true,
+  coverageDirectory: 'coverage/base-angular',
   setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
   globals: {
     'ts-jest': {

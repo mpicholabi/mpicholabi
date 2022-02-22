@@ -19,6 +19,7 @@ import { errorReducer } from '@/app/store/error.reducer';
 import { HomeComponent } from '@/app/pages/home/home.component';
 import { AppComponent } from '@/app/app.component';
 import { environment } from '@/environments/environment';
+import { CardComponent } from './components/card/card.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/locales/','.json');
@@ -27,6 +28,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     HomeComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

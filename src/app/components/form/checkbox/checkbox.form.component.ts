@@ -35,12 +35,4 @@ export class CheckboxFormComponent {
   Click = new EventEmitter<Event>();
 
   constructor() {}
-
-  public get classes(): string[] {
-    const mode = this.primary
-      ? 'storybook-button--primary'
-      : 'storybook-button--secondary';
-
-    return ['storybook-button', `storybook-button--${this.size}`, mode];
-  }
 }
