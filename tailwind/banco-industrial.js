@@ -8,9 +8,13 @@ const bancoIndustrial = {
         250: '#D0D0D0',
         550: '#848484',
       },
+      blue: {
+        750: '#003865'
+      }
     },
     fontSize: {
       '28px': '1.75rem',
+      '45px': '2.813rem'
     },
     borderRadius: {
       '5px': '0.313rem',
