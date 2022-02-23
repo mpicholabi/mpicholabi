@@ -4,6 +4,7 @@ import { AppState } from '@/app/app.state';
 import { ErrorInterface } from './interfaces/error';
 import * as ErrorActions from '@/app/store/error.actions';
 import { TranslateService } from '@ngx-translate/core';
+import * as AOS from 'aos';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -27,6 +28,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    AOS.init();
     this.store.subscribe((state) => {
       this.ArrErrors = state.errors;
     });
