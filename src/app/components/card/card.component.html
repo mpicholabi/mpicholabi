@@ -1,4 +1,21 @@
-<div>
-  <ng-content select=".head"></ng-content>
-  <ng-content select=".body"></ng-content>
+<div
+  class="
+    flex flex-col
+    items-center
+    shadow-card
+    bg-white
+    rounded-18px
+    xs:w-138px
+    w-283px
+    xs:p-2
+    xs:h-44
+    xs:justify-center
+    p-37px
+  "
+  data-test-id="card"
+>
+  <img class="pb-6 xs:pb-3 w-111px h-28 xs:w-14 xs:h-14" [src]="image" />
+  <p class="text-center text-gray-450 font-lato text-22px xs:text-base">
+    {{ description }}
+  </p>
 </div>
