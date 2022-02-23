@@ -20,6 +20,7 @@ import { HomeComponent } from '@/app/pages/home/home.component';
 import { AppComponent } from '@/app/app.component';
 import { environment } from '@/environments/environment';
 import { CardComponent } from './components/card/card.component';
+import { HomeBenefitComponent } from './components/home/home-benefit/home-benefit.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/locales/','.json');
@@ -29,6 +30,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     HomeComponent,
     CardComponent,
+    HomeBenefitComponent,
   ],
   imports: [
     BrowserModule,

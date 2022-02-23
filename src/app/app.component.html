@@ -1,9 +1,3 @@
-<div class="container">
-  <p>{{ "message" | translate }}</p>
-</div>
-
-<router-outlet></router-outlet>
-<ul>
-    <button (click)="generateErrorDummyVoid()">error</button>
-    <li *ngFor="let item of ArrErrors">{{ item.code }}</li>
-</ul>
+<main class="h-screen overflow-auto">
+  <router-outlet></router-outlet>
+</main>
