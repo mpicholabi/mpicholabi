@@ -30,6 +30,7 @@ module.exports = {
       width: {
         '50px': '3.125rem',
         '283px': '17.75rem',
+        '138px': '8.625rem',
         '111px': '6.938rem'
       },
       screens: {
@@ -43,6 +44,7 @@ module.exports = {
       },
       padding: {
         '37px': '2.313rem'
+
       },
       fontFamily: {
         'lato': ['Lato', 'sans-serif']
