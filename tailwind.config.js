@@ -28,15 +28,21 @@ module.exports = {
         },
       },
       fontSize: {
-        '28px': '1.75rem',
-        '45px': '2.813rem',
+        '16px': '1rem',
+        '18px': '1.125rem',
         '22px': '1.375rem',
+        '24px': '1.5rem',
+        '28px': '1.75rem',
+        '32px': '2rem',
+        '45px': '2.813rem'
       },
       borderRadius: {
         '5px': '0.313rem',
       },
       width: {
         '50px': '3.125rem',
+        '59px': '3.688rem',
+        '72px': '4.5rem',
         '283px': '17.75rem',
         '138px': '8.625rem',
         '111px': '6.938rem',
