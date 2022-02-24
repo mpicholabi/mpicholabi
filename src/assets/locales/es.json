@@ -3,5 +3,8 @@
   "home-benefit": {
     "title": "Beneficios",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus libero at aliquet aliquam. Quisque placerat lectus et malesuada tincidunt."
+  },
+  "home-requirement": {
+    "title": "Requisitos y políticas"
   }
 }
