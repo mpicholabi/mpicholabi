@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-benefit.component.scss']
 })
 export class HomeBenefitComponent {
-
   constructor() { }
 }
