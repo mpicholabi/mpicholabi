@@ -21,6 +21,7 @@ import { AppComponent } from '@/app/app.component';
 import { environment } from '@/environments/environment';
 import { CardComponent } from './components/card/card.component';
 import { HomeBenefitComponent } from './components/home/home-benefit/home-benefit.component';
+import { HomeProductComponent } from './components/home/home-product/home-product.component';
 import { ProductFeatureComponent } from './components/home/product-feature/product-feature.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -32,6 +33,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeComponent,
     CardComponent,
     HomeBenefitComponent,
+    HomeProductComponent,
     ProductFeatureComponent,
   ],
   imports: [
