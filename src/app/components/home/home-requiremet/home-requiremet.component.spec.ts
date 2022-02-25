@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateModule } from '@ngx-translate/core';
+import { RequirementFeatureComponent } from '../requirement-feature/requirement-feature.component';
 import { HomeRequiremetComponent } from './home-requiremet.component';
 
 describe('HomeRequiremetComponent', () => {
@@ -8,7 +9,7 @@ describe('HomeRequiremetComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeRequiremetComponent ],
+      declarations: [ HomeRequiremetComponent, RequirementFeatureComponent ],
       imports: [
         TranslateModule.forRoot()
       ]
