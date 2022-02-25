@@ -1,5 +1,5 @@
 export interface ProductInterface<T>{
-  id: number,
+  id?: number,
   code: string,
   name: string,
   description: string,
