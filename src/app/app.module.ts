@@ -23,6 +23,7 @@ import { CardComponent } from './components/card/card.component';
 import { HomeBenefitComponent } from './components/home/home-benefit/home-benefit.component';
 import { HomeProductComponent } from './components/home/home-product/home-product.component';
 import { ProductFeatureComponent } from './components/home/product-feature/product-feature.component';
+import { HomeRequiremetComponent } from './components/home/home-requiremet/home-requiremet.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/locales/','.json');
@@ -35,6 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeBenefitComponent,
     HomeProductComponent,
     ProductFeatureComponent,
+    HomeRequiremetComponent
   ],
   imports: [
     BrowserModule,
