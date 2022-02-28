@@ -2,26 +2,29 @@
   class="
     flex
     fixed
+    justify-center
     z-20
-    justify-between
     w-full
     h-24
     xs:h-70px
-    bg-blue-750
     transition
     duration-500
   "
-  [ngClass]="[isScrolled ? 'bg-gray-header' : 'bg-opacity-0']"
+  [ngClass]="[isScrolled ? 'bg-blue-750' : 'bg-opacity-0 border-solid border-white border-2']"
 >
-  <a href="home"
-    ><img
-      class="w-83px xs:w-10 h-71px xs:h-35px ml-20 xs:ml-51px mt-3 xs:mt-4"
-      src="assets/image/bi-logo.svg"
-      alt="Logo BI"
-  /></a>
-  <div class="flex text-rigth justify-center items-center pr-60 xs:pr-9">
-    <a href="#"
-      ><h1 class="text-white text-20px xs:text-18px font-lato">Principal</h1></a
-    >
+  <div class="lg:max-w-1360px w-full flex justify-between">
+    <a href="home"
+      ><img
+        class="w-83px xs:w-10 h-71px xs:h-35px"
+        src="assets/image/bi-logo.svg"
+        alt="Logo BI"
+    /></a>
+    <div class="flex text-rigth justify-center items-center">
+      <a href="#"
+        ><h1 class="text-white text-20px xs:text-18px font-lato">
+          Principal
+        </h1></a
+      >
+    </div>
   </div>
 </nav>
