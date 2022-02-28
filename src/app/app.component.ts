@@ -24,11 +24,7 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:scroll')
   public onWindowScroll(): void {
-    if (this.document.documentElement?.scrollTop > 0) {
-      this._isScrolled = true;
-    } else {
-      this._isScrolled = false;
-    }
+    this._isScrolled = this.document.documentElement?.scrollTop > 0 ? true : false;
   }
 
   public get isScrolled(): boolean {
