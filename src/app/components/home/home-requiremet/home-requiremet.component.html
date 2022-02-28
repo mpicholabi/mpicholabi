@@ -1,18 +1,20 @@
-<section class="bg-cyan-450 w-full flex justify-center relative mt-10 h-auto overflow-hidden">
+<section class="bg-cyan-450 w-full relative mt-10 h-auto overflow-hidden flex justify-center">
   <img
-    class="absolute xs:hidden w-199px h-191px left-0 top-24"
+    class="absolute lg:block hidden w-199px h-191px top-24 -left-16 z-0"
     src="assets/image/bi-square-white.svg"
     alt="icon square"
   />
-  <div class="max-w-1194px flex flex-col">
+  <div class="lg:max-w-1194px xs:w-full flex flex-col items-center">
     <h1
       class="
         text-white
         font-lato font-bold
+        text-left
         text-45px
         xs:text-28px
         xs:pt-12
         xs:px-10
+        w-full
         pt-24
       "
       data-aos="fade-up"
@@ -22,16 +24,18 @@
     <div
       class="
         grid
-        2xl:grid-cols-3
-        xl:grid-cols-2
+        xl:grid-cols-3
         lg:grid-cols-2
         md:grid-cols-1
         xs:grid-cols-1
-        gap-y-9 gap-x-2
+        gap-y-9 gap-x-16 xs:gap-x-2
+        2xl:grid-cols-2
         xs:pt-12
         xs:px-10
         pt-8
         pb-32
+        relative
+        z-1
       "
       data-aos="fade-up"
     >
@@ -73,6 +77,9 @@
       xs:w-167px
       h-191px
       xs:h-136px
+      z-0
+      lg:block
+      hidden
     "
     src="assets/image/bi-square-white.svg"
     alt="icon square"
