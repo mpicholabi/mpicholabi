@@ -27,6 +27,7 @@ import { HomeRequiremetComponent } from './components/home/home-requiremet/home-
 import { RequirementFeatureComponent } from './components/home/requirement-feature/requirement-feature.component';
 import { HomeHeaderComponent } from './components/home/home-header/home-header.component';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
+import { NavComponent } from './components/nav/nav.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/locales/','.json');
@@ -41,7 +42,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProductFeatureComponent,
     HomeRequiremetComponent,
     RequirementFeatureComponent,
-    HomeHeaderComponent
+    HomeHeaderComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
