@@ -30,6 +30,7 @@ module.exports = {
       fontSize: {
         '16px': '1rem',
         '18px': '1.125rem',
+        '20px': '1.25rem',
         '22px': '1.375rem',
         '24px': '1.5rem',
         '28px': '1.75rem',
@@ -43,6 +44,7 @@ module.exports = {
         '50px': '3.125rem',
         '59px': '3.688rem',
         '72px': '4.5rem',
+        '83px': '5.188rem',
         '283px': '17.75rem',
         '167px': '10.438rem',
         '138px': '8.625rem',
@@ -53,6 +55,9 @@ module.exports = {
         '500px': '31.25rem'
       },
       height:{
+        '35px': '2.188rem',
+        '70px': '4.375rem',
+        '71px': '4.438rem',
         '191px': '11.938rem',
         '136px': '8.5rem',
         '313px': '19.563rem'
@@ -74,6 +79,10 @@ module.exports = {
       },
       padding: {
         '37px': '2.313rem',
+        '260px': '16.25rem'
+      },
+      margin:{
+        '51px': '3.188rem'
       },
       fontFamily: {
         lato: ['Lato', 'sans-serif'],

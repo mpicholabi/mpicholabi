@@ -25,6 +25,7 @@ import { HomeProductComponent } from './components/home/home-product/home-produc
 import { ProductFeatureComponent } from './components/home/product-feature/product-feature.component';
 import { HomeRequiremetComponent } from './components/home/home-requiremet/home-requiremet.component';
 import { RequirementFeatureComponent } from './components/home/requirement-feature/requirement-feature.component';
+import { NavComponent } from './components/nav/nav.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/locales/','.json');
@@ -38,7 +39,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeProductComponent,
     ProductFeatureComponent,
     HomeRequiremetComponent,
-    RequirementFeatureComponent
+    RequirementFeatureComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
