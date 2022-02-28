@@ -35,6 +35,7 @@ module.exports = {
         '24px': '1.5rem',
         '28px': '1.75rem',
         '32px': '2rem',
+        '34px': '2.125rem',
         '45px': '2.813rem'
       },
       borderRadius: {
@@ -52,7 +53,8 @@ module.exports = {
         '199px': '12.438rem',
         '310px': '19.375rem',
         '379px': '23.688rem',
-        '500px': '31.25rem'
+        '500px': '31.25rem',
+        '522px': '32.625rem'
       },
       height:{
         '35px': '2.188rem',
@@ -61,6 +63,9 @@ module.exports = {
         '191px': '11.938rem',
         '136px': '8.5rem',
         '313px': '19.563rem'
+      },
+      minHeight: {
+        '700px': '43.75rem'
       },
       maxWidth: {
         '1194px': '74.625rem',
@@ -89,6 +94,9 @@ module.exports = {
       },
       zIndex: {
         1: 1
+      },
+      backgroundImage: {
+        'banner-header': 'url(/assets/image/bi-banner-home.jpeg)'
       }
     },
   },

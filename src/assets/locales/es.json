@@ -1,5 +1,8 @@
 {
   "message": "Hola mundo",
+  "home-header": {
+    "title": "¿Has pensado en qué es lo que más deseas?"
+  },
   "home-benefit": {
     "title": "Beneficios",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus libero at aliquet aliquam. Quisque placerat lectus et malesuada tincidunt."

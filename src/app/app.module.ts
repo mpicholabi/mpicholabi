@@ -25,6 +25,8 @@ import { HomeProductComponent } from './components/home/home-product/home-produc
 import { ProductFeatureComponent } from './components/home/product-feature/product-feature.component';
 import { HomeRequiremetComponent } from './components/home/home-requiremet/home-requiremet.component';
 import { RequirementFeatureComponent } from './components/home/requirement-feature/requirement-feature.component';
+import { HomeHeaderComponent } from './components/home/home-header/home-header.component';
+import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { NavComponent } from './components/nav/nav.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -40,6 +42,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProductFeatureComponent,
     HomeRequiremetComponent,
     RequirementFeatureComponent,
+    HomeHeaderComponent,
     NavComponent
   ],
   imports: [
@@ -62,7 +65,8 @@ export function HttpLoaderFactory(http: HttpClient) {
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
       }
-  })
+  }),
+    NgxScrollTopModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
