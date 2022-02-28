@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';​
-import { NgxScrollTopModule } from 'ngx-scrolltop';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -51,7 +50,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     CommonModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxScrollTopModule,
     StoreModule.forRoot({ errors: errorReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
