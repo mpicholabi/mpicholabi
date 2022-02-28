@@ -9,3 +9,11 @@
 .title-1 {
   @apply text-45px xs:text-28px font-lato text-blue-750 font-bold;
 }
+
+.bg-banner-gradient {
+  background: transparent linear-gradient(90deg, #00C1D400 0%, #00C1D443 21%, #00C1D4 100%) 0% 0% no-repeat padding-box;
+}
+
+button.scrolltop-button {
+  right: 70px!important;
+}

@@ -26,6 +26,7 @@ import { ProductFeatureComponent } from './components/home/product-feature/produ
 import { HomeRequiremetComponent } from './components/home/home-requiremet/home-requiremet.component';
 import { RequirementFeatureComponent } from './components/home/requirement-feature/requirement-feature.component';
 import { HomeHeaderComponent } from './components/home/home-header/home-header.component';
+import { NgxScrollTopModule } from 'ngx-scrolltop';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/locales/','.json');
@@ -62,7 +63,8 @@ export function HttpLoaderFactory(http: HttpClient) {
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
       }
-  })
+  }),
+    NgxScrollTopModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
