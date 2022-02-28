@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';​
+import { NgxScrollTopModule } from 'ngx-scrolltop';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -25,6 +26,7 @@ import { HomeProductComponent } from './components/home/home-product/home-produc
 import { ProductFeatureComponent } from './components/home/product-feature/product-feature.component';
 import { HomeRequiremetComponent } from './components/home/home-requiremet/home-requiremet.component';
 import { RequirementFeatureComponent } from './components/home/requirement-feature/requirement-feature.component';
+import { NavComponent } from './components/nav/nav.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/locales/','.json');
@@ -38,7 +40,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeProductComponent,
     ProductFeatureComponent,
     HomeRequiremetComponent,
-    RequirementFeatureComponent
+    RequirementFeatureComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     CommonModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxScrollTopModule,
     StoreModule.forRoot({ errors: errorReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
