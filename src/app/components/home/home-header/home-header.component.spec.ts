@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateModule } from '@ngx-translate/core';
+import { HomeCotizadorComponent } from '../home-cotizador/home-cotizador.component';
 
 import { HomeHeaderComponent } from './home-header.component';
 
@@ -9,7 +10,7 @@ describe('HomeHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeHeaderComponent ],
+      declarations: [ HomeHeaderComponent, HomeCotizadorComponent ],
       imports: [
         TranslateModule.forRoot()
       ]

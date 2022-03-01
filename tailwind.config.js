@@ -54,7 +54,9 @@ module.exports = {
         '310px': '19.375rem',
         '379px': '23.688rem',
         '500px': '31.25rem',
-        '522px': '32.625rem'
+        '522px': '32.625rem',
+        '700px': '43.75rem',
+        '710px': '44.375rem'
       },
       height:{
         '35px': '2.188rem',
@@ -69,6 +71,7 @@ module.exports = {
       },
       maxWidth: {
         '1194px': '74.625rem',
+        '1245px': '77.813rem',
         '1360px': '85rem'
       },
       screens: {
@@ -82,10 +85,12 @@ module.exports = {
       },
       borderRadius: {
         '18px': '1.125rem',
+        '35px': '2.188rem',
       },
       padding: {
         '37px': '2.313rem',
-        '260px': '16.25rem'
+        '120px': '7.5rem',
+        '260px': '16.25rem',
       },
       margin:{
         '51px': '3.188rem'
