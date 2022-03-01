@@ -5,12 +5,12 @@
     justify-center
     bg-banner-header bg-cover bg-center bg-no-repeat
     min-h-700px
-    relative px-11
+    relative lg:px-11
   "
 >
   <div class="absolute w-full top-0 bottom-0 z-0 bg-banner-gradient"></div>
-  <div class="grid grid-cols-2 w-full">
-    <div class="flex lg:items-center justify-end items-end relative z-1 pr-20">
+  <div class="grid lg:grid-cols-2 grid-cols-1 w-full">
+    <div class="flex lg:items-center lg:px-0 px-11 lg:justify-end justify-start items-end relative z-1 pr-20">
       <h1
         class="
           lg:text-7xl
@@ -26,7 +26,7 @@
         {{ 'home-header.title' | translate }}
       </h1>
     </div>
-    <div class="flex lg:items-center w-710px items-end relative z-1">
+    <div class="flex lg:items-center 2xl:w-710px w-full items-end relative z-1">
       <app-home-cotizador></app-home-cotizador>
     </div>
   </div>
