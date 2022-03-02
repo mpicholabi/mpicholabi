@@ -1,4 +1,66 @@
-<div class="w-full xl:px-120px px-11 py-9 bg-white lg:rounded-35px rounded-t-35px flex flex-col">
-  <h1 class="text-4xl text-center font-lato font-medium text-blue-750">Calcula el valor de tus sueños</h1>
-  <p class=" pt-5 font-lato text-xl text-gray-450 text-center">Los datos que se muestran son únicamente una proyección de la cuota nivelada estimada.</p>
+<div
+  class="
+    w-full
+    xl:px-120px
+    px-11
+    py-9
+    bg-white
+    lg:rounded-35px
+    rounded-t-35px
+    flex flex-col
+  "
+>
+  <h1
+    class="
+      text-35px
+      xs:text-24px
+      w-full
+      text-center
+      font-lato font-medium
+      text-blue-750
+    "
+  >
+    {{ 'home-quoter.title' | translate }}
+  </h1>
+  <p class="pt-5 font-lato text-xl xs:text-16px text-gray-450 text-center">
+    {{ 'home-quoter.description' | translate }}
+  </p>
+  <form [formGroup]="formQuoter" class="pt-6">
+    <div class="relative">
+      <!-- TODO: refactor this code into of input -->
+      <label class="font-lato font-bold text-gray-450 text-22px xs:text-16px">{{
+        'home-quoter.label-amunt' | translate
+      }}</label>
+      <label
+        class="
+          absolute
+          left-0
+          bottom-7
+          text-cyan-450 text-42px
+          xs:text-24px
+          font-lato
+        "
+        >{{ 'currency.symbol' | translate }}</label
+      >
+      <app-input
+        [parentForm]="formQuoter"
+        [name]="'amount'"
+        [rules]="'decimal'"
+        [classCustom]="
+          'border-b-2 border-cyan-450 focus:outline-none pl-12 xs:pl-8 text-42px xs:text-24px w-full text-gray-350'
+        "
+        [placeholder]="'0.00'"
+        [length]="'9'"
+      ></app-input>
+      <span
+        class="
+          absolute
+          bottom-1
+          font-lato font-semibold
+          text-14px text-cyan-450
+        "
+        >{{ 'home-quoter.input-description' | translate }}</span
+      >
+    </div>
+  </form>
 </div>

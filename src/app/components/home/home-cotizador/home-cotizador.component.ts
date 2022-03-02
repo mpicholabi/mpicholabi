@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home-cotizador',
   templateUrl: './home-cotizador.component.html',
-  styleUrls: ['./home-cotizador.component.scss']
 })
 export class HomeCotizadorComponent {
+  formQuoter: FormGroup;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) {
+    this.formQuoter = this.formBuilder.group({
+      amount: [''],
+    });
+  }
 }
