@@ -62,5 +62,18 @@
         >{{ 'home-quoter.input-description' | translate }}</span
       >
     </div>
+    <div class="pt-20">
+      <app-slider-range [max]="60" [min]="12" [step]="12"></app-slider-range>
+    </div>
+    <a
+      class="my-3 cursor-pointer flex flex-col items-center"
+      (click)="goToProduct()"
+      rel="no-refresh"
+    >
+      <label class="text-xl text-blue-750 font-lato font-medium pb-1">{{
+        'home-quoter.link' | translate
+      }}</label
+      ><img src="assets/image/bi-arrow-yellow.svg" alt=""
+    /></a>
   </form>
 </div>

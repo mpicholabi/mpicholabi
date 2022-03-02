@@ -1,13 +1,23 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, APP_INITIALIZER, LOCALE_ID } from '@angular/core';
+import {
+  NgModule,
+  CUSTOM_ELEMENTS_SCHEMA,
+  APP_INITIALIZER,
+  LOCALE_ID,
+} from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { HTTP_INTERCEPTORS, HttpClientModule, HttpClient } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClientModule,
+  HttpClient,
+} from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';​
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { SliderModule } from 'primeng/slider';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -29,10 +39,11 @@ import { HomeHeaderComponent } from './components/home/home-header/home-header.c
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeCotizadorComponent } from './components/home/home-cotizador/home-cotizador.component';
+import { SliderRangeComponent } from './components/form/slider-range/slider-range.component';
 import { InputTextFormComponent } from './components/form/input/input.form.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/locales/','.json');
+  return new TranslateHttpLoader(http, './assets/locales/', '.json');
 }
 @NgModule({
   declarations: [
@@ -47,7 +58,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeHeaderComponent,
     NavComponent,
     HomeCotizadorComponent,
-    InputTextFormComponent
+    SliderRangeComponent,
+    InputTextFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,12 +77,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     TranslateModule.forRoot({
       loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
-      }
-  }),
-    NgxScrollTopModule
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+    NgxScrollTopModule,
+    SliderModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
