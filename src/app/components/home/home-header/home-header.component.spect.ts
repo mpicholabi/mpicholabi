@@ -10,12 +10,9 @@ describe('HomeHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeHeaderComponent, HomeCotizadorComponent ],
-      imports: [
-        TranslateModule.forRoot()
-      ]
-    })
-    .compileComponents();
+      declarations: [HomeHeaderComponent, HomeCotizadorComponent],
+      imports: [TranslateModule.forRoot()],
+    }).compileComponents();
   });
 
   beforeEach(() => {

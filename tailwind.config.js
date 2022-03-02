@@ -17,6 +17,7 @@ module.exports = {
         },
         gray: {
           250: '#D0D0D0',
+          350: '#999999',
           375: '#CCCCCC',
           450: '#707070',
           550: '#848484',
@@ -29,6 +30,7 @@ module.exports = {
         },
       },
       fontSize: {
+        '14px': '0.875rem',
         '16px': '1rem',
         '18px': '1.125rem',
         '20px': '1.25rem',
@@ -37,6 +39,8 @@ module.exports = {
         '28px': '1.75rem',
         '32px': '2rem',
         '34px': '2.125rem',
+        '35px': '2.188rem',
+        '42px': '2.625rem',
         '45px': '2.813rem',
       },
       borderRadius: {
@@ -47,6 +51,7 @@ module.exports = {
         '59px': '3.688rem',
         '72px': '4.5rem',
         '83px': '5.188rem',
+        '236px': '14.75rem',
         '283px': '17.75rem',
         '167px': '10.438rem',
         '138px': '8.625rem',
@@ -55,6 +60,7 @@ module.exports = {
         '310px': '19.375rem',
         '379px': '23.688rem',
         '500px': '31.25rem',
+        '516px': '32.25rem',
         '522px': '32.625rem',
         '700px': '43.75rem',
         '710px': '44.375rem',
@@ -66,6 +72,7 @@ module.exports = {
         '191px': '11.938rem',
         '136px': '8.5rem',
         '313px': '19.563rem',
+        '443px': '27.688rem',
       },
       minHeight: {
         '700px': '43.75rem',
@@ -80,6 +87,8 @@ module.exports = {
       },
       spacing: {
         '15px': '0.938rem',
+        '70px': '4.375rem',
+        '79px': '4.938rem',
       },
       boxShadow: {
         card: '0px 3px 52px #9999992E',

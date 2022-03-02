@@ -11,6 +11,14 @@
     "title": "Requisitos y políticas"
   },
   "home-quoter": {
-    "link": "Conoce más sobre Bi fácil rapidito"
+    "link": "Conoce más sobre Bi fácil rapidito",
+    "title": "Calcula el valor de tus sueños",
+    "description": "Los datos que se muestran son únicamente una proyección de la cuota nivelada estimada.",
+    "input-description": "Ingresa montos desde Q3,000 hasta Q500,000",
+    "label-amunt": "Quiero un monto de"
+  },
+  "currency": {
+    "name": "Quetzal",
+    "symbol": "Q"
   }
 }

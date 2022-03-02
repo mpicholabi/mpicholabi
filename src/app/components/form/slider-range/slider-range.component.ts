@@ -32,6 +32,10 @@ export class SliderRangeComponent {
     );
   }
 
+  selectValue(value: number): void {
+    this.value = value;
+  }
+
   updateValue(value: string): void {
     this.valueChange.emit(value);
   }
