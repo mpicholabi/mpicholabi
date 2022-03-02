@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { scrollToTop } from '@/app/utils/scrollTo'
+
 @Component({
   selector: 'app-home-cotizador',
   templateUrl: './home-cotizador.component.html',
@@ -8,4 +10,8 @@ import { Component } from '@angular/core';
 export class HomeCotizadorComponent {
 
   constructor() { }
+
+  goToProduct():void {
+    scrollToTop('#homeProduct', 95);
+  }
 }

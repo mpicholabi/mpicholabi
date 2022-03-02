@@ -1,4 +1,24 @@
-<div class="w-full xl:px-120px px-11 py-9 bg-white lg:rounded-35px rounded-t-35px flex flex-col">
-  <h1 class="text-4xl text-center font-lato font-medium text-blue-750">Calcula el valor de tus sueños</h1>
-  <p class=" pt-5 font-lato text-xl text-gray-450 text-center">Los datos que se muestran son únicamente una proyección de la cuota nivelada estimada.</p>
+<div
+  class="
+    w-full
+    xl:px-120px
+    px-11
+    py-9
+    bg-white
+    lg:rounded-35px
+    rounded-t-35px
+    flex flex-col
+  "
+>
+  <h1 class="text-4xl text-center font-lato font-medium text-blue-750">
+    Calcula el valor de tus sueños
+  </h1>
+  <p class="pt-5 font-lato text-xl text-gray-450 text-center">
+    Los datos que se muestran son únicamente una proyección de la cuota nivelada
+    estimada.
+  </p>
+  <a class="my-3 cursor-pointer flex flex-col items-center" (click)="goToProduct()" rel="no-refresh">
+    <label class=" text-xl text-blue-750 font-lato font-medium pb-1">{{ 'home-quoter.link' | translate }}</label
+    ><img src="assets/image/bi-arrow-yellow.svg" alt=""
+  /></a>
 </div>

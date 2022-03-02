@@ -5,9 +5,12 @@
   },
   "home-benefit": {
     "title": "Beneficios",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus libero at aliquet aliquam. Quisque placerat lectus et malesuada tincidunt."
+    "description": "Buscamos brindarte diferentes beneficios y nuestro enfoque es apoyarte en tu salud financiera."
   },
   "home-requirement": {
     "title": "Requisitos y políticas"
+  },
+  "home-quoter": {
+    "link": "Conoce más sobre Bi - fácil"
   }
 }
