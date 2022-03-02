@@ -17,11 +17,12 @@ module.exports = {
         },
         gray: {
           250: '#D0D0D0',
+          375: '#CCCCCC',
           450: '#707070',
           550: '#848484',
         },
         cyan: {
-          450: '#00C1D4'
+          450: '#00C1D4',
         },
         blue: {
           750: '#003865',
@@ -36,7 +37,7 @@ module.exports = {
         '28px': '1.75rem',
         '32px': '2rem',
         '34px': '2.125rem',
-        '45px': '2.813rem'
+        '45px': '2.813rem',
       },
       borderRadius: {
         '5px': '0.313rem',
@@ -56,23 +57,23 @@ module.exports = {
         '500px': '31.25rem',
         '522px': '32.625rem',
         '700px': '43.75rem',
-        '710px': '44.375rem'
+        '710px': '44.375rem',
       },
-      height:{
+      height: {
         '35px': '2.188rem',
         '70px': '4.375rem',
         '71px': '4.438rem',
         '191px': '11.938rem',
         '136px': '8.5rem',
-        '313px': '19.563rem'
+        '313px': '19.563rem',
       },
       minHeight: {
-        '700px': '43.75rem'
+        '700px': '43.75rem',
       },
       maxWidth: {
         '1194px': '74.625rem',
         '1245px': '77.813rem',
-        '1360px': '85rem'
+        '1360px': '85rem',
       },
       screens: {
         xs: { min: '300px', max: '640px' },
@@ -92,18 +93,22 @@ module.exports = {
         '120px': '7.5rem',
         '260px': '16.25rem',
       },
-      margin:{
-        '51px': '3.188rem'
+      margin: {
+        '51px': '3.188rem',
       },
       fontFamily: {
         lato: ['Lato', 'sans-serif'],
       },
       zIndex: {
-        1: 1
+        1: 1,
       },
       backgroundImage: {
-        'banner-header': 'url(/assets/image/bi-banner-home.jpeg)'
-      }
+        'banner-header': 'url(/assets/image/bi-banner-home.jpeg)',
+      },
+      spacing: {
+        '10%': '10%',
+        '6px': '0.375rem',
+      },
     },
   },
   plugins: [],

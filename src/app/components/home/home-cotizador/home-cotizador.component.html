@@ -17,8 +17,15 @@
     Los datos que se muestran son únicamente una proyección de la cuota nivelada
     estimada.
   </p>
-  <a class="my-3 cursor-pointer flex flex-col items-center" (click)="goToProduct()" rel="no-refresh">
-    <label class=" text-xl text-blue-750 font-lato font-medium pb-1">{{ 'home-quoter.link' | translate }}</label
+  <app-slider-range [max]="60" [min]="12" [step]="12"></app-slider-range>
+  <a
+    class="my-3 cursor-pointer flex flex-col items-center"
+    (click)="goToProduct()"
+    rel="no-refresh"
+  >
+    <label class="text-xl text-blue-750 font-lato font-medium pb-1">{{
+      'home-quoter.link' | translate
+    }}</label
     ><img src="assets/image/bi-arrow-yellow.svg" alt=""
   /></a>
 </div>

@@ -17,3 +17,24 @@
 button.scrolltop-button {
   right: 70px!important;
 }
+
+.p-slider-handle {
+  background-color: #00C1D4!important;
+  height: 25px!important;
+  width: 25px!important;
+  border: solid 2px #FFF!important;
+  top: 0%!important;
+}
+
+.p-slider-range {
+  background-color: #00C1D4!important;
+  height: 5px!important;
+}
+
+.p-slider {
+  height: 5px!important;
+}
+
+.p-slider-handle:focus {
+  box-shadow: 0 0 1px 10px rgba(64, 201, 255, 0.2) !important;
+}

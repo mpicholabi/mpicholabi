@@ -1,0 +1,33 @@
+<div class="flex flex-col w-full pb-7">
+  <label class="text-gray-550 font-light text-sm pb-2 flex items-center"
+    ><img class="pr-3" *ngIf="icon" [src]="icon" />{{ label
+    }}<span class="pl-1 pt-1" *ngIf="required">*</span></label
+  >
+  <p-slider
+    [(ngModel)]="value"
+    [max]="max"
+    [min]="min"
+    [range]="range"
+    [step]="step"
+    styleClass="bg-gray-375 h-1 text-cyan-450"
+  ></p-slider>
+  <div class="relative pt-4">
+    <div class="flex justify-between w-full">
+      <div
+        class="flex items-center"
+        [class]="this.min === item ? 'justify-start' : 'justify-center'"
+        *ngFor="let item of rangeStep()"
+      >
+        <label class="text-sm font-bold text-gray-450"> {{ item }} </label>
+      </div>
+    </div>
+    <div class="flex w-full bottom-2 absolute">
+      <div
+        class="flex-1 flex justify-center"
+        *ngFor="let item of rangeStep(true); index as key"
+      >
+        <div class="w-6px h-6px bg-yellow-400 rounded-full">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+</div>

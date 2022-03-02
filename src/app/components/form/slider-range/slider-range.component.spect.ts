@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeCotizadorComponent } from './home-cotizador.component';
+import { SliderRangeComponent } from './slider-range.component';
 
-describe('HomeCotizadorComponent', () => {
-  let component: HomeCotizadorComponent;
-  let fixture: ComponentFixture<HomeCotizadorComponent>;
+describe('SliderRangeComponent', () => {
+  let component: SliderRangeComponent;
+  let fixture: ComponentFixture<SliderRangeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeCotizadorComponent ]
+      declarations: [ SliderRangeComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeCotizadorComponent);
+    fixture = TestBed.createComponent(SliderRangeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
