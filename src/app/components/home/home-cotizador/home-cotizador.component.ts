@@ -5,17 +5,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   selector: 'app-home-cotizador',
   templateUrl: './home-cotizador.component.html',
 })
-export class HomeCotizadorComponent implements OnInit {
-  quoter!: FormGroup;
+export class HomeCotizadorComponent {
+  formQuoter: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
-
-  ngOnInit(): void {
-    this.createForm;
-  }
-
-  createForm(): void {
-    this.quoter = this.formBuilder.group({
+  constructor(private formBuilder: FormBuilder) {
+    this.formQuoter = this.formBuilder.group({
       amount: ['', [Validators.required]],
       term: ['', [Validators.required]],
     });
