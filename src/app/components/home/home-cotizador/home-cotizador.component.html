@@ -62,7 +62,9 @@
         >{{ 'home-quoter.input-description' | translate }}</span
       >
     </div>
-    <app-slider-range [max]="60" [min]="12" [step]="12"></app-slider-range>
+    <div class="pt-20">
+      <app-slider-range [max]="60" [min]="12" [step]="12"></app-slider-range>
+    </div>
     <a
       class="my-3 cursor-pointer flex flex-col items-center"
       (click)="goToProduct()"
