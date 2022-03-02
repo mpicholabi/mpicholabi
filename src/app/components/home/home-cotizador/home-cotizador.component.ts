@@ -10,8 +10,7 @@ export class HomeCotizadorComponent {
 
   constructor(private formBuilder: FormBuilder) {
     this.formQuoter = this.formBuilder.group({
-      amount: ['', [Validators.required]],
-      term: ['', [Validators.required]],
+      amount: [''],
     });
   }
 }
