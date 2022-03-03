@@ -27,7 +27,7 @@ export class InputTextFormComponent implements OnInit {
   @Input() isFormControl: boolean = true;
   @Input() classCustom: string =
     'w-full h-10 border-solid border-gray-250 pl-2 rounded-5px border';
-
+  @Input() testId: string = '';
   @Output() valueChange: EventEmitter<string> = new EventEmitter();
 
   @ViewChild('inputElement') inputElement!: ElementRef;
