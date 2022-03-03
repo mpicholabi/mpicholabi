@@ -30,50 +30,48 @@
       <label class="font-lato font-bold text-gray-450 text-22px xs:text-16px">{{
         'home-quoter.label-amunt' | translate
       }}</label>
-      <label
-        class="
-          absolute
-          left-0
-          bottom-7
-          text-cyan-450 text-42px
-          xs:text-24px
-          font-lato
-        "
-        >{{ 'currency.symbol' | translate }}</label
-      >
-      <app-input
-        [parentForm]="formQuoter"
-        [name]="'amount'"
-        [rules]="'decimal'"
-        [classCustom]="
-          'border-b-2 border-cyan-450 focus:outline-none pl-12 xs:pl-8 text-42px xs:text-24px w-full text-gray-350'
-        "
-        [placeholder]="'0.00'"
-        [length]="'9'"
-      ></app-input>
-      <span
-        class="
-          absolute
-          bottom-1
-          font-lato font-semibold
-          text-14px text-cyan-450
-        "
-        >{{ 'home-quoter.input-description' | translate }}</span
-      >
+      <div class="relative">
+        <label
+          class="
+            absolute
+            left-0
+            top-2
+            text-cyan-450 text-42px
+            xs:text-24px
+            font-lato
+          "
+          >{{ 'currency.symbol' | translate }}</label
+        >
+        <app-input
+          [parentForm]="formQuoter"
+          [name]="'amount'"
+          [rules]="'decimal'"
+          [classCustom]="
+            'border-b-2 border-cyan-450 focus:outline-none pl-12 xs:pl-8 text-42px xs:text-24px w-full text-gray-350'
+          "
+          [placeholder]="'0.00'"
+          [length]="'9'"
+          [testId]="'inumAmount'"
+        ></app-input>
+      </div>
+      <span class="font-lato font-semibold text-14px text-cyan-450">{{
+        'home-quoter.input-description' | translate
+      }}</span>
     </div>
-    <div class="pt-20">
+    <div class="pt-10 pb-14">
       <label
         class="font-lato font-bold text-gray-450 text-22px pb-8 xs:text-16px"
         >{{ 'home-quoter.label-range' | translate }}</label
       >
       <app-slider-range [max]="60" [min]="12" [step]="12"></app-slider-range>
     </div>
+    <app-approximate-fee></app-approximate-fee>
     <a
       class="my-3 cursor-pointer flex flex-col items-center"
       (click)="goToProduct()"
       rel="no-refresh"
     >
-      <label class="text-xl text-blue-750 font-lato font-medium pb-1">{{
+      <label class="text-xl text-blue-750 font-lato font-medium pb-2">{{
         'home-quoter.link' | translate
       }}</label
       ><img src="assets/image/bi-arrow-yellow.svg" alt=""

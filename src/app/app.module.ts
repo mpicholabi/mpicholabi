@@ -37,6 +37,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { HomeCotizadorComponent } from './components/home/home-cotizador/home-cotizador.component';
 import { SliderRangeComponent } from './components/form/slider-range/slider-range.component';
 import { InputTextFormComponent } from './components/form/input/input.form.component';
+import { ApproximateFeeComponent } from './components/home/approximate-fee/approximate-fee.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/locales/', '.json');
@@ -56,6 +57,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeCotizadorComponent,
     SliderRangeComponent,
     InputTextFormComponent,
+    ApproximateFeeComponent,
   ],
   imports: [
     BrowserModule,

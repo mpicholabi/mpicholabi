@@ -1,4 +1,4 @@
-<div class="flex flex-col w-full pb-7" [formGroup]="parentForm">
+<div class="flex flex-col w-full pb-1" [formGroup]="parentForm">
   <label class="text-gray-550 font-light text-sm pb-2 flex items-center"
     ><img class="pr-3" *ngIf="icon" [src]="icon" />{{ label }}
     <span class="pl-1 pt-1" *ngIf="required">*</span></label
@@ -10,6 +10,7 @@
     [placeholder]="placeholder"
     [formControlName]="name"
     [maxlength]="length"
+    [attr.data-test-id]="testId"
     #inputElement
     (keypress)="validationValue($event)"
   />
