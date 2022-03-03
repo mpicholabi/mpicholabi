@@ -73,8 +73,11 @@ module.exports = {
         '136px': '8.5rem',
         '313px': '19.563rem',
         '443px': '27.688rem',
+        '700px': '43.75rem',
       },
       minHeight: {
+        '443px': '27.688rem',
+        '550px': '34.375rem',
         '700px': '43.75rem',
       },
       maxWidth: {
@@ -110,11 +113,13 @@ module.exports = {
       },
       zIndex: {
         1: 1,
+        2: 2,
       },
       backgroundImage: {
         'banner-header': 'url(/assets/image/bi-banner-home.jpeg)',
       },
       spacing: {
+        '2px': '0.125rem',
         '10%': '10%',
         '6px': '0.375rem',
       },

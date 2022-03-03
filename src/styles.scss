@@ -38,3 +38,8 @@ button.scrolltop-button {
 .p-slider-handle:focus {
   box-shadow: 0 0 1px 10px rgba(64, 201, 255, 0.2) !important;
 }
+
+.animation-touched, .p-slider-handle, .p-slider-range {
+  transition: all!important;
+  transition-duration: 0.5s!important;
+}

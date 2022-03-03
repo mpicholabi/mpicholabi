@@ -1,9 +1,4 @@
-import {
-  NgModule,
-  CUSTOM_ELEMENTS_SCHEMA,
-  APP_INITIALIZER,
-  LOCALE_ID,
-} from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
