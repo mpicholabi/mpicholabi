@@ -1,10 +1,10 @@
 <section
   class="
-    h-screen
+    lg:h-screen
     flex
     justify-center
-    bg-banner-header bg-cover bg-center bg-no-repeat
     min-h-700px
+    h-auto
     relative
     lg:px-11
     overflow-hidden
@@ -13,26 +13,29 @@
   <img
     src="assets/image/bi-square-margin.svg"
     alt="Decoración BI"
-    class="absolute lg:block hidden z-1 w-516px h-443px -bottom-40 -left-32"
+    class="absolute lg:block hidden z-2 w-516px h-443px -bottom-40 -left-32"
   />
   <img
     src="assets/image/bi-infinity-white.svg"
     alt="Decoración BI"
-    class="absolute lg:block hidden z-1 w-236px h-48 top-32 -right-20"
+    class="absolute lg:block hidden z-2 w-236px h-48 top-32 -right-20"
   />
+  <div class="absolute w-full top-0 bottom-0 z-1 bg-banner-gradient"></div>
   <div
     class="
-      absolute
-      lg:block
-      hidden
-      w-full
+      bg-banner-header bg-cover bg-center
       top-0
-      bottom-0
+      h-700px
+      g-center
+      bg-no-repeat
+      lg:h-screen
+      absolute
+      w-full
       z-0
-      bg-banner-gradient
     "
-  ></div>
-
+  >
+    &nbsp;
+  </div>
   <div class="grid lg:grid-cols-2 grid-cols-1 w-full">
     <div
       class="
@@ -43,9 +46,11 @@
         px-11
         lg:justify-end
         justify-start
-        items-end
+        items-center
         relative
         z-1
+        lg:min-h-full
+        min-h-443px
         pr-20
       "
     >

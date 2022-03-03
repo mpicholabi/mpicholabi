@@ -1,3 +1,4 @@
+import { AnimationClass } from '@/app/utils/animationClass';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 

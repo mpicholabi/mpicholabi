@@ -1,9 +1,4 @@
-import {
-  NgModule,
-  CUSTOM_ELEMENTS_SCHEMA,
-  APP_INITIALIZER,
-  LOCALE_ID,
-} from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -18,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SliderModule } from 'primeng/slider';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -84,6 +80,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     NgxScrollTopModule,
     SliderModule,
+    NgxSliderModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [

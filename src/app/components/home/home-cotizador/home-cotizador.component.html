@@ -19,13 +19,12 @@
       font-lato font-medium
       text-blue-750
     "
-  >
-    {{ 'home-quoter.title' | translate }}
-  </h1>
+    [innerHTML]="'home-quoter.title' | translate"
+  ></h1>
   <p class="pt-5 font-lato text-xl xs:text-16px text-gray-450 text-center">
     {{ 'home-quoter.description' | translate }}
   </p>
-  <form [formGroup]="formQuoter" class="pt-6">
+  <form [formGroup]="formQuoter" class="pt-6 lg:pb-0 pb-10">
     <div class="relative">
       <!-- TODO: refactor this code into of input -->
       <label class="font-lato font-bold text-gray-450 text-22px xs:text-16px">{{
@@ -63,6 +62,10 @@
       >
     </div>
     <div class="pt-20">
+      <label
+        class="font-lato font-bold text-gray-450 text-22px pb-8 xs:text-16px"
+        >{{ 'home-quoter.label-range' | translate }}</label
+      >
       <app-slider-range [max]="60" [min]="12" [step]="12"></app-slider-range>
     </div>
     <a
@@ -76,4 +79,5 @@
       ><img src="assets/image/bi-arrow-yellow.svg" alt=""
     /></a>
   </form>
+  <hr class="lg:hidden block bg-cyan-450 h-2px px-7" />
 </div>

@@ -11,8 +11,10 @@
     [step]="step"
     styleClass="bg-gray-375 h-1 text-cyan-450"
   ></p-slider>
-  <div class="relative pt-4">
-    <div class="flex justify-between w-full">
+  <div class="relative pt-10">
+    <div
+      class="flex justify-between w-ful z-1 bottom-2 absolute -left-1 -right-3"
+    >
       <div
         class="flex items-center"
         [class]="this.min === item ? 'justify-start' : 'justify-center'"
@@ -20,13 +22,14 @@
       >
         <label
           (click)="selectValue(item)"
+          [class]="item === 36 || item === 24 ? '-m-2px' : ''"
           class="text-sm font-bold text-gray-450 cursor-pointer"
         >
           {{ item }}
         </label>
       </div>
     </div>
-    <div class="flex w-full bottom-2 absolute">
+    <div class="flex w-full bottom-4 absolute">
       <div
         class="flex-1 flex justify-center"
         *ngFor="let item of rangeStep(true); index as key"

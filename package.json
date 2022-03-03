@@ -20,6 +20,7 @@
   "private": true,
   "dependencies": {
     "@angular-devkit/architect": "^0.1302.3",
+    "@angular-slider/ngx-slider": "^2.0.4",
     "@angular/animations": "~12.2.0",
     "@angular/common": "~12.2.0",
     "@angular/compiler": "~12.2.0",
