@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TranslateModule } from '@ngx-translate/core';
 import { ApproximateFeeComponent } from './approximate-fee.component';
 
 describe('ApproximateFeeComponent', () => {
@@ -8,9 +8,9 @@ describe('ApproximateFeeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ApproximateFeeComponent ]
-    })
-    .compileComponents();
+      declarations: [ApproximateFeeComponent],
+      imports: [TranslateModule.forRoot()],
+    }).compileComponents();
   });
 
   beforeEach(() => {
