@@ -13,7 +13,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SliderModule } from 'primeng/slider';
-import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -82,7 +81,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     NgxScrollTopModule,
     SliderModule,
-    NgxSliderModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
