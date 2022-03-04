@@ -1,0 +1,7 @@
+export interface ProductRequirementsInterface {
+  id?: number;
+  name: string;
+  description: string;
+  imageUrl: string;
+  active: boolean;
+}
