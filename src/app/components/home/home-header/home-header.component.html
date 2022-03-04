@@ -40,38 +40,42 @@
     <div
       class="
         flex
-        lg:items-center
-        lg:px-0
-        lg:mr-10
-        px-11
-        lg:justify-end
-        justify-center
-        items-end
+        lg:justify-center
+        justify-start
         relative
         z-1
-        lg:min-h-full
-        min-h-550px
-        pr-20
+        lg:pt-498px
+        lg:pl-20
+        xs:pt-300px
+        xs:pl-44px
+        xs:min-h-523px
       "
     >
       <h1
         class="
-          lg:text-7xl
-          text-34px
-          lg:w-522px
-          w-60
-          pb-24
-          text-center text-white
           font-lato font-bold
+          text-75px text-white
+          xs:text-34px
+          xs:leading-normal
         "
         data-aos="fade-down"
         data-aos-duration="1000"
         data-aos-offset="-200"
-      >
-        {{ 'home-header.title' | translate }}
-      </h1>
+        [innerHTML]="'home-header.title' | translate"
+      ></h1>
     </div>
-    <div class="flex lg:items-center 2xl:w-710px w-full items-end relative z-1">
+    <div
+      class="
+        flex
+        lg:items-center
+        2xl:w-710px
+        w-full
+        items-end
+        relative
+        z-1
+        pt-8
+      "
+    >
       <app-home-cotizador></app-home-cotizador>
     </div>
   </div>
