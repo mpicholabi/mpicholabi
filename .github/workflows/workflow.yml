@@ -35,3 +35,14 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }} # Estas credenciales se colocan en secret de GitHub
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # Estas credenciales se colocan en secret de GitHub
           SOURCE_DIR: "dist/AppTest" # Nombre de la carpeta interna en dist
+      - name: Slack notification                                
+        uses: rtCamp/action-slack-notify@master                 
+        env:                                                    
+          SLACK_CHANNEL: monitoring-empresasgt                   
+          SLACK_MESSAGE: 'Despliegue front-end!'
+          SLACK_TITLE: 'Deploy'                         
+          SLACK_USERNAME: 'Credito Consumo'                           
+          SLACK_ICON: "https://d29fhpw069ctt2.cloudfront.net/icon/image/84560/preview.svg"
+          SLACK_COLOR: '#228B22'                                
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}       
+          MSG_MINIMAL: true 
