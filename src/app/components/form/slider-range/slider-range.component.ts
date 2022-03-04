@@ -19,7 +19,7 @@ export class SliderRangeComponent {
   @Input() range: boolean = false;
   @Input() step: number = 12;
 
-  @Output() valueChange: EventEmitter<string> = new EventEmitter();
+  @Output() valueChange: EventEmitter<number> = new EventEmitter();
 
   formGroup: FormGroup = new FormGroup({});
 
@@ -35,9 +35,10 @@ export class SliderRangeComponent {
 
   selectValue(value: number): void {
     this.value = value;
+    this.valueChange.emit(this.value);
   }
 
-  updateValue(value: string): void {
+  updateValue(value: number): void {
     this.valueChange.emit(value);
   }
 }

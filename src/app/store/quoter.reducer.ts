@@ -13,6 +13,7 @@ const initialState: QuoterCalculateInterface = {
 export const quoterReducer = createReducer(
   initialState,
   on(quoterCalculate.SET_QUOTER, (state, { payload }) => {
-    return payload;
+    localStorage.setItem('quoter', JSON.stringify(payload));
+    return { ...state, ...payload };
   })
 );
