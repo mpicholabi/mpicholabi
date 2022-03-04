@@ -38,7 +38,7 @@ jobs:
       - name: Slack notification                                
         uses: rtCamp/action-slack-notify@master                 
         env:                                                    
-          SLACK_CHANNEL: monitoring-empresasgt                   
+          SLACK_CHANNEL: monitoring-consumogt                   
           SLACK_MESSAGE: 'Despliegue front-end!'
           SLACK_TITLE: 'Deploy'                         
           SLACK_USERNAME: 'Credito Consumo'                           
