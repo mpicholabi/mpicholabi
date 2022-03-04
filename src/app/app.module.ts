@@ -1,9 +1,4 @@
-import {
-  NgModule,
-  CUSTOM_ELEMENTS_SCHEMA,
-  APP_INITIALIZER,
-  LOCALE_ID,
-} from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -42,6 +37,7 @@ import { HomeCotizadorComponent } from './components/home/home-cotizador/home-co
 import { SliderRangeComponent } from './components/form/slider-range/slider-range.component';
 import { InputTextFormComponent } from './components/form/input/input.form.component';
 import { ApproximateFeeComponent } from './components/home/approximate-fee/approximate-fee.component';
+import { quoterReducer } from './store/quoter.reducer';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/locales/', '.json');
@@ -71,7 +67,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     CommonModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({ errors: errorReducer }),
+    StoreModule.forRoot({ errors: errorReducer, quoter: quoterReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.env.storeLog as boolean,
