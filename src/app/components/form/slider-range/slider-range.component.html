@@ -5,9 +5,11 @@
   >
   <p-slider
     [(ngModel)]="value"
+    (ngModelChange)="updateValue($event)"
     [max]="max"
     [min]="min"
     [range]="range"
+    [name]="name"
     [step]="step"
     styleClass="bg-gray-375 h-1 text-cyan-450"
   ></p-slider>

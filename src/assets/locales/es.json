@@ -14,11 +14,11 @@
     "link": "Conoce más sobre Bi fácil",
     "title": "Calcula el valor de <br class=\"lg:hidden block\"/>tus sueños",
     "description": "Los datos que se muestran son únicamente una proyección de la cuota nivelada estimada.",
-    "input-description": "Ingresa montos desde Q3,000 hasta Q500,000",
+    "input-description": "Ingresa monto desde Q3,000 hasta Q500,000",
     "label-amount": "Quiero un monto de",
     "label-range": "En cuantos meses lo quiero pagar",
     "fee": "Cuota",
-    "label-fee": "Se hará el debito a tu cuenta monetaria"
+    "label-fee": "Se hará el débito a tu cuenta monetaria"
   },
   "currency": {
     "name": "Quetzal",
