@@ -65,7 +65,14 @@
         class="font-lato font-bold text-gray-450 text-22px pb-8 xs:text-16px"
         >{{ 'home-quoter.label-range' | translate }}</label
       >
-      <app-slider-range [max]="60" [min]="12" [step]="12"></app-slider-range>
+      <app-slider-range
+        [(value)]="term"
+        (valueChange)="changeTerm($event)"
+        name="term"
+        [max]="60"
+        [min]="12"
+        [step]="12"
+      ></app-slider-range>
     </div>
     <app-approximate-fee></app-approximate-fee>
     <a
