@@ -14,6 +14,6 @@ export const quoterReducer = createReducer(
   initialState,
   on(quoterCalculate.SET_QUOTER, (state, { payload }) => {
     localStorage.setItem('quoter', JSON.stringify(payload));
-    return payload;
+    return { ...state, ...payload };
   })
 );
