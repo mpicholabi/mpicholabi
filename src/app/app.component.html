@@ -1,13 +1,13 @@
-<div class="container">
-  <p>{{ "message" | translate }}</p>
-</div>
-<app-card><div class="head">
-  <h1>Test</h1>
-  <p>Pru3eba descripcion</p>
-</div></app-card>
-
-<router-outlet></router-outlet>
-<ul>
-    <button (click)="generateErrorDummyVoid()">error</button>
-    <li *ngFor="let item of ArrErrors">{{ item.code }}</li>
-</ul>
+<main id="app-container">
+  <app-nav [isScrolled]="isScrolled"></app-nav>
+  <router-outlet></router-outlet>
+</main>
+<ngx-scrolltop>
+  <button class="absolute top-0 bottom-0 w-full left-0 bg-blue-750 rounded-full">
+    <img
+      class="transform p-2 rotate-180"
+      src="assets/image/bi-arrow.svg"
+      alt="Icon arrow"
+    />
+  </button>
+</ngx-scrolltop>

@@ -1,0 +1,86 @@
+<section class="bg-cyan-450 w-full relative mt-10 h-auto overflow-hidden flex justify-center">
+  <img
+    class="absolute lg:block hidden w-199px h-191px top-24 -left-16 z-0"
+    src="assets/image/bi-square-white.svg"
+    alt="icon square"
+  />
+  <div class="lg:max-w-1194px xs:w-full flex flex-col items-center">
+    <h1
+      class="
+        text-white
+        font-lato font-bold
+        text-left
+        text-45px
+        xs:text-28px
+        xs:pt-12
+        xs:px-10
+        w-full
+        pt-24
+      "
+      data-aos="fade-up"
+    >
+      {{ 'home-requirement.title' | translate }}
+    </h1>
+    <div
+      class="
+        grid
+        xl:grid-cols-3
+        lg:grid-cols-2
+        md:grid-cols-1
+        xs:grid-cols-1
+        gap-y-9 gap-x-16 xs:gap-x-2
+        xs:pt-12
+        xs:px-10
+        pt-8
+        pb-32
+        relative
+        z-1
+      "
+      data-aos="fade-up"
+    >
+      <app-requirement-feature
+        icon="assets/image/bi-cui.svg"
+        description="Fotografía DPI de ambos lados (El DPI debe estar vigente y en buen estado)"
+      ></app-requirement-feature>
+      <app-requirement-feature
+        icon="assets/image/bi-face.svg"
+        description="Otro documento de identificación (Ejemplo: licencia de conducir), carnet de IRTRA o IGSS"
+      ></app-requirement-feature>
+      <app-requirement-feature
+        icon="assets/image/bi-document.svg"
+        description="Recibo de servicios (agua, luz o teléfono) menor a 3 meses."
+      ></app-requirement-feature>
+      <app-requirement-feature
+        icon="assets/image/bi-users.svg"
+        description="Aplica desde los 19 hasta los 60 años de edad"
+      ></app-requirement-feature>
+      <app-requirement-feature
+        icon="assets/image/bi-bag.svg"
+        description="Estabilidad laboral de mínimo 1 año en una misma empresa"
+      ></app-requirement-feature>
+      <app-requirement-feature
+        icon="assets/image/bi-cash.svg"
+        description="Endeudamiento permitido del 35% de tus ingresos"
+      ></app-requirement-feature>
+    </div>
+  </div>
+  <img
+    class="
+      absolute
+      transform
+      rotate-180
+      bottom-7
+      xs:-bottom-8
+      -right-16
+      w-199px
+      xs:w-167px
+      h-191px
+      xs:h-136px
+      z-0
+      lg:block
+      hidden
+    "
+    src="assets/image/bi-square-white.svg"
+    alt="icon square"
+  />
+</section>

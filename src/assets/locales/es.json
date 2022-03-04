@@ -1,3 +1,27 @@
 {
-  "message": "Hola mundo"
+  "message": "Hola mundo",
+  "home-header": {
+    "title": "¿Has pensado en qué es lo que más deseas?"
+  },
+  "home-benefit": {
+    "title": "Beneficios",
+    "description": "Buscamos brindarte diferentes beneficios y nuestro enfoque es apoyarte en tu salud financiera."
+  },
+  "home-requirement": {
+    "title": "Requisitos y políticas"
+  },
+  "home-quoter": {
+    "link": "Conoce más sobre Bi fácil",
+    "title": "Calcula el valor de <br class=\"lg:hidden block\"/>tus sueños",
+    "description": "Los datos que se muestran son únicamente una proyección de la cuota nivelada estimada.",
+    "input-description": "Ingresa montos desde Q3,000 hasta Q500,000",
+    "label-amunt": "Quiero un monto de",
+    "label-range": "En cuantos meses lo quiero pagar",
+    "fee": "Cuota",
+    "label-fee": "Se hará el debito a tu cuenta monetaria"
+  },
+  "currency": {
+    "name": "Quetzal",
+    "symbol": "Q"
+  }
 }

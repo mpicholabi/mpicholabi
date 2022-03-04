@@ -1,0 +1,51 @@
+<div class="flex flex-col lg:max-w-1194px xs:w-full z-1 relative">
+  <h1 class="title-1 text-center xs:text-left pb-10 xs:pb-15px">
+    {{ 'home-benefit.title' | translate }}
+  </h1>
+  <p
+    class="
+      text-xl
+      font-lato
+      text-center
+      xs:text-left
+      font-normal
+      text-gray-450
+      xs:text-base
+    "
+  >
+    {{ 'home-benefit.description' | translate }}
+  </p>
+  <div
+    class="
+      grid
+      gap-5
+      xl:grid-cols-4
+      lg:grid-cols-2
+      grid-cols-2
+      xs:grid-cols-2
+      pt-16
+      xs:pt-10
+      lg:pb-14
+    "
+    data-aos="fade-in"
+    data-aos-offset="300"
+    data-aos-duration="1000"
+  >
+    <app-card
+      image="assets/image/bi-saving.svg"
+      description="Amplios plazos de Financiamiento"
+    ></app-card>
+    <app-card
+      image="assets/image/bi-airplane.svg"
+      description="Utiliza tu préstamo Como prefieras"
+    ></app-card>
+    <app-card
+      image="assets/image/bi-phone.svg"
+      description="Débito automático a tu cuenta BI"
+    ></app-card>
+    <app-card
+      image="assets/image/bi-balance.svg"
+      description="Nos adaptamos a tu presupuesto"
+    ></app-card>
+  </div>
+</div>

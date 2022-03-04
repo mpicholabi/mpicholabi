@@ -1,34 +1,37 @@
-import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { Component, OnInit, HostListener, Inject } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { AppState } from '@/app/app.state';
-import { ErrorInterface } from './interfaces/error';
-import * as ErrorActions from '@/app/store/error.actions';
 import { TranslateService } from '@ngx-translate/core';
+import { DOCUMENT } from '@angular/common';
+import Aos from 'aos';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  private _isScrolled: boolean = false;
   title = 'AppTest';
-  ArrErrors: Array<ErrorInterface> = [];
 
   constructor(
     private store: Store<AppState>,
-    public translate: TranslateService
+    private translate: TranslateService,
+    @Inject(DOCUMENT) private document: any
   ) {
     this.translate.addLangs(['es']);
     this.translate.setDefaultLang('es');
   }
 
-  generateErrorDummyVoid(): void {
-    const error: Array<ErrorInterface> = [{ code: 500, message: 'test'}]
-    this.store.dispatch(ErrorActions.ADD_ERROR({ payload: error }));
+  @HostListener('window:scroll')
+  public onWindowScroll(): void {
+    this._isScrolled = this.document.documentElement?.scrollTop > 0 ? true : false;
+  }
+
+  public get isScrolled(): boolean {
+    return this._isScrolled;
   }
 
   ngOnInit(): void {
-    this.store.subscribe((state) => {
-      this.ArrErrors = state.errors;
-    });
+    Aos.init();
   }
 }

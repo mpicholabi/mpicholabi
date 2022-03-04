@@ -2,11 +2,16 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./out-tsc/spec",
     "types": [
       "jest",
       "node"
     ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/app/components/*"]
+    },
     "esModuleInterop": true,
     "emitDecoratorMetadata": true
   },

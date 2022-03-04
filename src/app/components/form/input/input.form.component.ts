@@ -1,8 +1,13 @@
-import { Component, Input, Output, EventEmitter, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {
-  FormBuilder,
-  FormGroup,
-} from '@angular/forms';
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnInit,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -16,17 +21,20 @@ export class InputTextFormComponent implements OnInit {
   @Input() isEmail: boolean = false;
   @Input() type: string = 'text';
   @Input() icon: string = '';
-  @Input() rules: 'all' | 'string' | 'number' | 'email' = 'all';
+  @Input() rules: 'all' | 'string' | 'number' | 'decimal' | 'email' = 'all';
   @Input() parentForm!: FormGroup;
   @Input() length: string = '50';
-
+  @Input() isFormControl: boolean = true;
+  @Input() classCustom: string =
+    'w-full h-10 border-solid border-gray-250 pl-2 rounded-5px border';
+  @Input() testId: string = '';
   @Output() valueChange: EventEmitter<string> = new EventEmitter();
 
-  @ViewChild('inputElement')  inputElement!: ElementRef;
+  @ViewChild('inputElement') inputElement!: ElementRef;
 
   formGroup: FormGroup = new FormGroup({});
 
-  constructor(private form: FormBuilder) {}
+  constructor() {}
 
   updateValue(value: string): void {
     this.valueChange.emit(value);
@@ -50,11 +58,20 @@ export class InputTextFormComponent implements OnInit {
       } else {
         return event;
       }
+    } else if (this.rules === 'decimal') {
+      const regex = /^([0-9]+\.?[0-9]*|\.[0-9]+)$/g;
+      if (!regex.test(valueWord)) {
+        return false;
+      } else {
+        return event;
+      }
     }
     return event;
   }
 
   ngOnInit(): void {
-    this.parentForm.addControl(this.name, this.formGroup);
+    if (this.isFormControl) {
+      this.parentForm.addControl(this.name, this.formGroup);
+    }
   }
 }

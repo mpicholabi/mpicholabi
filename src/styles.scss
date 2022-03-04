@@ -3,3 +3,43 @@
 @import 'tailwindcss/components';
 
 @import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+
+.title-1 {
+  @apply text-45px xs:text-28px font-lato text-blue-750 font-bold;
+}
+
+.bg-banner-gradient {
+  background: transparent linear-gradient(90deg, #00C1D400 0%, #00C1D443 21%, #00C1D4 100%) 0% 0% no-repeat padding-box;
+}
+
+button.scrolltop-button {
+  right: 70px!important;
+}
+
+.p-slider-handle {
+  background-color: #00C1D4!important;
+  height: 25px!important;
+  width: 25px!important;
+  border: solid 2px #FFF!important;
+  top: 0%!important;
+}
+
+.p-slider-range {
+  background-color: #00C1D4!important;
+  height: 5px!important;
+}
+
+.p-slider {
+  height: 5px!important;
+}
+
+.p-slider-handle:focus {
+  box-shadow: 0 0 1px 10px rgba(64, 201, 255, 0.2) !important;
+}
+
+.animation-touched, .p-slider-handle, .p-slider-range {
+  transition: all!important;
+  transition-duration: 0.5s!important;
+}
