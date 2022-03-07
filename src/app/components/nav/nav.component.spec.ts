@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NavComponent } from './nav.component';
 
 describe('NavComponent', () => {
@@ -8,9 +7,8 @@ describe('NavComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavComponent ]
-    })
-    .compileComponents();
+      declarations: [NavComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +19,16 @@ describe('NavComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should be false', () => {
+    const isScrolled = component.isScrolled;
+    expect(isScrolled).toBe(false);
+  });
+
+  it('test', () => {
+    component.isScrolled = true;
+    const isScrolled = component.isScrolled;
+    expect(isScrolled).toBe(true);
   });
 });

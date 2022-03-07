@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ProductInterface } from '@/app/interfaces/Product/product';
 import { ProductDetailInterface } from '@/app/interfaces/Product/product-detail';
 import { ProductPoliciesInterface } from '@/app/interfaces/Product/product-policies';
+import { ProductRequirementsInterface } from '@/app/interfaces/Product/prodcut-requirements';
 
 @Injectable({
   providedIn: 'root',
@@ -17,14 +18,14 @@ export class ProductService {
     ProductInterface<
       ProductDetailInterface,
       ProductPoliciesInterface,
-      ProductPoliciesInterface
+      ProductRequirementsInterface
     >
   > {
     return this.http.get<
       ProductInterface<
         ProductDetailInterface,
         ProductPoliciesInterface,
-        ProductPoliciesInterface
+        ProductRequirementsInterface
       >
     >('https://reqres.in/api/posts', {
       params: {

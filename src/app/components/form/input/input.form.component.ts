@@ -29,23 +29,17 @@ export class InputTextFormComponent implements OnInit {
     'w-full h-10 border-solid border-gray-250 pl-2 rounded-5px border';
   @Input() testId: string = '';
   @Output() valueChange: EventEmitter<string> = new EventEmitter();
-
   @ViewChild('inputElement') inputElement!: ElementRef;
 
   formGroup: FormGroup = new FormGroup({});
 
   constructor() {}
 
-  updateValue(value: string): void {
-    this.valueChange.emit(value);
-  }
-
   validationValue(event: KeyboardEvent): string | boolean | KeyboardEvent {
     const { value } = this.inputElement.nativeElement;
     const valueWord = `${value}${event.key}`;
     if (this.rules === 'string') {
       const regex = /^(([A-záéíóúñÁÉÍÓÚÑ])|([a-z])+( ))+$/g;
-
       if (!regex.test(valueWord)) {
         return false;
       } else {
