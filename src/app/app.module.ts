@@ -28,16 +28,17 @@ import { CardComponent } from './components/card/card.component';
 import { HomeBenefitComponent } from './components/home/home-benefit/home-benefit.component';
 import { HomeProductComponent } from './components/home/home-product/home-product.component';
 import { ProductFeatureComponent } from './components/home/product-feature/product-feature.component';
-import { HomeRequiremetComponent } from './components/home/home-requiremet/home-requiremet.component';
+import { HomeRequirementComponent } from './components/home/home-requirement/home-requirement.component';
 import { RequirementFeatureComponent } from './components/home/requirement-feature/requirement-feature.component';
 import { HomeHeaderComponent } from './components/home/home-header/home-header.component';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { NavComponent } from './components/nav/nav.component';
-import { HomeCotizadorComponent } from './components/home/home-cotizador/home-cotizador.component';
+import { HomeQuoterComponent } from './components/home/home-quoter/home-quoter.component';
 import { SliderRangeComponent } from './components/form/slider-range/slider-range.component';
 import { InputTextFormComponent } from './components/form/input/input.form.component';
 import { ApproximateFeeComponent } from './components/home/approximate-fee/approximate-fee.component';
 import { quoterReducer } from './store/quoter.reducer';
+import { LoadingComponent } from './components/loading/loading.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/locales/', '.json');
@@ -50,14 +51,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeBenefitComponent,
     HomeProductComponent,
     ProductFeatureComponent,
-    HomeRequiremetComponent,
+    HomeRequirementComponent,
     RequirementFeatureComponent,
     HomeHeaderComponent,
     NavComponent,
-    HomeCotizadorComponent,
+    HomeQuoterComponent,
     SliderRangeComponent,
     InputTextFormComponent,
     ApproximateFeeComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
