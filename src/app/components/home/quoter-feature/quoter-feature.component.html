@@ -1,0 +1,74 @@
+<section
+  class="w-full relative mt-10 h-auto overflow-hidden flex justify-center"
+>
+  <div class="lg:max-w-1194px xs:w-full flex flex-col items-center">
+    <div>
+      <h1
+        [innerHTML]="'quoter-feature.title' | translate"
+        class="font-lato text-45px font-bold text-blue-750"
+      ></h1>
+    </div>
+    <div>
+      <form class="flex" [formGroup]="formQuoter">
+        <div class="relative pr-3">
+          <!-- TODO: refactor this code into of input -->
+          <label
+            class="font-lato font-bold text-gray-450 2xl:text-22px text-16px"
+            >{{ 'home-quoter.label-amount' | translate }}</label
+          >
+          <div class="relative">
+            <label
+              class="
+                absolute
+                left-0
+                top-2
+                text-cyan-450
+                2xl:text-42px
+                text-24px
+                font-lato
+              "
+              >{{ 'currency.symbol' | translate }}</label
+            >
+            <app-input
+              [parentForm]="formQuoter"
+              id="amount"
+              [name]="'amount'"
+              [rules]="'decimal'"
+              [classCustom]="
+                'border-b-2 border-cyan-450 focus:outline-none pl-12 xs:pl-8 2xl:text-42px text-24px w-full text-gray-350'
+              "
+              [placeholder]="'0.00'"
+              [length]="'9'"
+              [testId]="'inumAmount'"
+            ></app-input>
+          </div>
+          <span class="font-lato font-semibold text-14px text-cyan-450">{{
+            'home-quoter.input-description' | translate
+          }}</span>
+        </div>
+        <div class="pt-12">
+          <label
+            class="
+              font-lato font-bold
+              text-gray-450
+              2xl:text-22px
+              pb-8
+              text-16px
+            "
+            >{{ 'home-quoter.label-range' | translate }}</label
+          >
+          <input hidden id="term" type="number" formControlName="term" />
+          <app-slider-range
+            [(value)]="term"
+            [id]="'term'"
+            name="terms"
+            (valueChange)="changeTerm($event)"
+            [max]="60"
+            [min]="12"
+            [step]="12"
+          ></app-slider-range>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

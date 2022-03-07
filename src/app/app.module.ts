@@ -39,6 +39,7 @@ import { InputTextFormComponent } from './components/form/input/input.form.compo
 import { ApproximateFeeComponent } from './components/home/approximate-fee/approximate-fee.component';
 import { quoterReducer } from './store/quoter.reducer';
 import { LoadingComponent } from './components/loading/loading.component';
+import { QuoterFeatureComponent } from './components/home/quoter-feature/quoter-feature.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/locales/', '.json');
@@ -60,6 +61,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     InputTextFormComponent,
     ApproximateFeeComponent,
     LoadingComponent,
+    QuoterFeatureComponent,
   ],
   imports: [
     BrowserModule,
