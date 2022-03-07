@@ -3,6 +3,7 @@
     lg:h-screen
     flex
     justify-center
+    lg:min-h-1000px
     min-h-700px
     h-auto
     relative
@@ -25,7 +26,8 @@
     class="
       bg-banner-header bg-cover bg-center
       top-0
-      h-700px
+      lg:min-h-1000px
+      min-h-700px
       g-center
       bg-no-repeat
       lg:h-screen
@@ -36,25 +38,29 @@
   >
     &nbsp;
   </div>
-  <div class="grid lg:grid-cols-2 grid-cols-1 w-full">
+  <div class="grid lg:grid-cols-2 grid-cols-1 lg:max-w-1194px w-full">
     <div
       class="
         flex
         lg:justify-center
+        lg:items-center
         justify-start
+        items-end
+        lg:pb-0
+        pb-20
         relative
         z-1
-        lg:pt-498px
-        lg:pl-20
-        xs:pt-300px
+        lg:pl-10
         xs:pl-44px
-        xs:min-h-523px
+        lg:min-h-full
+        min-h-523px
       "
     >
       <h1
         class="
           font-lato font-bold
-          text-75px text-white
+          2xl:text-75px text-white
+          text-5xl
           xs:text-34px
           xs:leading-normal
         "
@@ -68,6 +74,7 @@
       class="
         flex
         lg:items-center
+        justify-center
         2xl:w-710px
         w-full
         items-end
