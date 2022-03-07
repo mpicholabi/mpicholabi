@@ -1,4 +1,4 @@
-export interface responseApiInterface<T> {
+export interface ResponseApiInterface<T> {
   data: T;
   transactionId: string;
   operationId: string;
