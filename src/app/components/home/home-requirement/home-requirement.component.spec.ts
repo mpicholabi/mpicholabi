@@ -1,24 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { RequirementFeatureComponent } from '../requirement-feature/requirement-feature.component';
-import { HomeRequiremetComponent } from './home-requiremet.component';
+import { HomeRequirementComponent } from './home-requirement.component';
 
-describe('HomeRequiremetComponent', () => {
-  let component: HomeRequiremetComponent;
-  let fixture: ComponentFixture<HomeRequiremetComponent>;
+describe('HomeRequirementComponent', () => {
+  let component: HomeRequirementComponent;
+  let fixture: ComponentFixture<HomeRequirementComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeRequiremetComponent, RequirementFeatureComponent ],
-      imports: [
-        TranslateModule.forRoot()
-      ]
-    })
-    .compileComponents();
+      declarations: [HomeRequirementComponent, RequirementFeatureComponent],
+      imports: [TranslateModule.forRoot()],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeRequiremetComponent);
+    fixture = TestBed.createComponent(HomeRequirementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
