@@ -31,16 +31,18 @@
   <form [formGroup]="formQuoter" class="pt-6 lg:pb-0 pb-10">
     <div class="relative">
       <!-- TODO: refactor this code into of input -->
-      <label class="font-lato font-bold text-gray-450 2xl:text-22px text-16px">{{
-        'home-quoter.label-amount' | translate
-      }}</label>
+      <label
+        class="font-lato font-bold text-gray-450 2xl:text-22px text-16px"
+        >{{ 'home-quoter.label-amount' | translate }}</label
+      >
       <div class="relative">
         <label
           class="
             absolute
             left-0
             top-2
-            text-cyan-450 2xl:text-42px
+            text-cyan-450
+            2xl:text-42px
             text-24px
             font-lato
           "
@@ -48,6 +50,7 @@
         >
         <app-input
           [parentForm]="formQuoter"
+          id="amount"
           [name]="'amount'"
           [rules]="'decimal'"
           [classCustom]="
@@ -67,24 +70,26 @@
         class="font-lato font-bold text-gray-450 2xl:text-22px pb-8 text-16px"
         >{{ 'home-quoter.label-range' | translate }}</label
       >
+      <input hidden id="term" type="number" formControlName="term" />
       <app-slider-range
         [(value)]="term"
+        [id]="'term'"
+        name="terms"
         (valueChange)="changeTerm($event)"
-        name="term"
         [max]="60"
         [min]="12"
         [step]="12"
       ></app-slider-range>
     </div>
-    <app-approximate-fee></app-approximate-fee>
+    <app-approximate-fee [isLoading]="isLoading"></app-approximate-fee>
     <a
       class="my-3 cursor-pointer flex flex-col items-center"
       (click)="goToProduct()"
       rel="no-refresh"
     >
-      <label class="2xl:text-xl text-base text-blue-750 font-lato font-medium pb-2">{{
-        'home-quoter.link' | translate
-      }}</label
+      <label
+        class="2xl:text-xl text-base text-blue-750 font-lato font-medium pb-2"
+        >{{ 'home-quoter.link' | translate }}</label
       ><img src="assets/image/bi-arrow-yellow.svg" alt=""
     /></a>
   </form>

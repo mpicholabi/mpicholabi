@@ -1,4 +1,4 @@
 export interface QuoterCalculateInterface {
-  amount: number;
+  amount: number | string;
   term: number;
 }

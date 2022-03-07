@@ -13,7 +13,7 @@ describe('Testing post service', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-    })
+    });
 
     service = TestBed.inject(PostService);
     httpController = TestBed.inject(HttpTestingController);
@@ -35,8 +35,8 @@ describe('Testing post service', () => {
     const req = httpController.expectOne({
       method: 'GET',
       url: 'https://jsonplaceholder.typicode.com/posts',
-    })
+    });
 
     req.flush(PostsDummy);
-  })
+  });
 });

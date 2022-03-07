@@ -1,6 +1,13 @@
 <div class="justify-self-auto pb-10">
   <div class="flex justify-center">
-    <h1 class="font-lato font-bold 2xl:text-45px text-32px text-blue-750">
+    <app-loading
+      [hidden]="!isLoading"
+      class="text-blue-750 h-10 mb-6"
+    ></app-loading>
+    <h1
+      [hidden]="isLoading"
+      class="font-lato font-bold 2xl:text-45px text-32px text-blue-750"
+    >
       {{ 'currency.symbol' | translate }} {{ fee | number: '1.2-2' }}
     </h1>
   </div>
