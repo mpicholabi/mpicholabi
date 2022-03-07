@@ -1,7 +1,8 @@
 <div
   class="
     w-full
-    xl:px-120px
+    2xl:px-120px
+    xl:px-24
     px-11
     py-9
     bg-white
@@ -14,8 +15,8 @@
 >
   <h1
     class="
-      text-35px
-      xs:text-24px
+      2xl:text-35px
+      text-24px
       w-full
       text-center
       font-lato font-bold
@@ -24,13 +25,13 @@
     "
     [innerHTML]="'home-quoter.title' | translate"
   ></h1>
-  <p class="pt-5 font-lato text-xl xs:text-16px text-gray-450 text-center">
+  <p class="pt-5 font-lato 2xl:text-xl text-16px text-gray-450 text-center">
     {{ 'home-quoter.description' | translate }}
   </p>
   <form [formGroup]="formQuoter" class="pt-6 lg:pb-0 pb-10">
     <div class="relative">
       <!-- TODO: refactor this code into of input -->
-      <label class="font-lato font-bold text-gray-450 text-22px xs:text-16px">{{
+      <label class="font-lato font-bold text-gray-450 2xl:text-22px text-16px">{{
         'home-quoter.label-amount' | translate
       }}</label>
       <div class="relative">
@@ -39,8 +40,8 @@
             absolute
             left-0
             top-2
-            text-cyan-450 text-42px
-            xs:text-24px
+            text-cyan-450 2xl:text-42px
+            text-24px
             font-lato
           "
           >{{ 'currency.symbol' | translate }}</label
@@ -50,7 +51,7 @@
           [name]="'amount'"
           [rules]="'decimal'"
           [classCustom]="
-            'border-b-2 border-cyan-450 focus:outline-none pl-12 xs:pl-8 text-42px xs:text-24px w-full text-gray-350'
+            'border-b-2 border-cyan-450 focus:outline-none pl-12 xs:pl-8 2xl:text-42px text-24px w-full text-gray-350'
           "
           [placeholder]="'0.00'"
           [length]="'9'"
@@ -63,7 +64,7 @@
     </div>
     <div class="pt-10 pb-14">
       <label
-        class="font-lato font-bold text-gray-450 text-22px pb-8 xs:text-16px"
+        class="font-lato font-bold text-gray-450 2xl:text-22px pb-8 text-16px"
         >{{ 'home-quoter.label-range' | translate }}</label
       >
       <app-slider-range
@@ -81,11 +82,11 @@
       (click)="goToProduct()"
       rel="no-refresh"
     >
-      <label class="text-xl text-blue-750 font-lato font-medium pb-2">{{
+      <label class="2xl:text-xl text-base text-blue-750 font-lato font-medium pb-2">{{
         'home-quoter.link' | translate
       }}</label
       ><img src="assets/image/bi-arrow-yellow.svg" alt=""
     /></a>
   </form>
-  <hr class="lg:hidden block bg-cyan-450 h-2px px-7" />
+  <hr class="lg:hidden md:hidden block bg-cyan-450 h-2px px-7" />
 </div>
