@@ -5,9 +5,7 @@ export function AnimationClass(selector: string, animation: string): void {
     element?.classList.add(animation);
     function handleAnimationEnd(event: any) {
       event.stopPropagation();
-      console.log(element);
       element?.classList.remove(animation);
-      console.log(element);
       resolve('Animation ended');
     }
 
