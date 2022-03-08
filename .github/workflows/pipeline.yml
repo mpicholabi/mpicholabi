@@ -33,6 +33,7 @@ jobs:
     needs: test
     if: github.ref_name == 'main' || github.ref_name == 'develop'
     steps:
+      - uses: actions/checkout@v2
       - run: npm run build
       - uses: jakejarvis/s3-sync-action@v0.5.1 # master no funciona
         with:
