@@ -1,13 +1,33 @@
 <section
-  class="w-full relative my-10 h-auto overflow-hidden flex justify-center px-11"
+  class="
+    w-full
+    relative
+    my-10
+    h-auto
+    overflow-hidden
+    flex flex-col
+    items-center
+    px-11
+  "
 >
   <div class="lg:max-w-1194px w-full flex flex-col items-center">
     <h1
       [innerHTML]="'quoter-feature.title' | translate"
-      class="font-lato w-full text-left lg:text-45px text-28px font-bold text-blue-750"
+      class="
+        font-lato
+        w-full
+        text-left
+        lg:text-45px
+        text-28px
+        font-bold
+        text-blue-750
+      "
     ></h1>
     <div class="w-full flex">
-      <form class="grid lg:grid-cols-2 w-full grid-cols-1 lg:gap-32 gap-4" [formGroup]="formQuoter">
+      <form
+        class="grid lg:grid-cols-2 w-full grid-cols-1 lg:gap-32 gap-4"
+        [formGroup]="formQuoter"
+      >
         <div class="relative lg:w-auto w-full">
           <!-- TODO: refactor this code into of input -->
           <label
@@ -70,5 +90,22 @@
       </form>
     </div>
   </div>
-  <img class="absolute w-44 right-10 transform 2xl:block hidden translate-y-1/2" src="/assets/image/bi-quoter-bg.svg" alt="quarer blue and yellow" />
+  <img
+    class="
+      absolute
+      w-44
+      right-10
+      transform
+      2xl:block
+      hidden
+      z-0
+      translate-y-1/2
+    "
+    src="/assets/image/bi-quoter-bg.svg"
+    alt="quarter blue and yellow"
+  />
+  <hr />
+  <div class="w-full">
+    <app-table> Test </app-table>
+  </div>
 </section>

@@ -40,6 +40,8 @@ import { ApproximateFeeComponent } from './components/home/approximate-fee/appro
 import { quoterReducer } from './store/quoter.reducer';
 import { LoadingComponent } from './components/loading/loading.component';
 import { QuoterFeatureComponent } from './components/home/quoter-feature/quoter-feature.component';
+import { TableComponent } from './components/table/table.component';
+import { HomeBalanceComponent } from './components/home/home-balance/home-balance.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/locales/', '.json');
@@ -62,6 +64,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ApproximateFeeComponent,
     LoadingComponent,
     QuoterFeatureComponent,
+    TableComponent,
+    HomeBalanceComponent,
   ],
   imports: [
     BrowserModule,
