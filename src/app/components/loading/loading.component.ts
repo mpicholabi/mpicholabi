@@ -6,8 +6,15 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./loading.component.scss'],
 })
 export class LoadingComponent {
+  private _class: string = '';
   @Input()
-  class: string = '';
+  get class(): string {
+    return this._class;
+  }
+
+  public set class(value: string) {
+    this._class = value;
+  }
 
   constructor() {}
 }
