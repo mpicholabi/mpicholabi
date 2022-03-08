@@ -10,7 +10,6 @@ const initialState: Array<ErrorInterface> = [];
 export const errorReducer = createReducer(
   initialState,
   on(ErrorActions.ADD_ERROR, (state, { payload }) => {
-    console.log(payload);
     return payload;
   })
 );
