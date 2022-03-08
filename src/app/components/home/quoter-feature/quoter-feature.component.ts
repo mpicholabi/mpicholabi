@@ -1,26 +1,22 @@
 import { Component } from '@angular/core';
-import { scrollToTop } from '@/app/utils/scrollTo';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AppState } from '@/app/app.state';
 import { Store } from '@ngrx/store';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import * as QuoterAction from '@/app/store/quoter.actions';
 import { QuoterCalculateInterface } from '@/app/interfaces/quoter/quoterCalculate';
+import * as QuoterAction from '@/app/store/quoter.actions';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'app-home-quoter',
-  templateUrl: './home-quoter.component.html',
+  selector: 'app-quoter-feature',
+  templateUrl: './quoter-feature.component.html',
+  styleUrls: ['./quoter-feature.component.scss'],
 })
-export class HomeQuoterComponent {
+export class QuoterFeatureComponent {
   formQuoter!: FormGroup;
   subject = new Subject();
   term: number = 12;
   isLoading: boolean = false;
-
-  goToProduct(): void {
-    scrollToTop('#homeProduct', 95);
-  }
 
   changeTerm(event: number): void {
     this.formQuoter.get('term')?.setValue(event);
@@ -32,9 +28,10 @@ export class HomeQuoterComponent {
   ) {
     this.createForm();
     this.changeFormValue();
-    this.store.subscribe((state) => {
-      const { quoter } = { ...state };
+    this.store.pipe(distinctUntilChanged()).subscribe((state) => {
+      const { quoter } = state;
       if (quoter.amount !== this.formQuoter.get('amount')?.value) {
+        console.log(quoter);
         this.formQuoter.get('amount')?.setValue(quoter.amount);
       }
       if (quoter.term !== this.formQuoter.get('term')?.value) {
@@ -47,7 +44,6 @@ export class HomeQuoterComponent {
 
   saveQuoter(payload: QuoterCalculateInterface): void {
     this.store.dispatch(QuoterAction.SET_QUOTER({ payload }));
-    this.getQuoterServices();
   }
 
   changeFormValue(): void {
@@ -81,12 +77,5 @@ export class HomeQuoterComponent {
       amount: [''],
       term: [12],
     });
-  }
-
-  getQuoterServices(): void {
-    this.isLoading = true;
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 3000);
   }
 }

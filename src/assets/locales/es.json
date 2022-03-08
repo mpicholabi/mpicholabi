@@ -23,5 +23,8 @@
   "currency": {
     "name": "Quetzal",
     "symbol": "Q"
+  },
+  "quoter-feature": {
+    "title": "Plan de pago para crédito Bi-fácil de Q10,200<br class=0\"lg:block hidden\" /> pagando a 10 meses a cuotas de Q1,020"
   }
 }
