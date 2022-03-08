@@ -31,11 +31,9 @@ export class QuoterFeatureComponent {
     this.store.pipe(distinctUntilChanged()).subscribe((state) => {
       const { quoter } = state;
       if (quoter.amount !== this.formQuoter.get('amount')?.value) {
-        console.log(quoter);
         this.formQuoter.get('amount')?.setValue(quoter.amount);
       }
       if (quoter.term !== this.formQuoter.get('term')?.value) {
-        console.log(quoter);
         this.term = quoter.term;
         this.formQuoter.get('term')?.setValue(quoter.term);
       }
