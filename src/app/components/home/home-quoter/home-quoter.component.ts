@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { scrollToTop } from '@/app/utils/scrollTo';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AppState } from '@/app/app.state';
@@ -11,7 +11,6 @@ import { Subject } from 'rxjs';
 @Component({
   selector: 'app-home-quoter',
   templateUrl: './home-quoter.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeQuoterComponent {
   formQuoter!: FormGroup;
@@ -23,12 +22,58 @@ export class HomeQuoterComponent {
     scrollToTop('#homeProduct', 95);
   }
 
+  changeTerm(event: number): void {
+    this.formQuoter.get('term')?.setValue(event);
+  }
+
   constructor(
     private formBuilder: FormBuilder,
     private store: Store<AppState>
   ) {
     this.createForm();
     this.changeFormValue();
+    this.store.subscribe((state) => {
+      const { quoter } = { ...state };
+      if (quoter.amount !== this.formQuoter.get('amount')?.value) {
+        this.formQuoter.get('amount')?.setValue(quoter.amount);
+      }
+      if (quoter.term !== this.formQuoter.get('term')?.value) {
+        console.log(quoter);
+        this.term = quoter.term;
+        this.formQuoter.get('term')?.setValue(quoter.term);
+      }
+    });
+  }
+
+  saveQuoter(payload: QuoterCalculateInterface): void {
+    this.store.dispatch(QuoterAction.SET_QUOTER({ payload }));
+    this.getQuoterServices();
+  }
+
+  changeFormValue(): void {
+    this.formQuoter
+      .get('amount')
+      ?.valueChanges.pipe(debounceTime(500), distinctUntilChanged())
+      .subscribe((value) => {
+        if (!!value && value > 200) {
+          this.saveQuoter({
+            amount: value,
+            term: this.formQuoter.get('term')?.value,
+          });
+        }
+      });
+
+    this.formQuoter
+      .get('term')
+      ?.valueChanges.pipe(distinctUntilChanged())
+      .subscribe((value) => {
+        this.saveQuoter({
+          amount: !!this.formQuoter.get('amount')?.value
+            ? this.formQuoter.get('amount')?.value
+            : 0,
+          term: value,
+        });
+      });
   }
 
   createForm(): void {
@@ -38,42 +83,10 @@ export class HomeQuoterComponent {
     });
   }
 
-  changeFormValue(): void {
-    this.formQuoter.get('amount')?.valueChanges.subscribe((value) => {
-      this.saveQuoter({
-        amount: value,
-        term: this.formQuoter.get('term')?.value,
-      });
-    });
-
-    this.formQuoter.get('term')?.valueChanges.subscribe((value) => {
-      this.saveQuoter({
-        term: value,
-        amount: this.formQuoter.get('amount')?.value,
-      });
-    });
-  }
-
-  changeTerm(event: number): void {
-    this.formQuoter.get('term')?.setValue(event);
-  }
-
-  saveQuoter(payload: QuoterCalculateInterface): void {
-    this.store.dispatch(QuoterAction.SET_QUOTER({ payload }));
-    if (!!this.formQuoter.get('amount')?.value) {
-      console.log(payload);
-      this.getQuoterService();
-    }
-  }
-
-  getQuoterService(): void {
-    this.setLoading(true);
+  getQuoterServices(): void {
+    this.isLoading = true;
     setTimeout(() => {
-      this.setLoading(false);
-    }, 4000);
-  }
-
-  setLoading(value: boolean): void {
-    this.isLoading = value;
+      this.isLoading = false;
+    }, 3000);
   }
 }

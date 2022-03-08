@@ -1,16 +1,14 @@
 <section
-  class="w-full relative mt-10 h-auto overflow-hidden flex justify-center"
+  class="w-full relative my-10 h-auto overflow-hidden flex justify-center px-11"
 >
-  <div class="lg:max-w-1194px xs:w-full flex flex-col items-center">
-    <div>
-      <h1
-        [innerHTML]="'quoter-feature.title' | translate"
-        class="font-lato text-45px font-bold text-blue-750"
-      ></h1>
-    </div>
-    <div>
-      <form class="flex" [formGroup]="formQuoter">
-        <div class="relative pr-3">
+  <div class="lg:max-w-1194px w-full flex flex-col items-center">
+    <h1
+      [innerHTML]="'quoter-feature.title' | translate"
+      class="font-lato w-full text-left lg:text-45px text-28px font-bold text-blue-750"
+    ></h1>
+    <div class="w-full flex">
+      <form class="grid lg:grid-cols-2 w-full grid-cols-1 lg:gap-32 gap-4" [formGroup]="formQuoter">
+        <div class="relative lg:w-auto w-full">
           <!-- TODO: refactor this code into of input -->
           <label
             class="font-lato font-bold text-gray-450 2xl:text-22px text-16px"
@@ -46,13 +44,14 @@
             'home-quoter.input-description' | translate
           }}</span>
         </div>
-        <div class="pt-12">
+        <div class="flex flex-col lg:w-auto w-full">
           <label
             class="
               font-lato font-bold
               text-gray-450
               2xl:text-22px
-              pb-8
+              2xl:pb-10
+              lg:pb-4
               text-16px
             "
             >{{ 'home-quoter.label-range' | translate }}</label
@@ -71,4 +70,5 @@
       </form>
     </div>
   </div>
+  <img class="absolute w-44 right-10 transform 2xl:block hidden translate-y-1/2" src="/assets/image/bi-quoter-bg.svg" alt="quarer blue and yellow" />
 </section>

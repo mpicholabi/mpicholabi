@@ -1,10 +1,11 @@
-import { AppState } from '@/app/app.state';
-import { QuoterCalculateInterface } from '@/app/interfaces/quoter/quoterCalculate';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AppState } from '@/app/app.state';
 import { Store } from '@ngrx/store';
-import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { QuoterCalculateInterface } from '@/app/interfaces/quoter/quoterCalculate';
 import * as QuoterAction from '@/app/store/quoter.actions';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-quoter-feature',
@@ -27,30 +28,48 @@ export class QuoterFeatureComponent {
   ) {
     this.createForm();
     this.changeFormValue();
+    this.store.pipe(distinctUntilChanged()).subscribe((state) => {
+      const { quoter } = state;
+      if (quoter.amount !== this.formQuoter.get('amount')?.value) {
+        console.log(quoter);
+        this.formQuoter.get('amount')?.setValue(quoter.amount);
+      }
+      if (quoter.term !== this.formQuoter.get('term')?.value) {
+        console.log(quoter);
+        this.term = quoter.term;
+        this.formQuoter.get('term')?.setValue(quoter.term);
+      }
+    });
   }
 
   saveQuoter(payload: QuoterCalculateInterface): void {
     this.store.dispatch(QuoterAction.SET_QUOTER({ payload }));
-    if (!!this.formQuoter.get('amount')?.value) {
-      console.log(payload);
-      this.getQuoterService();
-    }
   }
 
   changeFormValue(): void {
-    this.formQuoter.get('amount')?.valueChanges.subscribe((value) => {
-      this.saveQuoter({
-        amount: value,
-        term: this.formQuoter.get('term')?.value,
+    this.formQuoter
+      .get('amount')
+      ?.valueChanges.pipe(debounceTime(500), distinctUntilChanged())
+      .subscribe((value) => {
+        if (!!value && value > 200) {
+          this.saveQuoter({
+            amount: value,
+            term: this.formQuoter.get('term')?.value,
+          });
+        }
       });
-    });
 
-    this.formQuoter.get('term')?.valueChanges.subscribe((value) => {
-      this.saveQuoter({
-        term: value,
-        amount: this.formQuoter.get('amount')?.value,
+    this.formQuoter
+      .get('term')
+      ?.valueChanges.pipe(distinctUntilChanged())
+      .subscribe((value) => {
+        this.saveQuoter({
+          amount: !!this.formQuoter.get('amount')?.value
+            ? this.formQuoter.get('amount')?.value
+            : 0,
+          term: value,
+        });
       });
-    });
   }
 
   createForm(): void {
@@ -58,16 +77,5 @@ export class QuoterFeatureComponent {
       amount: [''],
       term: [12],
     });
-  }
-
-  getQuoterService(): void {
-    this.setLoading(true);
-    setTimeout(() => {
-      this.setLoading(false);
-    }, 4000);
-  }
-
-  setLoading(value: boolean): void {
-    this.isLoading = value;
   }
 }
