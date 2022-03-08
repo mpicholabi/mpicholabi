@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="182" height="158" viewBox="0 0 182 158">
+  <g id="Grupo_4025" data-name="Grupo 4025" transform="translate(-1573 -3079)">
+    <g id="Rectángulo_1178" data-name="Rectángulo 1178" transform="translate(1573 3169)" fill="none" stroke="#f4bb47" stroke-width="2">
+      <path d="M15,0H78a0,0,0,0,1,0,0V53A15,15,0,0,1,63,68H0a0,0,0,0,1,0,0V15A15,15,0,0,1,15,0Z" stroke="none"/>
+      <path d="M15,1H76a1,1,0,0,1,1,1V53A14,14,0,0,1,63,67H2a1,1,0,0,1-1-1V15A14,14,0,0,1,15,1Z" fill="none"/>
+    </g>
+    <g id="Rectángulo_1179" data-name="Rectángulo 1179" transform="translate(1651 3079)" fill="#143762" stroke="#143762" stroke-width="2">
+      <path d="M20,0h84a0,0,0,0,1,0,0V70A20,20,0,0,1,84,90H0a0,0,0,0,1,0,0V20A20,20,0,0,1,20,0Z" stroke="none"/>
+      <path d="M20,1h82a1,1,0,0,1,1,1V70A19,19,0,0,1,84,89H2a1,1,0,0,1-1-1V20A19,19,0,0,1,20,1Z" fill="none"/>
+    </g>
+  </g>
+</svg>
