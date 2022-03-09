@@ -15,6 +15,8 @@ export class TableComponent {
   headers: Array<HeaderTableInterface> = [];
   @Input()
   items: Array<Object> = [];
+  @Input()
+  id: string = '';
 
   getValueRow(key: string, row: object): string | number {
     return (row as any)[key];
