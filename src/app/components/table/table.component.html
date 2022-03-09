@@ -1,26 +1,18 @@
 <div class="grid grid-rows-1 w-full">
   <div
-    class="lg:grid hidden lg:grid-cols-5 bg-cyan-450 h-11 text-white rounded"
+    class="hidden lg:flex bg-cyan-450 h-11 text-white rounded"
     id="header-table"
   >
-    <div class="flex justify-center items-center font-lato font-bold">
-      Header 1
-    </div>
-    <div class="flex justify-center items-center font-lato font-bold">
-      Header 2
-    </div>
-    <div class="flex justify-center items-center font-lato font-bold">
-      Header 3
-    </div>
-    <div class="flex justify-center items-center font-lato font-bold">
-      Header 4
-    </div>
-    <div class="flex justify-center items-center font-lato font-bold">
-      Header 5
+    <div
+      *ngFor="let item of headers"
+      class="flex flex-1 justify-center items-center font-lato font-bold"
+    >
+      {{ item.label }}
     </div>
   </div>
   <div id="body-table">
     <div
+      *ngFor="let row of items"
       class="
         grid
         xl:grid-cols-1
@@ -31,33 +23,43 @@
         w-full
       "
     >
+      <div class="grid lg:hidden w-full rounded text-white-450">
+        <div
+          *ngFor="let item of headers; let index = index"
+          class="flex h-11 justify-center font-lato font-bold"
+          [class]="
+            index === 0
+              ? 'lg:text-cyan-450 lg:bg-white text-white bg-cyan-450'
+              : 'text-cyan-450'
+          "
+        >
+          {{ item.label }}
+        </div>
+      </div>
+      <div class="w-full grid lg:flex h-11">
+        <div
+          *ngFor="let item of headers; let index = index"
+          class="flex flex-1 h-11 justify-center items-center font-lato w-full"
+          [class]="
+            index === 0
+              ? 'lg:text-cyan-450 lg:bg-white text-white bg-cyan-450'
+              : 'text-cyan-450'
+          "
+        >
+          {{ getValueRow(item.key, row) }}
+        </div>
+      </div>
       <div
-        class="grid lg:hidden lg:w-full w-1/2 bg-cyan-450 rounded text-white"
+        class="
+          h-11
+          bg-gray-275
+          w-full
+          opacity-20
+          lg:block
+          hidden
+          border-gray-800 border-t border-b border-solid
+        "
       >
-        <div class="flex justify-center font-lato font-bold">Header 1</div>
-        <div class="flex justify-center font-lato font-bold">Header 2</div>
-        <div class="flex justify-center font-lato font-bold">Header 3</div>
-        <div class="flex justify-center font-lato font-bold">Header 4</div>
-        <div class="flex justify-center font-lato font-bold">Header 5</div>
-      </div>
-      <div class="lg:w-full grid lg:grid-cols-5 w-1/2 h-11">
-        <div class="flex justify-center items-center font-lato text-cyan-450">
-          body 1
-        </div>
-        <div class="flex justify-center items-center font-lato text-cyan-450">
-          body 2
-        </div>
-        <div class="flex justify-center items-center font-lato text-cyan-450">
-          body 3
-        </div>
-        <div class="flex justify-center items-center font-lato text-cyan-450">
-          body 4
-        </div>
-        <div class="flex justify-center items-center font-lato text-cyan-450">
-          body 5
-        </div>
-      </div>
-      <div class="h-11 bg-gray-275 w-full opacity-20 lg:block hidden">
         &nbsp;
       </div>
     </div>

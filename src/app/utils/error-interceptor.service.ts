@@ -1,19 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import {
+  HttpErrorResponse,
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest,
+} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ErrorInterceptorService implements HttpInterceptor {
+  constructor() {}
 
-  constructor() { }
-
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log(req, next)
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
-      map(res => {
+      map((res) => {
         return res;
       }),
       catchError((error: HttpErrorResponse) => {
@@ -23,8 +30,7 @@ export class ErrorInterceptorService implements HttpInterceptor {
         } else {
           message = `Error code: ${error.status}`;
         }
-        console.log(message)
-        return throwError(message)
+        return throwError(message);
       })
     );
   }

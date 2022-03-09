@@ -10,7 +10,7 @@
     px-11
   "
 >
-  <div class="lg:max-w-1194px w-full flex flex-col items-center">
+  <div class="lg:max-w-1194px w-full relative z-1 flex flex-col items-center">
     <h1
       [innerHTML]="'quoter-feature.title' | translate"
       class="
@@ -102,10 +102,19 @@
       translate-y-1/2
     "
     src="/assets/image/bi-quoter-bg.svg"
-    alt="quarter blue and yellow"
+    alt="quarer blue and yellow"
   />
   <hr />
   <div class="w-full">
-    <app-table> Test </app-table>
+    <app-table
+      [headers]="[
+        { label: 'Nombres', key: 'nombres' },
+        { label: 'Apellidos', key: 'apellidos' }
+      ]"
+      [items]="[
+        { id: 1, nombres: 'Alejandro', apellidos: 'pichola' },
+        { id: 2, nombres: 'Juan', apellidos: 'Pineda' }
+      ]"
+    ></app-table>
   </div>
 </section>
