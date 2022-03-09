@@ -1,5 +1,14 @@
 <section
-  class="w-full relative my-10 h-auto overflow-hidden flex justify-center px-11"
+  class="
+    w-full
+    relative
+    my-10
+    h-auto
+    overflow-hidden
+    flex flex-col
+    items-center
+    px-11
+  "
 >
   <div class="lg:max-w-1194px w-full relative z-1 flex flex-col items-center">
     <h1
@@ -80,6 +89,7 @@
         </div>
       </form>
     </div>
+    <hr class="border-gray-220 xs:border-cyan-450 my-12 w-full flex" />
   </div>
   <img
     class="
@@ -95,4 +105,60 @@
     src="/assets/image/bi-quoter-bg.svg"
     alt="quarer blue and yellow"
   />
+  <div class="w-full lg:max-w-1194px">
+    <h1
+      class="
+        text-28px
+        xs:text-24px
+        text-cyan-450 text-center
+        font-lato font-medium
+        lg:font-semibold
+        pb-3
+      "
+    >
+      {{ 'quoter-feature.subtitle' | translate }}
+    </h1>
+    <p
+      class="
+        text-22px
+        xs:text-16px
+        text-blue-750 text-center
+        font-lato font-bold
+      "
+    >
+      {{ 'quoter-feature.remember' | translate }}
+    </p>
+    <app-switch [value]="true"></app-switch>
+    <div class="flex lg:justify-between xs:flex-col">
+      <h1
+        class="
+          font-lato font-bold
+          text-22px
+          xs:text-16px
+          text-blue-750
+          xs:pb-7
+          xs:text-center
+        "
+      >
+        {{ 'quoter-feature.expires' | translate }}
+      </h1>
+      <div class="flex items-center xs:justify-between">
+        <button
+          class="lg:inline-flex lg:pr-8 xs:flex xs:flex-col xs:items-center"
+        >
+          <img src="/assets/image/bi-mail.svg" alt="icon-mail" />
+          <span class="font-lato font-medium text-blue-750 text-16px pl-2">{{
+            'quoter-feature.send-mail' | translate
+          }}</span>
+        </button>
+        <button class="lg:inline-flex xs:flex xs:flex-col xs:items-center">
+          <img src="/assets/image/bi-download.svg" alt="icon-mail" />
+          <span class="font-lato font-medium text-blue-750 text-16px pl-2">{{
+            'quoter-feature.download' | translate
+          }}</span>
+        </button>
+      </div>
+    </div>
+    <!--table-->
+  </div>
 </section>
