@@ -99,5 +99,40 @@
         &nbsp;
       </div>
     </div>
+    <div
+      *ngIf="items.length === 0"
+      class="
+        flex
+        items-center
+        justify-center
+        lg:flex-row
+        flex-col
+        bg-gray-200
+        py-10
+        lg:px-0
+        px-12
+      "
+    >
+      <div class="mr-5">
+        <img src="/assets/image/bi-empty-table.svg" alt="empty table" />
+      </div>
+      <div class="lg:w-522px w-full lg:text-left text-center">
+        <h1
+          class="
+            text-blue-750
+            whitespace-normal
+            lg:text-45px
+            text-32px
+            font-bold font-lato
+            tracking-tighter
+          "
+        >
+          {{ 'common.title-table' | translate }}
+        </h1>
+        <p class="text-lg font-lato text-gray-275">
+          {{ 'common.description-table' | translate }}
+        </p>
+      </div>
+    </div>
   </div>
 </div>

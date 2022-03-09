@@ -26,5 +26,9 @@
   },
   "quoter-feature": {
     "title": "Plan de pago para crédito Bi-fácil de Q10,200<br class=0\"lg:block hidden\" /> pagando a 10 meses a cuotas de Q1,020"
+  },
+  "common": {
+    "title-table": "¡No hay datos para mostrar!",
+    "description-table": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus libero at aliquet aliquam. Quisque placerat lectus et malesuada tincidunt."
   }
 }

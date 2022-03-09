@@ -19,7 +19,7 @@ export class TableComponent {
   id: string = '';
 
   getValueRow(key: string, row: object): string | number {
-    return (row as any)[key];
+    return !!row && !!(row as any)[key] ? (row as any)[key] : '';
   }
 
   constructor() {}
