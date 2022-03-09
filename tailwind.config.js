@@ -16,6 +16,8 @@ module.exports = {
           100: '#009DEB',
         },
         gray: {
+          210: '#EBEBEB',
+          220: '#BABABA',
           250: '#D0D0D0',
           350: '#999999',
           375: '#CCCCCC',
@@ -34,6 +36,7 @@ module.exports = {
         '14px': '0.875rem',
         '16px': '1rem',
         '18px': '1.125rem',
+        '19px': '1.188rem',
         '20px': '1.25rem',
         '22px': '1.375rem',
         '24px': '1.5rem',
