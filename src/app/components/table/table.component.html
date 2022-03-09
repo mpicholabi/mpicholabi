@@ -1,0 +1,138 @@
+<div [id]="id" class="grid grid-rows-1 w-full">
+  <div
+    class="hidden lg:flex bg-cyan-450 h-11 text-white rounded"
+    id="header-table"
+  >
+    <div
+      *ngFor="let item of headers; let headerIndex = index"
+      class="flex flex-1 justify-center items-center font-lato font-bold"
+      [id]="'row-' + headerIndex"
+    >
+      {{ item.label }}
+    </div>
+  </div>
+  <div id="body-table">
+    <div
+      *ngFor="let row of items; let rowIndex = index"
+      class="
+        grid
+        xl:grid-cols-1
+        lg:grid-cols-1
+        lg:border-none
+        grid-cols-2
+        w-full
+        lg:mb-0
+        mb-4
+      "
+      [id]="'row-' + rowIndex"
+    >
+      <div class="grid lg:hidden w-full rounded text-white-450">
+        <div
+          *ngFor="let item of headers; let index = index"
+          class="
+            flex
+            relative
+            h-11
+            justify-center
+            items-center
+            font-lato font-bold
+          "
+          [class]="
+            index === 0
+              ? 'lg:text-cyan-450 lg:bg-transparent text-white bg-cyan-450'
+              : 'text-cyan-450 lg:mb-0 mb-2px'
+          "
+        >
+          <div
+            [class]="
+              index !== 0
+                ? 'lg:bg-transparent opacity-30 bg-gray-260 absolute z-0 top-0 bottom-0 left-0 right-0'
+                : ''
+            "
+          ></div>
+          <label class="relative z-1">{{ item.label }}</label>
+        </div>
+      </div>
+      <div class="w-full grid lg:flex h-11 relative">
+        <div
+          class="absolute z-1 hover:bg-cyan-450 hover:opacity-20 w-full h-11"
+        ></div>
+        <div
+          *ngFor="let item of headers; let index = index"
+          class="
+            flex
+            relative
+            flex-1
+            h-11
+            justify-center
+            items-center
+            font-lato
+            w-full
+          "
+          [class]="
+            index === 0
+              ? 'lg:text-cyan-450 lg:bg-transparent text-white bg-cyan-450'
+              : 'text-cyan-450 lg:mb-0 mb-2px'
+          "
+        >
+          <div
+            [class]="
+              index !== 0
+                ? 'lg:bg-transparent opacity-30 bg-gray-260 absolute z-0 top-0 bottom-0 left-0 right-0'
+                : ''
+            "
+          ></div>
+          <label class="relative z-1">{{ getValueRow(item.key, row) }}</label>
+        </div>
+      </div>
+      <div
+        class="
+          h-11
+          bg-gray-275
+          w-full
+          opacity-20
+          lg:block
+          hidden
+          border-gray-800 border-t border-b border-solid
+        "
+      >
+        &nbsp;
+      </div>
+    </div>
+    <div
+      *ngIf="items.length === 0"
+      class="
+        flex
+        items-center
+        justify-center
+        lg:flex-row
+        flex-col
+        bg-gray-200
+        py-10
+        lg:px-0
+        px-12
+      "
+    >
+      <div class="mr-5">
+        <img src="/assets/image/bi-empty-table.svg" alt="empty table" />
+      </div>
+      <div class="lg:w-522px w-full lg:text-left text-center">
+        <h1
+          class="
+            text-blue-750
+            whitespace-normal
+            lg:text-45px
+            text-32px
+            font-bold font-lato
+            tracking-tighter
+          "
+        >
+          {{ 'common.title-table' | translate }}
+        </h1>
+        <p class="text-lg font-lato text-gray-275">
+          {{ 'common.description-table' | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
