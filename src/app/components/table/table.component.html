@@ -1,28 +1,65 @@
 <div class="grid grid-rows-1 w-full">
-  <div class="lg:grid hidden lg:grid-cols-5" id="header-table">
-    <div>Header 1</div>
-    <div>Header 2</div>
-    <div>Header 3</div>
-    <div>Header 4</div>
-    <div>Header 5</div>
-  </div>
   <div
-    id="body-table"
-    class="grid xl:grid-cols-1 lg:grid-cols-1 grid-cols-2 w-full"
+    class="lg:grid hidden lg:grid-cols-5 bg-cyan-450 h-11 text-white rounded"
+    id="header-table"
   >
-    <div class="grid lg:hidden lg:w-full w-1/2">
-      <div>Header 1</div>
-      <div>Header 2</div>
-      <div>Header 3</div>
-      <div>Header 4</div>
-      <div>Header 5</div>
+    <div class="flex justify-center items-center font-lato font-bold">
+      Header 1
     </div>
-    <div class="lg:w-full grid lg:grid-cols-5 w-1/2">
-      <div>body 1</div>
-      <div>body 2</div>
-      <div>body 3</div>
-      <div>body 4</div>
-      <div>body 5</div>
+    <div class="flex justify-center items-center font-lato font-bold">
+      Header 2
+    </div>
+    <div class="flex justify-center items-center font-lato font-bold">
+      Header 3
+    </div>
+    <div class="flex justify-center items-center font-lato font-bold">
+      Header 4
+    </div>
+    <div class="flex justify-center items-center font-lato font-bold">
+      Header 5
+    </div>
+  </div>
+  <div id="body-table">
+    <div
+      class="
+        grid
+        xl:grid-cols-1
+        lg:grid-cols-1
+        lg:border-none
+        border
+        grid-cols-2
+        w-full
+      "
+    >
+      <div
+        class="grid lg:hidden lg:w-full w-1/2 bg-cyan-450 rounded text-white"
+      >
+        <div class="flex justify-center font-lato font-bold">Header 1</div>
+        <div class="flex justify-center font-lato font-bold">Header 2</div>
+        <div class="flex justify-center font-lato font-bold">Header 3</div>
+        <div class="flex justify-center font-lato font-bold">Header 4</div>
+        <div class="flex justify-center font-lato font-bold">Header 5</div>
+      </div>
+      <div class="lg:w-full grid lg:grid-cols-5 w-1/2 h-11">
+        <div class="flex justify-center items-center font-lato text-cyan-450">
+          body 1
+        </div>
+        <div class="flex justify-center items-center font-lato text-cyan-450">
+          body 2
+        </div>
+        <div class="flex justify-center items-center font-lato text-cyan-450">
+          body 3
+        </div>
+        <div class="flex justify-center items-center font-lato text-cyan-450">
+          body 4
+        </div>
+        <div class="flex justify-center items-center font-lato text-cyan-450">
+          body 5
+        </div>
+      </div>
+      <div class="h-11 bg-gray-275 w-full opacity-20 lg:block hidden">
+        &nbsp;
+      </div>
     </div>
   </div>
 </div>
