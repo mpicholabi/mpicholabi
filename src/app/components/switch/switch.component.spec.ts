@@ -23,9 +23,16 @@ describe('SwitchComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should show test input value', () => {
+  it('should show test input value true', () => {
     component.value = true;
-    component.switchFee();
+    component.switchLeft();
+    fixture.detectChanges();
+    expect(component.value).toBe(true);
+  });
+
+  it('should show test input value false', () => {
+    component.value = false;
+    component.switchRight();
     fixture.detectChanges();
     expect(component.value).toBe(false);
   });

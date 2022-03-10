@@ -17,6 +17,8 @@ export class QuoterFeatureComponent {
   subject = new Subject();
   term: number = 12;
   isLoading: boolean = false;
+  hoverMail: boolean = false;
+  hoverDownload: boolean = false;
 
   changeTerm(event: number): void {
     this.formQuoter.get('term')?.setValue(event);
