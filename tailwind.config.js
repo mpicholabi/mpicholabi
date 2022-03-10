@@ -35,8 +35,8 @@ module.exports = {
           750: '#003865',
         },
         yellow: {
-          logo: '#f4bb48'
-        }
+          logo: '#f4bb48',
+        },
       },
       fontSize: {
         '14px': '0.875rem',
@@ -81,8 +81,10 @@ module.exports = {
         '522px': '32.625rem',
         '700px': '43.75rem',
         '710px': '44.375rem',
+        '110%': 'calc(100% + 11px)',
       },
       height: {
+        '5px': '0.313rem',
         '35px': '2.188rem',
         '70px': '4.375rem',
         '71px': '4.438rem',
@@ -110,6 +112,7 @@ module.exports = {
         xs: { min: '300px', max: '640px' },
       },
       spacing: {
+        '5px': '0.313rem',
         '15px': '0.938rem',
         '70px': '4.375rem',
         '79px': '4.938rem',

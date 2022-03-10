@@ -24,11 +24,13 @@ button.scrolltop-button {
   width: 25px!important;
   border: solid 2px #FFF!important;
   top: 0%!important;
+  z-index: 1;
 }
 
 .p-slider-range {
   background-color: #00C1D4!important;
   height: 5px!important;
+  z-index: 1;
 }
 
 .p-slider {
@@ -37,6 +39,7 @@ button.scrolltop-button {
 
 .p-slider-handle:focus {
   box-shadow: 0 0 1px 10px rgba(64, 201, 255, 0.2) !important;
+  z-index: 1;
 }
 
 .animation-touched, .p-slider-handle, .p-slider-range {
