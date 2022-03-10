@@ -159,6 +159,27 @@
         </button>
       </div>
     </div>
-    <!--table-->
+    <div class="w-full mt-12">
+      <app-table
+        [headers]="[
+          { label: 'Cuota', key: 'cuota' },
+          { label: 'Valor capital', key: 'capital' },
+          { label: 'Interés', key: 'interes' },
+          { label: 'Total a pagar', key: 'total' },
+          { label: 'Saldo a capital', key: 'capital' }
+        ]"
+        [items]="items"
+      ></app-table>
+      <div
+        [ngClass]="{ hidden: page === totalPage - 1 }"
+        class="w-full justify-center flex"
+      >
+        <label
+          class="cursor-pointer underline text-blue-750 font-lato mt-7"
+          (click)="showMore()"
+          >{{ 'common.show-more' | translate }}</label
+        >
+      </div>
+    </div>
   </div>
 </section>

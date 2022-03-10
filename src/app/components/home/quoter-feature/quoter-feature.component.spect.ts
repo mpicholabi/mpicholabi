@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TableComponent } from '@/app/components/table/table.component';
 
 import { QuoterFeatureComponent } from './quoter-feature.component';
 
@@ -8,7 +9,7 @@ describe('QuoterFeatureComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QuoterFeatureComponent ]
+      declarations: [ QuoterFeatureComponent, TableComponent ]
     })
     .compileComponents();
   });

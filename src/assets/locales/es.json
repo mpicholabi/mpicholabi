@@ -37,5 +37,10 @@
     "expires": "Esta oferta expira en…",
     "send-mail": "Enviar al correo",
     "download": "Descargar"
+  },
+  "common": {
+    "title-table": "¡No hay datos para mostrar!",
+    "description-table": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus libero at aliquet aliquam. Quisque placerat lectus et malesuada tincidunt.",
+    "show-more": "Ver más cuotas"
   }
 }
