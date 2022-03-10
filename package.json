@@ -14,6 +14,7 @@
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook",
     "lint": "ng lint --fix",
+    "lint:check": "eslint . --ext .js,.ts",
     "prepare": "husky install",
     "commit": "npx cz"
   },
