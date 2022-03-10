@@ -1,13 +1,21 @@
-import { AnimationClass } from '@/app/utils/animationClass';
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ViewChild,
+  ElementRef,
+  OnInit,
+  AfterViewInit,
+} from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-slider-range',
   templateUrl: './slider-range.component.html',
   styleUrls: ['./slider-range.component.scss'],
 })
-export class SliderRangeComponent {
+export class SliderRangeComponent implements AfterViewInit {
   @Input() value: number = 12;
   @Input() label: string = '';
   @Input() placeholder: string = '';
@@ -18,6 +26,8 @@ export class SliderRangeComponent {
   @Input() max: number = 60;
   @Input() range: boolean = false;
   @Input() step: number = 12;
+  @Input() id: string = '';
+  @ViewChild('sliderInput') sliderInput!: ElementRef;
 
   @Output() valueChange: EventEmitter<number> = new EventEmitter();
 
@@ -40,5 +50,20 @@ export class SliderRangeComponent {
 
   updateValue(value: number): void {
     this.valueChange.emit(value);
+  }
+
+  findSlider(): void {
+    const elements: NodeList = document.querySelectorAll(
+      '.p-slider.p-component'
+    );
+    const span = document.createElement('span');
+    span.classList.add('w-110%', 'h-5px', 'bg-gray-375', 'absolute');
+    elements.forEach((element) => {
+      element.appendChild(span);
+    });
+  }
+
+  ngAfterViewInit(): void {
+    this.findSlider();
   }
 }
