@@ -168,30 +168,18 @@
           { label: 'Total a pagar', key: 'total' },
           { label: 'Saldo a capital', key: 'capital' }
         ]"
-        [items]="[
-          {
-            cuota: 3,
-            capital: 'Q600',
-            interes: 'Q345',
-            total: 'Q945',
-            saldo: 'Q44,105'
-          },
-          {
-            cuota: 3,
-            capital: 'Q600',
-            interes: 'Q345',
-            total: 'Q945',
-            saldo: 'Q44,105'
-          },
-          {
-            cuota: 3,
-            capital: 'Q600',
-            interes: 'Q345',
-            total: 'Q945',
-            saldo: 'Q44,105'
-          }
-        ]"
+        [items]="items"
       ></app-table>
+      <div
+        [ngClass]="{ hidden: page === totalPage - 1 }"
+        class="w-full justify-center flex"
+      >
+        <label
+          class="cursor-pointer underline text-blue-750 font-lato mt-7"
+          (click)="showMore()"
+          >Show more</label
+        >
+      </div>
     </div>
   </div>
 </section>
