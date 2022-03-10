@@ -34,6 +34,9 @@ module.exports = {
           350: '#95E5ED',
           750: '#003865',
         },
+        yellow: {
+          logo: '#f4bb48'
+        }
       },
       fontSize: {
         '14px': '0.875rem',
@@ -98,6 +101,7 @@ module.exports = {
         '1000px': '62.5rem',
       },
       maxWidth: {
+        '1436px': '89.75rem',
         '1194px': '74.625rem',
         '1245px': '77.813rem',
         '1360px': '85rem',

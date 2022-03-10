@@ -10,8 +10,13 @@ export class SwitchComponent {
 
   constructor() {}
 
-  switchFee() {
-    this.value = !this.value;
+  switchLeft() {
+    this.value = true;
+    this.valueChange.emit(this.value);
+  }
+
+  switchRight() {
+    this.value = false;
     this.valueChange.emit(this.value);
   }
 }
