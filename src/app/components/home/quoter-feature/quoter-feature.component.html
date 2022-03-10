@@ -28,7 +28,7 @@
         class="grid lg:grid-cols-2 w-full grid-cols-1 lg:gap-32 gap-4"
         [formGroup]="formQuoter"
       >
-        <div class="relative lg:w-auto w-full lg:pt-10 xs:pt-7">
+        <div class="relative lg:w-auto w-full lg:pt-10 xs:pt-7 lg:pr-28">
           <!-- TODO: refactor this code into of input -->
           <label
             class="font-lato font-bold text-gray-450 2xl:text-22px text-16px"
@@ -64,13 +64,13 @@
             'home-quoter.input-description' | translate
           }}</span>
         </div>
-        <div class="flex flex-col lg:w-auto w-full lg:pt-10 xs:pt-1">
+        <div class="flex flex-col lg:w-auto w-full lg:pt-10 xs:pt-1 lg:pr-28">
           <label
             class="
               font-lato font-bold
               text-gray-450
               2xl:text-22px
-              2xl:pb-10
+              2xl:pb-11
               lg:pb-4
               text-16px
             "
@@ -91,16 +91,7 @@
     </div>
   </div>
   <img
-    class="
-      absolute
-      w-44
-      right-10
-      transform
-      2xl:block
-      hidden
-      z-0
-      translate-y-1/2
-    "
+    class="absolute w-44 right-40 transform 2xl:block hidden z-0 translate-y-24"
     src="/assets/image/bi-quoter-bg.svg"
     alt="quarer blue and yellow"
   />
@@ -143,16 +134,16 @@
       >
         {{ 'quoter-feature.expires' | translate }}
       </h1>
-      <div class="flex items-center xs:justify-between">
+      <div class="flex items-center xs:justify-center">
         <button
           class="
             lg:inline-flex
             lg:pr-8
             xs:flex xs:flex-col
             xs:items-center
+            xs:px-4
             text-blue-750 text-16px
             hover:text-yellow-logo
-            hover:
           "
           (mouseover)="hoverMail = true"
           (mouseleave)="hoverMail = false"
@@ -177,6 +168,7 @@
             lg:inline-flex
             xs:flex xs:flex-col
             xs:items-center
+            xs:px-4
             text-blue-750 text-16px
             hover:text-yellow-logo
           "
@@ -200,7 +192,7 @@
         </button>
       </div>
     </div>
-    <div class="w-full mt-12">
+    <div class="w-full mt-12 xs:mt-5">
       <app-table
         id="level-fee"
         [headers]="[
@@ -224,4 +216,9 @@
       </div>
     </div>
   </div>
+  <img
+    class="absolute w-44 left-9 bottom-3 z-0 2xl:block hidden"
+    src="/assets/image/bi-quoter-bg-blue.svg"
+    alt="quarer blue and yellow"
+  />
 </section>
