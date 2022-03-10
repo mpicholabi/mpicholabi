@@ -16,6 +16,8 @@ module.exports = {
           100: '#009DEB',
         },
         gray: {
+          210: '#EBEBEB',
+          220: '#BABABA',
           250: '#D0D0D0',
           260: '#D5D5D5',
           275: '#808080',
@@ -26,16 +28,21 @@ module.exports = {
         },
         cyan: {
           450: '#00C1D4',
+          550: '#2C8B9E',
         },
         blue: {
           350: '#95E5ED',
           750: '#003865',
         },
+        yellow: {
+          logo: '#f4bb48'
+        }
       },
       fontSize: {
         '14px': '0.875rem',
         '16px': '1rem',
         '18px': '1.125rem',
+        '19px': '1.188rem',
         '20px': '1.25rem',
         '22px': '1.375rem',
         '24px': '1.5rem',
@@ -94,6 +101,7 @@ module.exports = {
         '1000px': '62.5rem',
       },
       maxWidth: {
+        '1436px': '89.75rem',
         '1194px': '74.625rem',
         '1245px': '77.813rem',
         '1360px': '85rem',

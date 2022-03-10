@@ -42,6 +42,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { QuoterFeatureComponent } from './components/home/quoter-feature/quoter-feature.component';
 import { TableComponent } from './components/table/table.component';
 import { HomeBalanceComponent } from './components/home/home-balance/home-balance.component';
+import { SwitchComponent } from './components/switch/switch.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/locales/', '.json');
@@ -66,6 +67,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     QuoterFeatureComponent,
     TableComponent,
     HomeBalanceComponent,
+    SwitchComponent,
   ],
   imports: [
     BrowserModule,

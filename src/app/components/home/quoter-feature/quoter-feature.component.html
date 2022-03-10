@@ -2,7 +2,7 @@
   class="
     w-full
     relative
-    my-10
+    my-14
     h-auto
     overflow-hidden
     flex flex-col
@@ -28,7 +28,7 @@
         class="grid lg:grid-cols-2 w-full grid-cols-1 lg:gap-32 gap-4"
         [formGroup]="formQuoter"
       >
-        <div class="relative lg:w-auto w-full">
+        <div class="relative lg:w-auto w-full lg:pt-10 xs:pt-7">
           <!-- TODO: refactor this code into of input -->
           <label
             class="font-lato font-bold text-gray-450 2xl:text-22px text-16px"
@@ -64,7 +64,7 @@
             'home-quoter.input-description' | translate
           }}</span>
         </div>
-        <div class="flex flex-col lg:w-auto w-full">
+        <div class="flex flex-col lg:w-auto w-full lg:pt-10 xs:pt-1">
           <label
             class="
               font-lato font-bold
@@ -104,4 +104,123 @@
     src="/assets/image/bi-quoter-bg.svg"
     alt="quarer blue and yellow"
   />
+  <hr
+    class="border-gray-220 xs:border-cyan-450 my-12 w-full flex lg:max-w-1436px"
+  />
+  <div class="w-full lg:max-w-1194px">
+    <h1
+      class="
+        text-28px
+        xs:text-24px
+        text-cyan-450 text-center
+        font-lato font-semibold
+        pb-3
+      "
+    >
+      {{ 'quoter-feature.subtitle' | translate }}
+    </h1>
+    <p
+      class="
+        text-22px
+        xs:text-16px
+        text-blue-750 text-center
+        font-lato font-bold
+      "
+    >
+      {{ 'quoter-feature.remember' | translate }}
+    </p>
+    <app-switch [value]="true"></app-switch>
+    <div class="flex lg:justify-between xs:flex-col">
+      <h1
+        class="
+          font-lato font-bold
+          text-22px
+          xs:text-16px
+          text-blue-750
+          xs:pb-7
+          xs:text-center
+        "
+      >
+        {{ 'quoter-feature.expires' | translate }}
+      </h1>
+      <div class="flex items-center xs:justify-between">
+        <button
+          class="
+            lg:inline-flex
+            lg:pr-8
+            xs:flex xs:flex-col
+            xs:items-center
+            text-blue-750 text-16px
+            hover:text-yellow-logo
+            hover:
+          "
+          (mouseover)="hoverMail = true"
+          (mouseleave)="hoverMail = false"
+          id="btnSendMail"
+        >
+          <img
+            [hidden]="hoverMail"
+            src="/assets/image/bi-mail.svg"
+            alt="icon-mail"
+          />
+          <img
+            [hidden]="!hoverMail"
+            src="/assets/image/bi-mail-yellow.svg"
+            alt="icon-mail"
+          />
+          <span class="font-lato font-medium pl-2">{{
+            'quoter-feature.send-mail' | translate
+          }}</span>
+        </button>
+        <button
+          class="
+            lg:inline-flex
+            xs:flex xs:flex-col
+            xs:items-center
+            text-blue-750 text-16px
+            hover:text-yellow-logo
+          "
+          (mouseover)="hoverDownload = true"
+          (mouseleave)="hoverDownload = false"
+          id="btnDownload"
+        >
+          <img
+            [hidden]="hoverDownload"
+            src="/assets/image/bi-download.svg"
+            alt="icon-download"
+          />
+          <img
+            [hidden]="!hoverDownload"
+            src="/assets/image/bi-download-yellow.svg"
+            alt="icon-download"
+          />
+          <span class="font-lato font-medium pl-2">{{
+            'quoter-feature.download' | translate
+          }}</span>
+        </button>
+      </div>
+    </div>
+    <div class="w-full mt-12">
+      <app-table
+        [headers]="[
+          { label: 'Cuota', key: 'cuota' },
+          { label: 'Valor capital', key: 'capital' },
+          { label: 'Interés', key: 'interes' },
+          { label: 'Total a pagar', key: 'total' },
+          { label: 'Saldo a capital', key: 'capital' }
+        ]"
+        [items]="items"
+      ></app-table>
+      <div
+        [ngClass]="{ hidden: page === totalPage - 1 }"
+        class="w-full justify-center flex"
+      >
+        <label
+          class="cursor-pointer underline text-blue-750 font-lato mt-7"
+          (click)="showMore()"
+          >{{ 'common.show-more' | translate }}</label
+        >
+      </div>
+    </div>
+  </div>
 </section>

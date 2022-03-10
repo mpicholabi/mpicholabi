@@ -25,10 +25,22 @@
     "symbol": "Q"
   },
   "quoter-feature": {
-    "title": "Plan de pago para crédito Bi-fácil de Q10,200<br class=0\"lg:block hidden\" /> pagando a 10 meses a cuotas de Q1,020"
+    "title": "Plan de pago para crédito Bi-fácil de Q10,200<br class=0\"lg:block hidden\" /> pagando a 10 meses a cuotas de Q1,020",
+    "level-fee": "Cuota nivelada",
+    "xs-level-fee": "Nivelada",
+    "description-level-fee": "Tipo de cuota que se calcula sobre el saldo de capital cada mes, el valor de tu cuota mensual será la misma todos los meses durante la vigencia de tu préstamo.",
+    "balance-fee": "Cuota sobre saldos",
+    "xs-balance-fee": "Sobre saldos",
+    "description-balance-fee": "Es un tipo de cuota que se calcula dividiendo el capital del préstamo entre el número total de meses según el plazo estipulado, la cuota irá disminuyendo mes a mes hasta completar el total del préstamo.",
+    "subtitle": "Selecciona un tipo de cuota",
+    "remember": "(Te recordamos que las cuotas están basadas únicamente en una proyección)",
+    "expires": "Esta oferta expira en…",
+    "send-mail": "Enviar al correo",
+    "download": "Descargar"
   },
   "common": {
     "title-table": "¡No hay datos para mostrar!",
-    "description-table": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus libero at aliquet aliquam. Quisque placerat lectus et malesuada tincidunt."
+    "description-table": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus libero at aliquet aliquam. Quisque placerat lectus et malesuada tincidunt.",
+    "show-more": "Ver más cuotas"
   }
 }
