@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AppState } from '@/app/app.state';
 import { Store } from '@ngrx/store';
@@ -6,22 +6,48 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { QuoterCalculateInterface } from '@/app/interfaces/quoter/quoterCalculate';
 import * as QuoterAction from '@/app/store/quoter.actions';
 import { Subject } from 'rxjs';
+import { dataDummy } from './dataDummy';
 
 @Component({
   selector: 'app-quoter-feature',
   templateUrl: './quoter-feature.component.html',
   styleUrls: ['./quoter-feature.component.scss'],
 })
-export class QuoterFeatureComponent {
+export class QuoterFeatureComponent implements OnInit {
   formQuoter!: FormGroup;
   subject = new Subject();
   term: number = 12;
   isLoading: boolean = false;
   hoverMail: boolean = false;
   hoverDownload: boolean = false;
+  data: Array<Array<Object>> = [];
+  items: Array<Object> = [];
+  page: number = 0;
+  totalPage: number = 0;
+  perPage: number = 4;
 
   changeTerm(event: number): void {
     this.formQuoter.get('term')?.setValue(event);
+  }
+
+  showMore(): void {
+    if (this.page === this.totalPage - 1) return;
+    this.page++;
+    this.items = [...this.items, ...this.data[this.page]];
+  }
+
+  loadData(): void {
+    if (dataDummy.length > 0) {
+      this.totalPage = Math.ceil(dataDummy.length / this.perPage);
+      const data = [];
+      for (let i = 0; i < this.totalPage; i++) {
+        const start = i === 0 ? i : i * this.perPage;
+        const limit = (i + 1) * this.perPage;
+        data.push(dataDummy.slice(start, limit));
+      }
+      this.data = data;
+      this.items = [...data[this.page]];
+    }
   }
 
   constructor(
@@ -77,5 +103,9 @@ export class QuoterFeatureComponent {
       amount: [''],
       term: [12],
     });
+  }
+
+  ngOnInit(): void {
+    this.loadData();
   }
 }
