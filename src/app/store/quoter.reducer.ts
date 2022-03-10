@@ -5,7 +5,7 @@ import { QuoterCalculateInterface } from '@/app/interfaces/quoter/quoterCalculat
 
 // 2 - Estado inicial
 const initialState: QuoterCalculateInterface = {
-  amount: 0,
+  amount: '',
   term: 12,
 };
 
