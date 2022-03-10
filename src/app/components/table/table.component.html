@@ -46,9 +46,13 @@
           <label class="relative z-1">{{ item.label }}</label>
         </div>
       </div>
-      <div class="w-full grid lg:flex h-11 relative">
+      <div
+        class="w-full grid lg:flex h-11 relative"
+        (mouseover)="changeHover(true)"
+        (mouseout)="changeHover(false)"
+      >
         <div
-          class="absolute z-1 hover:bg-cyan-450 hover:opacity-20 w-full h-11"
+          class="absolute z-2 hover:bg-cyan-450 hover:opacity-20 w-full h-11"
         ></div>
         <div
           *ngFor="let item of headers; let index = index"
@@ -81,18 +85,32 @@
           <label class="relative z-1">{{ getValueRow(item.key, row) }}</label>
         </div>
       </div>
-      <div
-        class="
-          h-11
-          bg-gray-275
-          w-full
-          opacity-20
-          lg:block
-          hidden
-          border-gray-800 border-t border-b border-solid
-        "
-      >
-        &nbsp;
+      <div class="lg:flex justify-end items-center h-11 w-full hidden relative">
+        <div
+          class="
+            absolute
+            border-gray-800 border-t border-b border-solid
+            w-full
+            top-0
+            bottom-0
+            bg-gray-275
+            opacity-20
+            flex
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          *ngFor="let item of headers; let headerIndex = index"
+          class="flex-1 flex items-center justify-center"
+        >
+          <figure
+            *ngIf="headerIndex === headers.length - 1"
+            class="w-2px h-7 bg-cyan-450"
+          >
+            &nbsp;
+          </figure>
+        </div>
       </div>
     </div>
     <div

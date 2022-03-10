@@ -29,11 +29,9 @@ export class QuoterFeatureComponent implements OnInit {
   }
 
   showMore(): void {
-    console.log(this.page, this.totalPage);
     if (this.page === this.totalPage - 1) return;
     this.page++;
     this.items = [...this.items, ...this.data[this.page]];
-    console.log(this.items);
   }
 
   loadData(): void {
