@@ -29,18 +29,11 @@
       <div class="grid lg:hidden w-full rounded text-white-450">
         <div
           *ngFor="let item of headers; let index = index"
-          class="
-            flex
-            relative
-            h-11
-            justify-center
-            items-center
-            font-lato font-bold
-          "
+          class="flex relative h-11 items-center text-left pl-7"
           [class]="
             index === 0
               ? 'lg:text-cyan-450 lg:bg-transparent text-white bg-cyan-450'
-              : 'text-cyan-450 lg:mb-0 mb-2px'
+              : 'text-cyan-550 lg:mb-0 mb-2px'
           "
         >
           <div
@@ -55,7 +48,7 @@
       </div>
       <div class="w-full grid lg:flex h-11 relative">
         <div
-          class="absolute z-1 hover:bg-cyan-450 hover:opacity-20 w-full h-11"
+          class="absolute z-2 hover:bg-cyan-450 hover:opacity-20 w-full h-11"
         ></div>
         <div
           *ngFor="let item of headers; let index = index"
@@ -64,39 +57,56 @@
             relative
             flex-1
             h-11
-            justify-center
             items-center
             font-lato
             w-full
+            lg:justify-center
+            justify-end
+            lg:pr-0
+            pr-7
           "
           [class]="
             index === 0
-              ? 'lg:text-cyan-450 lg:bg-transparent text-white bg-cyan-450'
-              : 'text-cyan-450 lg:mb-0 mb-2px'
+              ? 'lg:text-cyan-550 lg:bg-transparent text-white bg-cyan-450'
+              : 'text-cyan-550 lg:mb-0 mb-2px font-medium'
           "
         >
           <div
             [class]="
               index !== 0
-                ? 'lg:bg-transparent opacity-30 bg-gray-260 absolute z-0 top-0 bottom-0 left-0 right-0'
+                ? 'lg:bg-transparent opacity-30 lg:text-center bg-gray-260 absolute z-0 top-0 bottom-0 left-0 right-0'
                 : ''
             "
           ></div>
           <label class="relative z-1">{{ getValueRow(item.key, row) }}</label>
         </div>
       </div>
-      <div
-        class="
-          h-11
-          bg-gray-275
-          w-full
-          opacity-20
-          lg:block
-          hidden
-          border-gray-800 border-t border-b border-solid
-        "
-      >
-        &nbsp;
+      <div class="lg:flex justify-end items-center h-11 w-full hidden relative">
+        <div
+          class="
+            absolute
+            border-gray-800 border-t border-b border-solid
+            w-full
+            top-0
+            bottom-0
+            bg-gray-275
+            opacity-20
+            flex
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          *ngFor="let item of headers; let headerIndex = index"
+          class="flex-1 flex items-center justify-center"
+        >
+          <figure
+            *ngIf="headerIndex === headers.length - 1"
+            class="w-2px h-7 bg-cyan-450"
+          >
+            &nbsp;
+          </figure>
+        </div>
       </div>
     </div>
     <div

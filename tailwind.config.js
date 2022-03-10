@@ -28,6 +28,7 @@ module.exports = {
         },
         cyan: {
           450: '#00C1D4',
+          550: '#2C8B9E',
         },
         blue: {
           350: '#95E5ED',
