@@ -18,13 +18,6 @@ export class TableComponent {
   @Input()
   id: string = '';
 
-  hoverSeparator: boolean = false;
-
-  changeHover(value: boolean): void {
-    console.log(value);
-    this.hoverSeparator = value;
-  }
-
   getValueRow(key: string, row: object): string | number {
     return !!row && !!(row as any)[key] ? (row as any)[key] : '';
   }
