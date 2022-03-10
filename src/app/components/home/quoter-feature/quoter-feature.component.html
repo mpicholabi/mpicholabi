@@ -159,6 +159,39 @@
         </button>
       </div>
     </div>
-    <!--table-->
+    <div class="w-full mt-12">
+      <app-table
+        [headers]="[
+          { label: 'Cuota', key: 'cuota' },
+          { label: 'Valor capital', key: 'capital' },
+          { label: 'Interés', key: 'interes' },
+          { label: 'Total a pagar', key: 'total' },
+          { label: 'Saldo a capital', key: 'capital' }
+        ]"
+        [items]="[
+          {
+            cuota: 3,
+            capital: 'Q600',
+            interes: 'Q345',
+            total: 'Q945',
+            saldo: 'Q44,105'
+          },
+          {
+            cuota: 3,
+            capital: 'Q600',
+            interes: 'Q345',
+            total: 'Q945',
+            saldo: 'Q44,105'
+          },
+          {
+            cuota: 3,
+            capital: 'Q600',
+            interes: 'Q345',
+            total: 'Q945',
+            saldo: 'Q44,105'
+          }
+        ]"
+      ></app-table>
+    </div>
   </div>
 </section>
