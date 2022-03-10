@@ -18,6 +18,8 @@ export class QuoterFeatureComponent implements OnInit {
   subject = new Subject();
   term: number = 12;
   isLoading: boolean = false;
+  hoverMail: boolean = false;
+  hoverDownload: boolean = false;
   data: Array<Array<Object>> = [];
   items: Array<Object> = [];
   page: number = 0;
