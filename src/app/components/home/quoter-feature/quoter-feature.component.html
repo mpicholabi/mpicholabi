@@ -137,10 +137,8 @@
       <div class="flex items-center xs:justify-center">
         <button
           class="
-            lg:inline-flex
-            lg:pr-8
-            md:inline-flex
-            md:pr-8
+            inline-flex
+            pr-8
             xs:flex xs:flex-col
             xs:items-center
             xs:px-4
@@ -167,8 +165,7 @@
         </button>
         <button
           class="
-            lg:inline-flex
-            md:inline-flex
+            inline-flex
             xs:flex xs:flex-col
             xs:items-center
             xs:px-4
@@ -195,7 +192,7 @@
         </button>
       </div>
     </div>
-    <div [hidden]="!isQuoterLevel" class="w-full mt-12 md:mt-6 xs:mt-5">
+    <div [hidden]="!isQuoterLevel" class="w-full lg:mt-12 mt-5">
       <app-table
         id="level-fee"
         [headers]="[
