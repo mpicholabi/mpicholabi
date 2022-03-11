@@ -17,7 +17,7 @@
       (click)="switchLeft()"
     >
       <h1
-        class="text-22px font-lato text-center w-full hidden lg:block md:block"
+        class="text-22px font-lato text-center w-full xs:hidden"
         [ngClass]="value ? 'text-white font-bold' : 'text-cyan-450 font-normal'"
       >
         {{ 'quoter-feature.level-fee' | translate }}
@@ -46,7 +46,7 @@
       (click)="switchRight()"
     >
       <h1
-        class="text-22px font-lato text-center w-full hidden md:block lg:block"
+        class="text-22px font-lato text-center w-full xs:hidden"
         [ngClass]="value ? 'text-cyan-450 font-normal' : 'text-white font-bold'"
       >
         {{ 'quoter-feature.balance-fee' | translate }}
