@@ -153,6 +153,19 @@ module.exports = {
       lineHeight: {
         '85px': '6.313rem',
       },
+      keyframes: {
+        shake: {
+          '0%, 30%, 60%, 90%': {
+            transform: 'translateX(-20px)',
+          },
+          '15%, 45%, 75%, 100%': {
+            transform: 'translateX(10px)',
+          },
+        },
+      },
+      animation: {
+        shake: 'shake 1s ease-in-out',
+      },
     },
   },
   plugins: [],

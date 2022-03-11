@@ -37,14 +37,11 @@
       >
       <div class="relative">
         <label
-          class="
-            absolute
-            left-0
-            top-2
-            text-cyan-450
-            2xl:text-42px
-            text-24px
-            font-lato
+          class="absolute left-0 top-2 2xl:text-42px text-24px font-lato"
+          [class]="
+            formQuoter.get('amount')?.value > 50000
+              ? ' text-red-500'
+              : 'text-cyan-450'
           "
           >{{ 'currency.symbol' | translate }}</label
         >
@@ -60,10 +57,22 @@
           [length]="'9'"
           [testId]="'inumAmount'"
         ></app-input>
+        <label
+          [class]="
+            formQuoter.get('amount')?.value > 50000
+              ? ' text-red-500 animate-shake transform'
+              : 'text-cyan-450'
+          "
+          class="
+            font-lato font-semibold
+            absolute
+            text-14px
+            transform
+            animate-spin
+          "
+          >{{ 'home-quoter.input-description' | translate }}</label
+        >
       </div>
-      <span class="font-lato font-semibold text-14px text-cyan-450">{{
-        'home-quoter.input-description' | translate
-      }}</span>
     </div>
     <div class="pt-10 pb-14">
       <label
