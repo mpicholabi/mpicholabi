@@ -1,7 +1,7 @@
-<div [id]="id" class="grid grid-rows-1 w-full">
+<div class="grid grid-rows-1 w-full">
   <div
     class="hidden lg:flex bg-cyan-450 h-11 text-white rounded"
-    id="header-table"
+    [id]="'header-table'"
   >
     <div
       *ngFor="let item of headers; let headerIndex = index"
