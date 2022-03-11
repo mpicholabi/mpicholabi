@@ -121,7 +121,7 @@
       {{ 'quoter-feature.remember' | translate }}
     </p>
     <app-switch [(value)]="isQuoterLevel"></app-switch>
-    <div class="flex lg:justify-between xs:flex-col">
+    <div class="flex justify-between xs:flex-col">
       <h1
         class="
           font-lato font-bold
@@ -139,6 +139,8 @@
           class="
             lg:inline-flex
             lg:pr-8
+            md:inline-flex
+            md:pr-8
             xs:flex xs:flex-col
             xs:items-center
             xs:px-4
@@ -166,6 +168,7 @@
         <button
           class="
             lg:inline-flex
+            md:inline-flex
             xs:flex xs:flex-col
             xs:items-center
             xs:px-4
@@ -192,7 +195,7 @@
         </button>
       </div>
     </div>
-    <div [hidden]="!isQuoterLevel" class="w-full mt-12 xs:mt-5">
+    <div [hidden]="!isQuoterLevel" class="w-full mt-12 md:mt-6 xs:mt-5">
       <app-table
         id="level-fee"
         [headers]="[
