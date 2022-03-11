@@ -192,7 +192,7 @@
         </button>
       </div>
     </div>
-    <div [hidden]="!isQuoterLevel" class="w-full lg:mt-12 mt-5">
+    <div [hidden]="!isQuoterLevel" class="w-full lg:mt-12 mt-5 relative z-1">
       <app-table
         id="level-fee"
         [headers]="[
@@ -215,7 +215,7 @@
         >
       </div>
     </div>
-    <div [hidden]="isQuoterLevel" class="w-full mt-12 xs:mt-5">
+    <div [hidden]="isQuoterLevel" class="w-full mt-12 xs:mt-5 relative z-1">
       <app-table
         id="level-salary"
         [headers]="[
