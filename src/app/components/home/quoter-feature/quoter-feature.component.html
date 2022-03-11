@@ -120,7 +120,7 @@
     >
       {{ 'quoter-feature.remember' | translate }}
     </p>
-    <app-switch [value]="true"></app-switch>
+    <app-switch [(value)]="isQuoterLevel"></app-switch>
     <div class="flex lg:justify-between xs:flex-col">
       <h1
         class="
@@ -192,7 +192,7 @@
         </button>
       </div>
     </div>
-    <div class="w-full mt-12 xs:mt-5">
+    <div [hidden]="!isQuoterLevel" class="w-full mt-12 xs:mt-5">
       <app-table
         id="level-fee"
         [headers]="[
@@ -201,6 +201,27 @@
           { label: 'Interés', key: 'interes' },
           { label: 'Total a pagar', key: 'total' },
           { label: 'Saldo a capital', key: 'capital' }
+        ]"
+        [items]="items"
+      ></app-table>
+      <div
+        [ngClass]="{ hidden: page === totalPage - 1 }"
+        class="w-full justify-center flex"
+      >
+        <label
+          class="cursor-pointer underline text-blue-750 font-lato mt-7"
+          (click)="showMore()"
+          >{{ 'common.show-more' | translate }}</label
+        >
+      </div>
+    </div>
+    <div [hidden]="isQuoterLevel" class="w-full mt-12 xs:mt-5">
+      <app-table
+        id="level-salary"
+        [headers]="[
+          { label: 'Cuota', key: 'cuota' },
+          { label: 'Interés', key: 'interes' },
+          { label: 'Total a pagar', key: 'total' }
         ]"
         [items]="items"
       ></app-table>
