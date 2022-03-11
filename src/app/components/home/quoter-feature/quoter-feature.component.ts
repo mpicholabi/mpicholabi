@@ -25,6 +25,7 @@ export class QuoterFeatureComponent implements OnInit {
   page: number = 0;
   totalPage: number = 0;
   perPage: number = 4;
+  isQuoterLevel: boolean = true;
 
   changeTerm(event: number): void {
     this.formQuoter.get('term')?.setValue(event);
