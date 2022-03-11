@@ -1,4 +1,4 @@
-<div class="flex flex-col w-full">
+<div [id]="id" class="flex flex-col w-full pr-3" #sliderInput>
   <label class="text-gray-550 font-light text-sm pb-5 flex items-center"
     ><img class="pr-3" *ngIf="icon" [src]="icon" />{{ label
     }}<span class="pl-1 pt-1" *ngIf="required">*</span></label
@@ -23,6 +23,7 @@
         *ngFor="let item of rangeStep()"
       >
         <label
+          [id]="id + '-selector' + item"
           (click)="selectValue(item)"
           [class]="item === 36 || item === 24 ? '-m-2px' : ''"
           class="text-sm font-bold text-gray-450 cursor-pointer"
