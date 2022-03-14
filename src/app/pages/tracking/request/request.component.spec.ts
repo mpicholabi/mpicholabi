@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { RequestPageComponent } from '@/app/pages/tracking/request/request.component';
 
@@ -11,6 +12,7 @@ describe('RequestPageComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [RequestPageComponent],
       imports: [ReactiveFormsModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   });
 
