@@ -40,8 +40,11 @@
           id="label-amount"
           class="absolute left-0 top-2 2xl:text-42px text-24px font-lato"
           [class]="
-            formQuoter.get('amount')?.value > 50000
-              ? ' text-red-500'
+            !!formQuoter.get('amount')?.value
+              ? formQuoter.get('amount')?.value > 50000 ||
+                formQuoter.get('amount')?.value < 3000
+                ? ' text-red-500'
+                : 'text-cyan-450'
               : 'text-cyan-450'
           "
           >{{ 'currency.symbol' | translate }}</label
@@ -55,16 +58,24 @@
             'focus:outline-none pl-12 xs:pl-8 2xl:text-42px text-24px w-full text-gray-350'
           "
           [placeholder]="'0.00'"
-          [length]="'9'"
+          [length]="'7'"
           [isValid]="
-            formQuoter.get('amount')?.value > 50000 ? 'invalid' : 'valid'
+            !!formQuoter.get('amount')?.value
+              ? formQuoter.get('amount')?.value > 50000 ||
+                formQuoter.get('amount')?.value < 3000
+                ? 'invalid'
+                : 'valid'
+              : 'normal'
           "
           [testId]="'inumAmount'"
         ></app-input>
         <label
           [class]="
-            formQuoter.get('amount')?.value > 50000
-              ? ' text-red-500 animate-shake transform'
+            !!formQuoter.get('amount')?.value
+              ? formQuoter.get('amount')?.value > 50000 ||
+                formQuoter.get('amount')?.value < 3000
+                ? ' text-red-500 animate-shake transform'
+                : 'text-cyan-450'
               : 'text-cyan-450'
           "
           class="

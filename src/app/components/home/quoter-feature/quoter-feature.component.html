@@ -36,14 +36,14 @@
           >
           <div class="relative">
             <label
-              class="
-                absolute
-                left-0
-                top-2
-                text-cyan-450
-                2xl:text-42px
-                text-24px
-                font-lato
+              class="absolute left-0 top-2 2xl:text-42px text-24px font-lato"
+              [class]="
+                !!formQuoter.get('amount')?.value
+                  ? formQuoter.get('amount')?.value > 50000 ||
+                    formQuoter.get('amount')?.value < 3000
+                    ? ' text-red-500'
+                    : 'text-cyan-450'
+                  : 'text-cyan-450'
               "
               >{{ 'currency.symbol' | translate }}</label
             >
@@ -53,16 +53,33 @@
               [name]="'amount'"
               [rules]="'decimal'"
               [classCustom]="
-                'border-b-2 border-cyan-450 focus:outline-none pl-12 xs:pl-8 2xl:text-42px text-24px w-full text-gray-350'
+                'focus:outline-none pl-12 xs:pl-8 2xl:text-42px text-24px w-full text-gray-350'
               "
               [placeholder]="'0.00'"
-              [length]="'9'"
+              [length]="'7'"
               [testId]="'inumAmount'"
+              [isValid]="
+                !!formQuoter.get('amount')?.value
+                  ? formQuoter.get('amount')?.value > 50000 ||
+                    formQuoter.get('amount')?.value < 3000
+                    ? 'invalid'
+                    : 'valid'
+                  : 'normal'
+              "
             ></app-input>
           </div>
-          <span class="font-lato font-semibold text-14px text-cyan-450">{{
-            'home-quoter.input-description' | translate
-          }}</span>
+          <span
+            [class]="
+              !!formQuoter.get('amount')?.value
+                ? formQuoter.get('amount')?.value > 50000 ||
+                  formQuoter.get('amount')?.value < 3000
+                  ? ' text-red-500 animate-shake transform'
+                  : 'text-cyan-450'
+                : 'text-cyan-450'
+            "
+            class="font-lato font-semibold absolute text-sm"
+            >{{ 'home-quoter.input-description' | translate }}</span
+          >
         </div>
         <div class="flex flex-col lg:w-auto w-full lg:pt-10 xs:pt-1 lg:pr-28">
           <label
@@ -240,6 +257,6 @@
   <img
     class="absolute w-44 left-9 bottom-3 z-0 2xl:block hidden"
     src="/assets/image/bi-quoter-bg-blue.svg"
-    alt="quarer blue and yellow"
+    alt="quarter blue and yellow"
   />
 </section>
