@@ -57,7 +57,13 @@ export class SliderRangeComponent implements AfterViewInit {
       '.p-slider.p-component'
     );
     const span = document.createElement('span');
-    span.classList.add('w-110%', 'h-5px', 'bg-gray-375', 'absolute');
+    span.classList.add(
+      'w-110%',
+      'h-5px',
+      '-left-2px',
+      'bg-gray-375',
+      'absolute'
+    );
     elements.forEach((element) => {
       element.appendChild(span);
     });

@@ -3,6 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { RequestPageComponent } from '@/app/pages/tracking/request/request.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('RequestPageComponent', () => {
   let component: RequestPageComponent;
@@ -11,7 +12,7 @@ describe('RequestPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [RequestPageComponent],
-      imports: [ReactiveFormsModule],
+      imports: [ReactiveFormsModule, TranslateModule.forRoot()],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   });

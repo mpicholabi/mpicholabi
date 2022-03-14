@@ -28,6 +28,7 @@ export class QuoterFeatureComponent implements OnInit {
   totalPage: number = 0;
   perPage: number = 4;
   isQuoterLevel: boolean = true;
+  isInvalid: boolean = false;
   fee: number | string = '';
 
   changeTerm(event: number): void {
@@ -83,6 +84,7 @@ export class QuoterFeatureComponent implements OnInit {
       .get('amount')
       ?.valueChanges.pipe(debounceTime(500), distinctUntilChanged())
       .subscribe((value) => {
+        this.isInvalid = (value < 3000 || value > 50000) && value !== '';
         if (!!value && value > 200) {
           this.saveQuoter({
             amount: value,
