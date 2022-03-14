@@ -12,7 +12,24 @@
 >
   <div class="lg:max-w-1194px w-full relative z-1 flex flex-col items-center">
     <h1
-      [innerHTML]="'quoter-feature.title' | translate"
+      id="h1TitleQuoter"
+      [innerHTML]="
+        isQuoterLevel
+          ? ('quoter-feature.title-level-fee'
+            | translate
+              : {
+                  amount: formatCurrency(formQuoter.get('amount')?.value),
+                  term: formQuoter.get('term')?.value,
+                  fee: formatCurrency(fee)
+                })
+          : ('quoter-feature.title-balance-fee'
+            | translate
+              : {
+                  amount: formatCurrency(formQuoter.get('amount')?.value),
+                  term: formQuoter.get('term')?.value,
+                  fee: formatCurrency(fee)
+                })
+      "
       class="
         font-lato
         w-full
@@ -137,8 +154,10 @@
       <div class="flex items-center xs:justify-center">
         <button
           class="
-            inline-flex
-            pr-8
+            lg:inline-flex
+            lg:pr-8
+            md:inline-flex
+            md:pr-8
             xs:flex xs:flex-col
             xs:items-center
             xs:px-4
@@ -165,7 +184,8 @@
         </button>
         <button
           class="
-            inline-flex
+            lg:inline-flex
+            md:inline-flex
             xs:flex xs:flex-col
             xs:items-center
             xs:px-4
@@ -192,7 +212,7 @@
         </button>
       </div>
     </div>
-    <div [hidden]="!isQuoterLevel" class="w-full lg:mt-12 mt-5 relative z-1">
+    <div [hidden]="!isQuoterLevel" class="w-full mt-12 md:mt-6 xs:mt-5">
       <app-table
         id="level-fee"
         [headers]="[
@@ -215,7 +235,7 @@
         >
       </div>
     </div>
-    <div [hidden]="isQuoterLevel" class="w-full mt-12 xs:mt-5 relative z-1">
+    <div [hidden]="isQuoterLevel" class="w-full mt-12 xs:mt-5">
       <app-table
         id="level-salary"
         [headers]="[
