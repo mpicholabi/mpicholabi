@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SliderModule } from 'primeng/slider';
+import { NgxScrollTopModule } from 'ngx-scrolltop';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -31,7 +32,6 @@ import { ProductFeatureComponent } from './components/home/product-feature/produ
 import { HomeRequirementComponent } from './components/home/home-requirement/home-requirement.component';
 import { RequirementFeatureComponent } from './components/home/requirement-feature/requirement-feature.component';
 import { HomeHeaderComponent } from './components/home/home-header/home-header.component';
-import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeQuoterComponent } from './components/home/home-quoter/home-quoter.component';
 import { SliderRangeComponent } from './components/form/slider-range/slider-range.component';
@@ -43,6 +43,7 @@ import { QuoterFeatureComponent } from './components/home/quoter-feature/quoter-
 import { TableComponent } from './components/table/table.component';
 import { HomeBalanceComponent } from './components/home/home-balance/home-balance.component';
 import { SwitchComponent } from './components/switch/switch.component';
+import { FormatNumberDirective } from './utils/directives/format-number.directive';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/locales/', '.json');
@@ -68,6 +69,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     TableComponent,
     HomeBalanceComponent,
     SwitchComponent,
+    FormatNumberDirective,
   ],
   imports: [
     BrowserModule,
