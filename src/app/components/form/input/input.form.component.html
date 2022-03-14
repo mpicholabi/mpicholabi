@@ -4,15 +4,22 @@
     <span class="pl-1 pt-1" *ngIf="required">*</span></label
   >
   <input
-    [class]="classCustom"
+    [class]="
+      isValid === 'invalid'
+        ? 'border-b-2 border-red-500'
+        : 'border-b-2 border-cyan-450'
+    "
+    [ngClass]="classCustom"
     [name]="name"
     [type]="type"
+    autocomplete="off"
     [placeholder]="placeholder"
     [formControlName]="name"
     [maxlength]="length"
     [attr.data-test-id]="testId"
     #inputElement
     (keypress)="validationValue($event)"
+    appFormatNumber
   />
   <div
     class="text-red-300 text-xs font-semibold flex flex-col"
