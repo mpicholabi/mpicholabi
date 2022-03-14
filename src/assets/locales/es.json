@@ -26,6 +26,7 @@
     "symbol": "Q"
   },
   "quoter-feature": {
+    "title-empty-amount": "Ingresa un monto para conocer tu proyección de cuota promedio",
     "title-level-fee": "Plan de pago para crédito Bi-fácil de <span id='spanAmount'>{{amount}}</span><br class='lg:block hidden'/> pagando a <span id='spanTerm'>{{term}}</span> meses a cuotas de <span id='spanFee'>{{fee}}</span>",
     "title-balance-fee": "Plan de pago para crédito Bi-fácil de <span id='spanAmount'>{{amount}}</span><br class='lg:block hidden'/> pagando a <span id='spanTerm'>{{term}}</span> meses a cuotas promedio de <span id='spanFee'>{{fee}}</span>",
     "level-fee": "Cuota nivelada",

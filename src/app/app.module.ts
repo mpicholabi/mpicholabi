@@ -47,6 +47,7 @@ import { TableComponent } from './components/table/table.component';
 import { HomeBalanceComponent } from './components/home/home-balance/home-balance.component';
 import { SwitchComponent } from './components/switch/switch.component';
 import { FormatNumberDirective } from './utils/directives/format-number.directive';
+import { ModalComponent } from './components/modal/modal.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/locales/', '.json');
@@ -73,6 +74,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeBalanceComponent,
     SwitchComponent,
     FormatNumberDirective,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

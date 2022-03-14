@@ -1,0 +1,43 @@
+<div
+  class="inset-0 fixed z-40 flex justify-center items-center"
+  *ngIf="modalService.showModal"
+>
+  <div
+    class="
+      min-w-100px min-h-100px
+      max-h-90vh max-w-90vw
+      xl:w-1/2
+      lg:w-1/2
+      w-full
+      bg-white
+      rounded-35px
+      absolute
+      overflow-auto
+      no-scrollbar
+    "
+  >
+    <div
+      class="
+        sticky
+        top-0
+        float-right
+        font-lato-bold
+        text-xl text-gray-closeModal
+        cursor-pointer
+        z-10
+        px-6
+        py-4
+      "
+      (click)="modalService.closeModal()"
+    >
+      x
+    </div>
+    <div class="h-full relative xl:px-10 lg:px-10 py-10">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
+<div
+  class="inset-0 bg-black fixed z-30 opacity-50 modal-pro-open"
+  *ngIf="modalService.showModal"
+></div>

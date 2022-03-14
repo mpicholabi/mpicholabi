@@ -14,7 +14,10 @@
     <h1
       id="h1TitleQuoter"
       [innerHTML]="
-        isQuoterLevel
+        formQuoter.get('amount')?.value === '' ||
+        formQuoter.get('amount')?.value <= 0
+          ? ('quoter-feature.title-empty-amount' | translate)
+          : isQuoterLevel
           ? ('quoter-feature.title-level-fee'
             | translate
               : {
@@ -184,6 +187,7 @@
           (mouseover)="hoverMail = true"
           (mouseleave)="hoverMail = false"
           id="btnSendMail"
+          (click)="openModal()"
         >
           <img
             [hidden]="hoverMail"
@@ -281,3 +285,5 @@
     alt="quarter blue and yellow"
   />
 </section>
+
+<app-modal> <h1>Holis</h1></app-modal>
