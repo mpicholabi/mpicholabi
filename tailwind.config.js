@@ -81,7 +81,7 @@ module.exports = {
         '522px': '32.625rem',
         '700px': '43.75rem',
         '710px': '44.375rem',
-        '110%': 'calc(100% + 11px)',
+        '110%': 'calc(100% + 13px)',
       },
       height: {
         '5px': '0.313rem',

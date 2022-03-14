@@ -1,7 +1,9 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { registerLocaleData } from '@angular/common';
+import guatemala from '@angular/common/locales/es-GT';
 import {
   HTTP_INTERCEPTORS,
   HttpClientModule,
@@ -32,7 +34,6 @@ import { ProductFeatureComponent } from './components/home/product-feature/produ
 import { HomeRequirementComponent } from './components/home/home-requirement/home-requirement.component';
 import { RequirementFeatureComponent } from './components/home/requirement-feature/requirement-feature.component';
 import { HomeHeaderComponent } from './components/home/home-header/home-header.component';
-import { NavComponent } from './components/nav/nav.component';
 import { HomeQuoterComponent } from './components/home/home-quoter/home-quoter.component';
 import { SliderRangeComponent } from './components/form/slider-range/slider-range.component';
 import { InputTextFormComponent } from './components/form/input/input.form.component';
@@ -43,11 +44,16 @@ import { QuoterFeatureComponent } from './components/home/quoter-feature/quoter-
 import { TableComponent } from './components/table/table.component';
 import { HomeBalanceComponent } from './components/home/home-balance/home-balance.component';
 import { SwitchComponent } from './components/switch/switch.component';
-import { FormatNumberDirective } from './utils/directives/format-number.directive';
+import { FormatNumberDirective } from '@/app/utils/directives/format-number.directive';
+import {
+  HttpLoaderFactory,
+  TrackingModules,
+} from '@/app/pages/tracking/tracking.modules';
+import { ComponentsModule } from './components/components.module';
+import { SharedModule } from './shared/shared.module';
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/locales/', '.json');
-}
+registerLocaleData(guatemala, 'es-guatemala');
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +65,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeRequirementComponent,
     RequirementFeatureComponent,
     HomeHeaderComponent,
-    NavComponent,
     HomeQuoterComponent,
     SliderRangeComponent,
     InputTextFormComponent,
@@ -94,7 +99,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     NgxScrollTopModule,
     SliderModule,
+    TrackingModules,
+    ComponentsModule,
+    SharedModule,
   ],
+  exports: [TranslateModule, CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     {
@@ -102,6 +111,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       useClass: ErrorInterceptorService,
       multi: true,
     },
+    { provide: LOCALE_ID, useValue: 'es-guatemala' },
   ],
   bootstrap: [AppComponent],
 })

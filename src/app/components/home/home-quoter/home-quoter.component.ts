@@ -17,6 +17,7 @@ export class HomeQuoterComponent {
   subject = new Subject();
   term: number = 12;
   isLoading: boolean = false;
+  isInvalid: boolean = false;
 
   goToProduct(): void {
     scrollToTop('#homeProduct', 95);
@@ -54,6 +55,8 @@ export class HomeQuoterComponent {
       .get('amount')
       ?.valueChanges.pipe(debounceTime(500), distinctUntilChanged())
       .subscribe((value) => {
+        this.isInvalid = (value < 3000 || value > 50000) && value !== '';
+        console.log(value < 3000, value > 50000);
         if (!!value && value > 200) {
           this.saveQuoter({
             amount: value,
