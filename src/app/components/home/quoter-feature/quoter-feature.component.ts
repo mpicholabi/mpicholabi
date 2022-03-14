@@ -8,6 +8,7 @@ import * as QuoterAction from '@/app/store/quoter.actions';
 import { Subject } from 'rxjs';
 import { dataDummy } from './dataDummy';
 import { CurrencyPipe } from '@angular/common';
+import { jsPDF } from 'jspdf';
 
 @Component({
   selector: 'app-quoter-feature',
@@ -114,6 +115,17 @@ export class QuoterFeatureComponent implements OnInit {
 
   formatCurrency(key: number | string): string {
     return this.currencyPipe.transform(key, 'GTQ', 'symbol') || '';
+  }
+
+  downloadQuoter(): void {
+    const doc = new jsPDF();
+    if (this.isQuoterLevel) {
+      doc.text('¡Cotizacion cuota nivelada!', 10, 10);
+      doc.save('Cuota-nivelada.pdf');
+    } else {
+      doc.text('¡Cotizacion cuota sobre saldos!', 10, 10);
+      doc.save('Cuota-sobre-saldos.pdf');
+    }
   }
 
   ngOnInit(): void {
