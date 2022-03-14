@@ -37,6 +37,7 @@
       >
       <div class="relative">
         <label
+          id="label-amount"
           class="absolute left-0 top-2 2xl:text-42px text-24px font-lato"
           [class]="
             formQuoter.get('amount')?.value > 50000
@@ -51,10 +52,13 @@
           [name]="'amount'"
           [rules]="'decimal'"
           [classCustom]="
-            'border-b-2 border-cyan-450 focus:outline-none pl-12 xs:pl-8 2xl:text-42px text-24px w-full text-gray-350'
+            'focus:outline-none pl-12 xs:pl-8 2xl:text-42px text-24px w-full text-gray-350'
           "
           [placeholder]="'0.00'"
           [length]="'9'"
+          [isValid]="
+            formQuoter.get('amount')?.value > 50000 ? 'invalid' : 'valid'
+          "
           [testId]="'inumAmount'"
         ></app-input>
         <label
@@ -76,6 +80,7 @@
     </div>
     <div class="pt-10 pb-14">
       <label
+        id="label-range"
         class="font-lato font-bold text-gray-450 2xl:text-22px pb-8 text-16px"
         >{{ 'home-quoter.label-range' | translate }}</label
       >

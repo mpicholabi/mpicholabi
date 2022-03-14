@@ -4,7 +4,12 @@
     <span class="pl-1 pt-1" *ngIf="required">*</span></label
   >
   <input
-    [class]="classCustom"
+    [class]="
+      isValid === 'invalid'
+        ? 'border-b-2 border-red-500'
+        : 'border-b-2 border-cyan-450'
+    "
+    [ngClass]="classCustom"
     [name]="name"
     [type]="type"
     autocomplete="off"

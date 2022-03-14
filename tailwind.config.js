@@ -155,16 +155,16 @@ module.exports = {
       },
       keyframes: {
         shake: {
-          '0%, 30%, 60%, 90%': {
+          '0%, 40%, 80%': {
             transform: 'translateX(-20px)',
           },
-          '15%, 45%, 75%, 100%': {
+          '20%, 60%, 100%': {
             transform: 'translateX(10px)',
           },
         },
       },
       animation: {
-        shake: 'shake 1s ease-in-out',
+        shake: 'shake 700ms ease-in-out',
       },
     },
   },
