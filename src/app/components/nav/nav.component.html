@@ -2,6 +2,7 @@
   class="
     flex
     fixed
+    top-0
     justify-center
     z-20
     w-full
@@ -10,11 +11,13 @@
     transition
     duration-500
   "
-  [ngClass]="[
-    isScrolled
-      ? 'bg-blue-750'
-      : 'bg-opacity-0 border-solid border-white border-b-2'
-  ]"
+  [class]="
+    isTransparent
+      ? isScrolled
+        ? 'bg-blue-750'
+        : 'bg-opacity-0 border-solid border-white border-b-2'
+      : 'bg-blue-750'
+  "
 >
   <div
     class="

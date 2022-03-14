@@ -35,6 +35,7 @@ button.scrolltop-button {
 .p-slider-range {
   background-color: #00C1D4!important;
   height: 5px!important;
+  left: -2px!important;
   z-index: 1;
 }
 
@@ -49,5 +50,5 @@ button.scrolltop-button {
 
 .animation-touched, .p-slider-handle, .p-slider-range {
   transition: all!important;
-  transition-duration: 0.5s!important;
+  transition-duration: 0.3s!important;
 }

@@ -11,7 +11,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SliderModule } from 'primeng/slider';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 
@@ -35,7 +34,6 @@ import { ProductFeatureComponent } from './components/home/product-feature/produ
 import { HomeRequirementComponent } from './components/home/home-requirement/home-requirement.component';
 import { RequirementFeatureComponent } from './components/home/requirement-feature/requirement-feature.component';
 import { HomeHeaderComponent } from './components/home/home-header/home-header.component';
-import { NavComponent } from './components/nav/nav.component';
 import { HomeQuoterComponent } from './components/home/home-quoter/home-quoter.component';
 import { SliderRangeComponent } from './components/form/slider-range/slider-range.component';
 import { InputTextFormComponent } from './components/form/input/input.form.component';
@@ -48,10 +46,15 @@ import { HomeBalanceComponent } from './components/home/home-balance/home-balanc
 import { SwitchComponent } from './components/switch/switch.component';
 import { FormatNumberDirective } from './utils/directives/format-number.directive';
 import { ModalComponent } from './components/modal/modal.component';
+import {
+  HttpLoaderFactory,
+  TrackingModules,
+} from '@/app/pages/tracking/tracking.modules';
+import { ComponentsModule } from './components/components.module';
+import { SharedModule } from './shared/shared.module';
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/locales/', '.json');
-}
+registerLocaleData(guatemala, 'es-guatemala');
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +66,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeRequirementComponent,
     RequirementFeatureComponent,
     HomeHeaderComponent,
-    NavComponent,
     HomeQuoterComponent,
     SliderRangeComponent,
     InputTextFormComponent,
@@ -99,7 +101,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     NgxScrollTopModule,
     SliderModule,
+    TrackingModules,
+    ComponentsModule,
+    SharedModule,
   ],
+  exports: [TranslateModule, CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-guatemala' },
@@ -109,6 +115,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       useClass: ErrorInterceptorService,
       multi: true,
     },
+    { provide: LOCALE_ID, useValue: 'es-guatemala' },
   ],
   bootstrap: [AppComponent],
 })

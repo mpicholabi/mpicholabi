@@ -8,6 +8,7 @@ const routes: Routes = [
     path: '',
     component: HomeTrackingPageComponent,
     children: [
+      { path: '', redirectTo: 'information-request', pathMatch: 'full' },
       {
         path: 'information-request',
         component: RequestPageComponent,

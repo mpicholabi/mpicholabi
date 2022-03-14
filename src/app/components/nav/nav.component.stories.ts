@@ -10,6 +10,4 @@ const Template: Story<NavComponent> = (args: NavComponent) => ({
   props: args,
 });
 
-export const base = Template.bind({
-  isScrolled: true
-});
+export const base = Template.bind({});
