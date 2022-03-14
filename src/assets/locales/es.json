@@ -22,10 +22,12 @@
   },
   "currency": {
     "name": "Quetzal",
+    "code": "GTQ",
     "symbol": "Q"
   },
   "quoter-feature": {
-    "title": "Plan de pago para crédito Bi-fácil de Q10,200<br class=0\"lg:block hidden\" /> pagando a 10 meses a cuotas de Q1,020",
+    "title-level-fee": "Plan de pago para crédito Bi-fácil de <span id='spanAmount'>{{amount}}</span><br class='lg:block hidden'/> pagando a <span id='spanTerm'>{{term}}</span> meses a cuotas de <span id='spanFee'>{{fee}}</span>",
+    "title-balance-fee": "Plan de pago para crédito Bi-fácil de <span id='spanAmount'>{{amount}}</span><br class='lg:block hidden'/> pagando a <span id='spanTerm'>{{term}}</span> meses a cuotas promedio de <span id='spanFee'>{{fee}}</span>",
     "level-fee": "Cuota nivelada",
     "xs-level-fee": "Nivelada",
     "description-level-fee": "Tipo de cuota que se calcula sobre el saldo de capital cada mes, el valor de tu cuota mensual será la misma todos los meses durante la vigencia de tu préstamo.",
@@ -36,7 +38,8 @@
     "remember": "(Te recordamos que las cuotas están basadas únicamente en una proyección)",
     "expires": "Esta oferta expira en…",
     "send-mail": "Enviar al correo",
-    "download": "Descargar"
+    "download": "Descargar",
+    "average": "promedio"
   },
   "common": {
     "title-table": "¡No hay datos para mostrar!",

@@ -8,7 +8,7 @@
       [hidden]="isLoading"
       class="font-lato font-bold 2xl:text-45px text-32px text-blue-750"
     >
-      {{ 'currency.symbol' | translate }} {{ fee | number: '1.2-2' }}
+      {{ formatCurrency(fee) }}
     </h1>
   </div>
   <div class="flex justify-center">

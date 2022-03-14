@@ -7,6 +7,7 @@ import { QuoterCalculateInterface } from '@/app/interfaces/quoter/quoterCalculat
 import * as QuoterAction from '@/app/store/quoter.actions';
 import { Subject } from 'rxjs';
 import { dataDummy } from './dataDummy';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-quoter-feature',
@@ -26,6 +27,7 @@ export class QuoterFeatureComponent implements OnInit {
   totalPage: number = 0;
   perPage: number = 4;
   isQuoterLevel: boolean = true;
+  fee: number | string = '';
 
   changeTerm(event: number): void {
     this.formQuoter.get('term')?.setValue(event);
@@ -53,7 +55,8 @@ export class QuoterFeatureComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    private currencyPipe: CurrencyPipe
   ) {
     this.createForm();
     this.changeFormValue();
@@ -66,6 +69,7 @@ export class QuoterFeatureComponent implements OnInit {
         this.term = quoter.term;
         this.formQuoter.get('term')?.setValue(quoter.term);
       }
+      this.fee = quoter.fee;
     });
   }
 
@@ -82,6 +86,7 @@ export class QuoterFeatureComponent implements OnInit {
           this.saveQuoter({
             amount: value,
             term: this.formQuoter.get('term')?.value,
+            fee: this.fee,
           });
         }
       });
@@ -95,6 +100,7 @@ export class QuoterFeatureComponent implements OnInit {
             ? this.formQuoter.get('amount')?.value
             : 0,
           term: value,
+          fee: this.fee,
         });
       });
   }
@@ -104,6 +110,10 @@ export class QuoterFeatureComponent implements OnInit {
       amount: [''],
       term: [12],
     });
+  }
+
+  formatCurrency(key: number | string): string {
+    return this.currencyPipe.transform(key, 'GTQ', 'symbol') || '';
   }
 
   ngOnInit(): void {
