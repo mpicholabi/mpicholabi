@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-
+import { CurrencyPipe } from '@angular/common';
 @Component({
   selector: 'app-approximate-fee',
   templateUrl: './approximate-fee.component.html',
@@ -7,7 +7,11 @@ import { Component, Input } from '@angular/core';
 export class ApproximateFeeComponent {
   @Input()
   isLoading: boolean = false;
-  fee: number = 1259.51;
+  fee: number = 1500;
 
-  constructor() {}
+  constructor(private currencyPipe: CurrencyPipe) {}
+
+  formatCurrency(key: number | string): string {
+    return this.currencyPipe.transform(key, 'GTQ', 'symbol') || '';
+  }
 }

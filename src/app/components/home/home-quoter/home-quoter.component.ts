@@ -18,6 +18,7 @@ export class HomeQuoterComponent {
   term: number = 12;
   isLoading: boolean = false;
   isInvalid: boolean = false;
+  fee: number | string = 1500;
 
   goToProduct(): void {
     scrollToTop('#homeProduct', 95);
@@ -42,6 +43,7 @@ export class HomeQuoterComponent {
         this.term = quoter.term;
         this.formQuoter.get('term')?.setValue(quoter.term);
       }
+      this.fee = quoter.fee;
     });
   }
 
@@ -61,6 +63,7 @@ export class HomeQuoterComponent {
           this.saveQuoter({
             amount: value,
             term: this.formQuoter.get('term')?.value,
+            fee: this.fee,
           });
         }
       });
@@ -74,6 +77,7 @@ export class HomeQuoterComponent {
             ? this.formQuoter.get('amount')?.value
             : 0,
           term: value,
+          fee: this.fee,
         });
       });
   }

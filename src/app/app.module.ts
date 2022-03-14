@@ -22,7 +22,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from '@/app/app-routing.module';
 import { ErrorInterceptorService } from '@/app/utils/error-interceptor.service';
 import { errorReducer } from '@/app/store/error.reducer';
-
+import { CurrencyPipe } from '@angular/common';
+import { registerLocaleData } from '@angular/common';
+import guatemala from '@angular/common/locales/es-GT';
+registerLocaleData(guatemala, 'es-guatemala');
 // import in next section the component of the app
 import { HomeComponent } from '@/app/pages/home/home.component';
 import { AppComponent } from '@/app/app.component';
@@ -106,6 +109,8 @@ registerLocaleData(guatemala, 'es-guatemala');
   exports: [TranslateModule, CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
+    { provide: LOCALE_ID, useValue: 'es-guatemala' },
+    CurrencyPipe,
     {
       provide: [HTTP_INTERCEPTORS],
       useClass: ErrorInterceptorService,
