@@ -55,10 +55,9 @@ export class HomeQuoterComponent {
   changeFormValue(): void {
     this.formQuoter
       .get('amount')
-      ?.valueChanges.pipe(debounceTime(500), distinctUntilChanged())
+      ?.valueChanges.pipe(debounceTime(3000), distinctUntilChanged())
       .subscribe((value) => {
         this.isInvalid = (value < 3000 || value > 50000) && value !== '';
-        console.log(value < 3000, value > 50000);
         if (!!value && value > 200) {
           this.saveQuoter({
             amount: value,
