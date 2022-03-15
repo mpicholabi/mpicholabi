@@ -2,8 +2,6 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { registerLocaleData } from '@angular/common';
-import guatemala from '@angular/common/locales/es-GT';
 import {
   HTTP_INTERCEPTORS,
   HttpClientModule,
@@ -13,7 +11,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SliderModule } from 'primeng/slider';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 
@@ -47,7 +44,8 @@ import { QuoterFeatureComponent } from './components/home/quoter-feature/quoter-
 import { TableComponent } from './components/table/table.component';
 import { HomeBalanceComponent } from './components/home/home-balance/home-balance.component';
 import { SwitchComponent } from './components/switch/switch.component';
-import { FormatNumberDirective } from '@/app/utils/directives/format-number.directive';
+import { FormatNumberDirective } from './utils/directives/format-number.directive';
+import { ModalComponent } from './components/modal/modal.component';
 import {
   HttpLoaderFactory,
   TrackingModules,
@@ -78,6 +76,7 @@ registerLocaleData(guatemala, 'es-guatemala');
     HomeBalanceComponent,
     SwitchComponent,
     FormatNumberDirective,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

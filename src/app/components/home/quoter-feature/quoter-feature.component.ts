@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
 import { dataDummy } from './dataDummy';
 import { CurrencyPipe } from '@angular/common';
 import { jsPDF } from 'jspdf';
-
+import { ModalService } from '@/app/services/modal/modal.service';
 @Component({
   selector: 'app-quoter-feature',
   templateUrl: './quoter-feature.component.html',
@@ -58,7 +58,8 @@ export class QuoterFeatureComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private store: Store<AppState>,
-    private currencyPipe: CurrencyPipe
+    private currencyPipe: CurrencyPipe,
+    private modalService: ModalService
   ) {
     this.createForm();
     this.changeFormValue();
@@ -128,6 +129,14 @@ export class QuoterFeatureComponent implements OnInit {
       doc.text('¡Cotizacion cuota sobre saldos!', 10, 10);
       doc.save('Cuota-sobre-saldos.pdf');
     }
+  }
+
+  openModal() {
+    this.modalService.openModal();
+  }
+
+  closeModal() {
+    this.modalService.closeModal();
   }
 
   ngOnInit(): void {
