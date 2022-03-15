@@ -42,7 +42,7 @@
     "download": "Descargar",
     "average": "promedio"
   },
-  "send-quoter":{
+  "send-quoter": {
     "modal-title": "Enviar formulario por correo electrónico",
     "modal-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur augue a eros rutrum.",
     "input-placeholder": "Ingresa tu dirección de correo electrónico",
@@ -56,5 +56,8 @@
   },
   "requirement-page": {
     "title": "Vas a necesitar…."
+  },
+  "send-email": {
+    "title-interest": "Cuota a interés"
   }
 }

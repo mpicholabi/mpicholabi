@@ -285,6 +285,22 @@
         [placeholder]="'send-quoter.input-placeholder' | translate"
         [testId]="'iemail'"
       ></app-input>
+      <h1 class="font-lato text-22px text-blue-750">
+        {{ 'send-email.title-interest' | translate }}
+      </h1>
+      <div class="flex pt-3">
+        <div class="flex items-center pr-9">
+          <app-checkbox></app-checkbox
+          ><label class="pl-2">Cuota nivelada</label>
+        </div>
+        <div class="flex items-center pr-9">
+          <app-checkbox></app-checkbox
+          ><label class="pl-2">Cuota sobre saldo</label>
+        </div>
+        <div class="flex items-center">
+          <app-checkbox></app-checkbox><label class="pl-2">Ambas</label>
+        </div>
+      </div>
     </form>
   </div>
   <div class="w-full flex justify-center">
