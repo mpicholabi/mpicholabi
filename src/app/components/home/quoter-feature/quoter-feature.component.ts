@@ -84,7 +84,7 @@ export class QuoterFeatureComponent implements OnInit {
   changeFormValue(): void {
     this.formQuoter
       .get('amount')
-      ?.valueChanges.pipe(debounceTime(500), distinctUntilChanged())
+      ?.valueChanges.pipe(debounceTime(3000), distinctUntilChanged())
       .subscribe((value) => {
         this.isInvalid = (value < 3000 || value > 50000) && value !== '';
         if (!!value && value > 200) {
@@ -114,6 +114,9 @@ export class QuoterFeatureComponent implements OnInit {
     this.formQuoter = this.formBuilder.group({
       amount: [''],
       term: [12],
+    });
+    this.sendQuoter = this.formBuilder.group({
+      email: [''],
     });
   }
 

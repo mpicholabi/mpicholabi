@@ -119,6 +119,7 @@ module.exports = {
         '70px': '4.375rem',
         '79px': '4.938rem',
         '153px': '9.563rem',
+        '952px': '59.5rem',
         '10%': '10%',
       },
       boxShadow: {
