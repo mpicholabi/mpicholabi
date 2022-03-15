@@ -1,14 +1,12 @@
 import { Story, Meta } from '@storybook/angular/types-6-0';
-import { InputTextFormComponent } from './input.form.component';
+import { InputQuoterComponent } from './input-quoter.component';
 
 export default {
-  title: 'Component',
-  component: InputTextFormComponent,
+  title: 'InputQuoterComponent',
+  component: InputQuoterComponent,
 } as Meta;
 
-const Template: Story<InputTextFormComponent> = (
-  args: InputTextFormComponent
-) => ({
+const Template: Story<InputQuoterComponent> = (args: InputQuoterComponent) => ({
   props: args,
 });
 

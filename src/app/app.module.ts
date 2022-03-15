@@ -36,7 +36,7 @@ import { RequirementFeatureComponent } from './components/home/requirement-featu
 import { HomeHeaderComponent } from './components/home/home-header/home-header.component';
 import { HomeQuoterComponent } from './components/home/home-quoter/home-quoter.component';
 import { SliderRangeComponent } from './components/form/slider-range/slider-range.component';
-import { InputTextFormComponent } from './components/form/input/input.form.component';
+import { InputComponent } from './components/form/input/input.component';
 import { ApproximateFeeComponent } from './components/home/approximate-fee/approximate-fee.component';
 import { quoterReducer } from './store/quoter.reducer';
 import { LoadingComponent } from './components/loading/loading.component';
@@ -68,7 +68,7 @@ registerLocaleData(guatemala, 'es-guatemala');
     HomeHeaderComponent,
     HomeQuoterComponent,
     SliderRangeComponent,
-    InputTextFormComponent,
+    InputComponent,
     ApproximateFeeComponent,
     LoadingComponent,
     QuoterFeatureComponent,

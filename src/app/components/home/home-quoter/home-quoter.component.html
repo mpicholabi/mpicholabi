@@ -42,7 +42,7 @@
           [class]="isInvalid ? 'text-red-500' : 'text-cyan-450'"
           >{{ 'currency.symbol' | translate }}</label
         >
-        <app-input
+        <app-input-quoter
           [parentForm]="formQuoter"
           id="amount"
           [name]="'amount'"
@@ -54,7 +54,7 @@
           [length]="'7'"
           [isValid]="isInvalid ? 'invalid' : 'normal'"
           [testId]="'inumAmount'"
-        ></app-input>
+        ></app-input-quoter>
         <label
           [class]="isInvalid ? 'text-red-500 animate-shake' : 'text-cyan-450'"
           class="

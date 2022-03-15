@@ -15,22 +15,12 @@
       no-scrollbar
     "
   >
-    <div
-      class="
-        sticky
-        top-0
-        float-right
-        font-lato-bold
-        text-28px text-blue-750
-        cursor-pointer
-        z-10
-        px-7
-        py-5
-      "
+    <img
+      class="sticky cursor-pointer top-0 float-right z-1 px-7 py-7"
+      src="/assets/image/bi-close.svg"
+      alt="bi-close"
       (click)="modalService.closeModal()"
-    >
-      x
-    </div>
+    />
     <div class="h-full relative xl:px-10 lg:px-10 py-10">
       <ng-content></ng-content>
     </div>

@@ -11,28 +11,27 @@ import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
-  templateUrl: './input.form.component.html',
+  templateUrl: './input.component.html',
 })
-export class InputTextFormComponent implements OnInit {
+export class InputComponent implements OnInit {
   @Input() label: string = '';
+  @Input() labelClass: string = '';
   @Input() placeholder: string = '';
   @Input() name: string = '';
   @Input() required: boolean = false;
-  @Input() isEmail: boolean = false;
   @Input() type: string = 'text';
   @Input() icon: string = '';
   @Input() rules: 'all' | 'string' | 'number' | 'decimal' | 'email' = 'all';
   @Input() parentForm!: FormGroup;
   @Input() length: string = '50';
   @Input() isFormControl: boolean = true;
-  @Input() classCustom: string =
-    'w-full h-10 border-solid border-gray-250 pl-2 rounded-5px border';
+  @Input() classCustom: string = '';
   @Input() testId: string = '';
-  @Input() isValid: 'invalid' | 'normal' | 'valid' = 'normal';
   @Output() valueChange: EventEmitter<string> = new EventEmitter();
   @ViewChild('inputElement') inputElement!: ElementRef;
 
   formGroup: FormGroup = new FormGroup({});
+  isValid: boolean = true;
 
   constructor() {}
 
