@@ -112,13 +112,18 @@ module.exports = {
         xs: { min: '300px', max: '640px' },
       },
       spacing: {
+        '2px': '0.125rem',
         '5px': '0.313rem',
+        '6px': '0.375rem',
         '15px': '0.938rem',
         '70px': '4.375rem',
         '79px': '4.938rem',
+        '153px': '9.563rem',
+        '10%': '10%',
       },
       boxShadow: {
         card: '0px 3px 52px #9999992E',
+        cardRequirement: '0px 3px 32px #9999991F',
       },
       borderRadius: {
         '18px': '1.125rem',
@@ -144,11 +149,6 @@ module.exports = {
       },
       backgroundImage: {
         'banner-header': 'url(/assets/image/bi-banner-home.jpeg)',
-      },
-      spacing: {
-        '2px': '0.125rem',
-        '10%': '10%',
-        '6px': '0.375rem',
       },
       lineHeight: {
         '85px': '6.313rem',

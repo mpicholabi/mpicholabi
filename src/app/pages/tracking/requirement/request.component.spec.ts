@@ -2,23 +2,24 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-import { RequestPageComponent } from '@/app/pages/tracking/request/request.component';
+import { RequirementPageComponent } from '@/app/pages/tracking/requirement/requirement.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { CardRequirementComponent } from '@/app/components/tracking/card-requirement/card-requirement.component';
 
 describe('RequestPageComponent', () => {
-  let component: RequestPageComponent;
-  let fixture: ComponentFixture<RequestPageComponent>;
+  let component: RequirementPageComponent;
+  let fixture: ComponentFixture<RequirementPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [RequestPageComponent],
+      declarations: [RequirementPageComponent, CardRequirementComponent],
       imports: [ReactiveFormsModule, TranslateModule.forRoot()],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RequestPageComponent);
+    fixture = TestBed.createComponent(RequirementPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

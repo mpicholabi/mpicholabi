@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
-import { RequestPageComponent } from '@/app/pages/tracking/request/request.component';
+import { RequirementPageComponent } from '@/app/pages/tracking/requirement/requirement.component';
 import { PagesRoutingModules } from '@/app/pages/tracking/app-routing.module';
 import { HomeTrackingPageComponent } from '@/app/pages/tracking/home-tracking.component';
 import { ComponentsModule } from '@/app/components/components.module';
@@ -14,7 +14,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/locales/', '.json');
 }
 @NgModule({
-  declarations: [RequestPageComponent, HomeTrackingPageComponent],
+  declarations: [RequirementPageComponent, HomeTrackingPageComponent],
   imports: [
     CommonModule,
     FormsModule,

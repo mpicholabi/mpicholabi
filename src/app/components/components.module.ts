@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NavComponent } from '@/app/components/nav/nav.component';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '@/app/shared/shared.module';
+import { CardRequirementComponent } from '@/app/components/tracking/card-requirement/card-requirement.component';
 
-const components = [NavComponent];
+const components = [NavComponent, CardRequirementComponent];
 
 @NgModule({
   declarations: components,

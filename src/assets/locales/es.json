@@ -45,7 +45,8 @@
   "common": {
     "title-table": "¡No hay datos para mostrar!",
     "description-table": "Ingresa un monto para conocer tu proyección de cuota promedio.",
-    "show-more": "Ver más cuotas"
+    "show-more": "Ver más cuotas",
+    "start": "Comencemos"
   },
   "requirement-page": {
     "title": "Vas a necesitar…."
