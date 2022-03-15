@@ -115,6 +115,9 @@ export class QuoterFeatureComponent implements OnInit {
       amount: [''],
       term: [12],
     });
+    this.sendQuoter = this.formBuilder.group({
+      email: [''],
+    });
   }
 
   formatCurrency(key: number | string): string {

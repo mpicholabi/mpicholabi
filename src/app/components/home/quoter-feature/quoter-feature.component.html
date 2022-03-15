@@ -266,7 +266,7 @@
 </section>
 
 <app-modal>
-  <div class="pt-12 pl-28">
+  <div class="pt-12 px-28">
     <h1 class="text-35px font-lato font-medium text-cyan-550">
       {{ 'send-quoter.modal-title' | translate }}
     </h1>
@@ -278,8 +278,9 @@
         [label]="'send-quoter.label-input' | translate"
         [parentForm]="sendQuoter"
         id="iemail"
-        [name]="'iemail'"
+        [name]="'email'"
         [rules]="'email'"
+        [required]="true"
         [classCustom]="'focus:outline-none text-18px w-auto text-gray-350'"
         [placeholder]="'send-quoter.input-placeholder' | translate"
         [testId]="'iemail'"
