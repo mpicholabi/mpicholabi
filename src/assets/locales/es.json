@@ -42,6 +42,12 @@
     "download": "Descargar",
     "average": "promedio"
   },
+  "send-quoter":{
+    "modal-title": "Enviar formulario por correo electrónico",
+    "modal-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur augue a eros rutrum.",
+    "input-placeholder": "Ingresa tu dirección de correo electrónico",
+    "label-input": "Correo electrónico por defecto"
+  },
   "common": {
     "title-table": "¡No hay datos para mostrar!",
     "description-table": "Ingresa un monto para conocer tu proyección de cuota promedio.",

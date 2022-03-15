@@ -17,6 +17,7 @@ import { ModalService } from '@/app/services/modal/modal.service';
 })
 export class QuoterFeatureComponent implements OnInit {
   formQuoter!: FormGroup;
+  sendQuoter!: FormGroup;
   subject = new Subject();
   term: number = 12;
   isLoading: boolean = false;

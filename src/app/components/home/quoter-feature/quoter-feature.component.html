@@ -265,4 +265,38 @@
   />
 </section>
 
-<app-modal> <h1>Holis</h1></app-modal>
+<app-modal>
+  <div class="pt-12 pl-28">
+    <h1 class="text-35px font-lato font-medium text-cyan-550">
+      {{ 'send-quoter.modal-title' | translate }}
+    </h1>
+    <p class="text-18px text-gray-450 font-lato font-normal pt-4 pb-11">
+      {{ 'send-quoter.modal-description' | translate }}
+    </p>
+    <form [formGroup]="sendQuoter">
+      <app-input
+        [label]="'send-quoter.label-input' | translate"
+        [parentForm]="sendQuoter"
+        id="iemail"
+        [name]="'iemail'"
+        [rules]="'email'"
+        [classCustom]="'focus:outline-none text-18px w-auto text-gray-350'"
+        [placeholder]="'send-quoter.input-placeholder' | translate"
+        [testId]="'iemail'"
+      ></app-input>
+    </form>
+  </div>
+  <div class="w-full flex justify-center">
+    <button
+      class="
+        rounded-full
+        text-white text-20px text-center
+        w-56
+        h-12
+        bg-cyan-450
+      "
+    >
+      Enviar
+    </button>
+  </div>
+</app-modal>

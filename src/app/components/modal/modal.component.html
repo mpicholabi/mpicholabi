@@ -22,11 +22,11 @@
         top-0
         float-right
         font-lato-bold
-        text-xl text-gray-closeModal
+        text-28px text-blue-750
         cursor-pointer
         z-10
-        px-6
-        py-4
+        px-7
+        py-5
       "
       (click)="modalService.closeModal()"
     >
@@ -38,6 +38,6 @@
   </div>
 </div>
 <div
-  class="inset-0 bg-black fixed z-30 opacity-50 modal-pro-open"
+  class="inset-0 bg-cyan-450 fixed z-30 opacity-50 modal-pro-open"
   *ngIf="modalService.showModal"
 ></div>
