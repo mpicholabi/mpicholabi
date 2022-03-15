@@ -1,0 +1,37 @@
+<div class="pt-32 pl-36">
+  <h1 class="text-22px text-cyan-450">
+    {{ 'requirement-page.title' | translate }}
+  </h1>
+  <div class="grid grid-cols-1 gap-5 mt-8">
+    <app-card-requirement
+      title="DPI"
+      description="Fotografía DPI de ambos lados (El DPI debe estar vigente y en buen estado)"
+    ></app-card-requirement>
+    <app-card-requirement
+      image="/assets/image/bi-face-color.svg"
+      title="Otro"
+      description="Otro documento de identificación (Ejemplo: licencia de conducir)"
+    ></app-card-requirement>
+    <app-card-requirement
+      image="/assets/image/bi-document-color.svg"
+      title="Recibo"
+      description="Recibo de servicios (agua, luz o teléfono) menor a 3 meses"
+    ></app-card-requirement>
+  </div>
+  <div class="flex justify-center mt-7">
+    <button
+      class="
+        text-white
+        bg-cyan-450
+        hover:bg-cyan-550
+        transition-all
+        delay-150
+        h-12
+        w-56
+        rounded-3xl
+      "
+    >
+      {{ 'common.start' | translate }}
+    </button>
+  </div>
+</div>

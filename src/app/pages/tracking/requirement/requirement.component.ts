@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './request.component.html',
+  templateUrl: './requirement.component.html',
 })
-export class RequestPageComponent {
+export class RequirementPageComponent {
   constructor() {}
 }

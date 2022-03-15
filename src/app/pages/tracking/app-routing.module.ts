@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeTrackingPageComponent } from './home-tracking.component';
-import { RequestPageComponent } from './request/request.component';
+import { RequirementPageComponent } from './requirement/requirement.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'information-request', pathMatch: 'full' },
       {
         path: 'information-request',
-        component: RequestPageComponent,
+        component: RequirementPageComponent,
       },
     ],
   },
