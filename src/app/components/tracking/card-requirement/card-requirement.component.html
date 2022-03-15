@@ -2,8 +2,10 @@
   <div>
     <div
       class="
-        w-153px
-        h-153px
+        lg:w-153px
+        lg:h-153px
+        w-28
+        h-28
         rounded-2xl
         shadow-cardRequirement
         flex flex-col
@@ -11,11 +13,13 @@
         items-center
       "
     >
-      <img class="w-10" [src]="image" alt="" />
+      <img class="w-10 mb-2" [src]="image" alt="" />
       <p class="text-lg font-lato text-gray-350">{{ title }}</p>
     </div>
   </div>
   <div class="flex items-center">
-    <p class="pl-7 w-72 text-lg font-lato text-gray-350">{{ description }}</p>
+    <p class="pl-7 lg:w-72 w-full text-lg font-lato text-gray-350">
+      {{ description }}
+    </p>
   </div>
 </div>
