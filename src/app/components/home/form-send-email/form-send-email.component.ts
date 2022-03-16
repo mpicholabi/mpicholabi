@@ -1,0 +1,64 @@
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-form-send-email',
+  templateUrl: './form-send-email.component.html',
+})
+export class FormSendEmailComponent {
+  sendQuoter!: FormGroup;
+  _level: boolean = false;
+  _both: boolean = false;
+  _balance: boolean = false;
+
+  set level(value: boolean) {
+    if (value && this._balance) {
+      this._both = true;
+    } else if (!value || !this.balance) {
+      this._both = false;
+    }
+    this._level = value;
+  }
+
+  set both(value: boolean) {
+    if (value) {
+      this._level = true;
+      this._balance = true;
+    } else {
+      this._level = false;
+      this._balance = false;
+    }
+    this._both = value;
+  }
+
+  set balance(value: boolean) {
+    if (value && this._level) {
+      this._both = true;
+    } else if (!value || !this.level) {
+      this._both = false;
+    }
+    this._balance = value;
+  }
+
+  get level() {
+    return this._level;
+  }
+
+  get both() {
+    return this._both;
+  }
+
+  get balance() {
+    return this._balance;
+  }
+
+  constructor(private formBuilder: FormBuilder) {
+    this.createForm();
+  }
+
+  createForm(): void {
+    this.sendQuoter = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+    });
+  }
+}
