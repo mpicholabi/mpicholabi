@@ -1,0 +1,77 @@
+<div class="pt-12 lg:px-28 xs:px-4 px-0">
+  <h1
+    class="
+      text-35px
+      xs:text-24px
+      xs:font-bold
+      font-lato font-medium
+      text-cyan-550
+    "
+  >
+    {{ 'send-quoter.modal-title' | translate }}
+  </h1>
+  <p class="text-18px text-gray-450 font-lato font-normal pt-4 pb-11 xs:pb-7">
+    {{ 'send-quoter.modal-description' | translate }}
+  </p>
+  <form autocomplete="off" [formGroup]="sendQuoter">
+    <app-input
+      [parentForm]="sendQuoter"
+      id="iemail"
+      [testId]="'iemail'"
+      [name]="'email'"
+      [rules]="'email'"
+      [placeholder]="'send-quoter.input-placeholder' | translate"
+      [label]="'send-quoter.label-input' | translate"
+      [labelClass]="'text-blue-750 text-22px font-lato font-medium pb-2'"
+    ></app-input>
+    <h1
+      class="font-lato font-medium lg:text-22px text-20px text-blue-750 pt-10"
+    >
+      {{ 'send-email.title-interest' | translate }}
+    </h1>
+    <div class="flex md:flex-row flex-col pt-3">
+      <div class="flex items-center md:pr-9 pr-0 md:pb-0 pb-5">
+        <app-checkbox [(value)]="level" id="checkbox-level"></app-checkbox
+        ><label class="pl-2 text-blue-750">{{
+          'quoter-feature.level-fee' | translate
+        }}</label>
+      </div>
+      <div class="flex items-center md:pr-9 pr-0 md:pb-0 pb-5">
+        <app-checkbox [(value)]="balance" id="checkbox-balance"></app-checkbox
+        ><label class="pl-2 text-blue-750">{{
+          'quoter-feature.balance-fee' | translate
+        }}</label>
+      </div>
+      <div class="flex items-center">
+        <app-checkbox [(value)]="both" id="checkbox-both"></app-checkbox
+        ><label class="pl-2 text-blue-750">{{
+          'quoter-feature.both-fee' | translate
+        }}</label>
+      </div>
+    </div>
+    <div class="w-full flex justify-center pt-6">
+      <button
+        class="
+          rounded-full
+          text-white text-20px text-center
+          w-56
+          xs:w-40
+          h-12
+          xs:h-10
+          xs:text-16px
+          bg-cyan-450
+        "
+        [ngClass]="
+          !sendQuoter.valid || (!this.level && !this.balance && !this.both)
+            ? 'opacity-40'
+            : ''
+        "
+        [disabled]="
+          !sendQuoter.valid && (this.level || this.balance || this.both)
+        "
+      >
+        {{ 'send-email.btn-send' | translate }}
+      </button>
+    </div>
+  </form>
+</div>
