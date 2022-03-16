@@ -1,6 +1,6 @@
 <div class="flex flex-col w-full pb-1 relative" [formGroup]="parentForm">
   <label [ngClass]="labelClass"
-    ><img class="pr-3" *ngIf="icon" [src]="icon" />{{ label }}
+    ><img class="pr-3" *ngIf="icon" [src]="icon" />{{ label }}:
     <span class="pl-1 pt-1" *ngIf="required">*</span></label
   >
   <div class="flex relative">
@@ -15,27 +15,49 @@
       [attr.data-test-id]="testId"
       #inputElement
       (keypress)="validationValue($event)"
-      class="flex w-full"
-      style="border: solid"
+      class="
+        flex
+        w-full
+        focus:outline-none
+        font-lato
+        text-18px text-gray-350
+        xs:text-16px
+        border-b-2
+      "
+      [class]="
+        parentForm.get(name)?.errors &&
+        (parentForm.get(name)?.touched || parentForm.get(name)?.dirty)
+          ? 'border-red-350'
+          : 'border-gray-220'
+      "
     />
     <div
-      class="text-red-300 text-xs font-lato font-semibold absolute"
-      style="border: solid"
+      class="
+        text-red-350 text-xs
+        font-lato font-semibold
+        absolute
+        float-right
+        right-0
+        xs:float-left
+        xs:left-0
+        pt-2
+        xs:pt-8
+      "
       *ngIf="
         parentForm.get(name)?.errors &&
         (parentForm.get(name)?.touched || parentForm.get(name)?.dirty)
       "
     >
       <span *ngIf="parentForm.get(name)?.hasError('required')">
-        El campo {{ label }} es requerido.
+        {{ 'errors.requerid' | translate }}
       </span>
       <span
         *ngIf="parentForm.get(name)?.hasError('pattern') && rules === 'number'"
       >
         El campo admite solo datos numéricos.
       </span>
-      <span *ngIf="parentForm.get(name)?.hasError('pattern')">
-        {{ 'errors.email-invalid' | translate }}
+      <span *ngIf="parentForm.get(name)?.hasError('email')">
+        {{ 'errors.invalid' | translate: { label: label } }}
       </span>
       <span *ngIf="parentForm.get(name)?.hasError('minlength')">
         El mínimo de caracteres es

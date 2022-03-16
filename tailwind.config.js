@@ -37,6 +37,9 @@ module.exports = {
         yellow: {
           logo: '#f4bb48',
         },
+        red:{
+          350: '#FF7272',
+        }
       },
       fontSize: {
         '14px': '0.875rem',
