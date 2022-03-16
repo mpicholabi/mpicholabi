@@ -281,7 +281,7 @@
     <p class="text-18px text-gray-450 font-lato font-normal pt-4 pb-11 xs:pb-7">
       {{ 'send-quoter.modal-description' | translate }}
     </p>
-    <form [formGroup]="sendQuoter">
+    <form autocomplete="off" [formGroup]="sendQuoter">
       <app-input
         [parentForm]="sendQuoter"
         id="iemail"
@@ -299,19 +299,19 @@
       </h1>
       <div class="flex md:flex-row flex-col pt-3">
         <div class="flex items-center md:pr-9 pr-0 md:pb-0 pb-5">
-          <app-checkbox></app-checkbox
+          <app-checkbox id="checkbox-level"></app-checkbox
           ><label class="pl-2 text-blue-750">{{
             'quoter-feature.level-fee' | translate
           }}</label>
         </div>
         <div class="flex items-center md:pr-9 pr-0 md:pb-0 pb-5">
-          <app-checkbox></app-checkbox
+          <app-checkbox id="checkbox-balance"></app-checkbox
           ><label class="pl-2 text-blue-750">{{
             'quoter-feature.balance-fee' | translate
           }}</label>
         </div>
         <div class="flex items-center">
-          <app-checkbox></app-checkbox
+          <app-checkbox id="checkbox-both"></app-checkbox
           ><label class="pl-2 text-blue-750">{{
             'quoter-feature.both-fee' | translate
           }}</label>

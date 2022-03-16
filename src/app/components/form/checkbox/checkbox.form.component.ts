@@ -6,7 +6,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class CheckboxFormComponent {
   @Input()
-  value = false;
+  value: boolean = false;
+
+  @Input()
+  id: string = '';
 
   @Output() valueChange: EventEmitter<boolean> = new EventEmitter();
 
