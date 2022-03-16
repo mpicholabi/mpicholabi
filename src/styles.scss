@@ -52,3 +52,7 @@ button.scrolltop-button {
   transition: all!important;
   transition-duration: 0.3s!important;
 }
+
+.scrolltop-button{
+  z-index: 5 !important;
+}

@@ -40,13 +40,14 @@
     "expires": "Esta oferta expira en…",
     "send-mail": "Enviar al correo",
     "download": "Descargar",
-    "average": "promedio"
+    "average": "promedio",
+    "both-fee": "Ambas"
   },
   "send-quoter": {
     "modal-title": "Enviar cotización por correo",
     "input-placeholder": "Ingresa tu dirección de correo electrónico",
     "modal-description": "Ingresa tu correo y selecciona el tipo de cotización que deseas recibir",
-    "label-input": "Correo electrónico:"
+    "label-input": "Correo electrónico"
   },
   "common": {
     "title-table": "¡No hay datos para mostrar!",
@@ -58,9 +59,12 @@
     "title": "Vas a necesitar…."
   },
   "send-email": {
-    "title-interest": "Tipo de cuota:"
+    "title-interest": "Tipo de cuota:",
+    "btn-send": "Enviar"
+
   },
   "errors": {
-    "email-invalid": "Correo inválido"
+    "invalid": "{{ label }} inválido",
+    "requerid": "Campo requerido"
   }
 }
