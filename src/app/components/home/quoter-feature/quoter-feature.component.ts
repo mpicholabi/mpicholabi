@@ -115,12 +115,13 @@ export class QuoterFeatureComponent implements OnInit {
       amount: [''],
       term: [12],
     });
+
     this.sendQuoter = this.formBuilder.group({
       email: [
         '',
         [
           Validators.required,
-          Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g),
+          Validators.pattern(/[a-z0-9._%+--\.]+@[a-z0-9.-]+\.[a-z]{2,4}$/i),
         ],
       ],
     });
