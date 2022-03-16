@@ -60,7 +60,7 @@
               [class]="isInvalid ? 'text-red-500' : 'text-cyan-450'"
               >{{ 'currency.symbol' | translate }}</label
             >
-            <app-input
+            <app-input-quoter
               [parentForm]="formQuoter"
               id="amount"
               [name]="'amount'"
@@ -72,7 +72,7 @@
               [length]="'7'"
               [testId]="'inumAmount'"
               [isValid]="isInvalid ? 'invalid' : 'normal'"
-            ></app-input>
+            ></app-input-quoter>
           </div>
           <span
             [class]="isInvalid ? 'text-red-500 animate-shake' : 'text-cyan-450'"
@@ -275,15 +275,17 @@
     </p>
     <form [formGroup]="sendQuoter">
       <app-input
-        [label]="'send-quoter.label-input' | translate"
         [parentForm]="sendQuoter"
         id="iemail"
+        [testId]="'iemail'"
         [name]="'email'"
         [rules]="'email'"
-        [required]="true"
-        [classCustom]="'focus:outline-none text-18px w-auto text-gray-350'"
         [placeholder]="'send-quoter.input-placeholder' | translate"
-        [testId]="'iemail'"
+        [classCustom]="
+          'focus:outline-none text-18px w-auto text-gray-350 border-b-2 text-gray-450'
+        "
+        [label]="'send-quoter.label-input' | translate"
+        [labelClass]="'text-blue-750 text-22px font-lato font-medium pb-2'"
       ></app-input>
     </form>
   </div>

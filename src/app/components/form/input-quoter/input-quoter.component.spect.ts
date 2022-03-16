@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { InputTextFormComponent } from './input.form.component';
-import { FormGroup, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { InputQuoterComponent } from './input-quoter.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
-describe('InputTextFormComponent', () => {
-  let component: InputTextFormComponent;
-  let fixture: ComponentFixture<InputTextFormComponent>;
+describe('InputQuoterComponent', () => {
+  let component: InputQuoterComponent;
+  let fixture: ComponentFixture<InputQuoterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [InputTextFormComponent],
+      declarations: [InputQuoterComponent],
       imports: [ReactiveFormsModule, FormsModule],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InputTextFormComponent);
+    fixture = TestBed.createComponent(InputQuoterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     component.ngOnInit();
