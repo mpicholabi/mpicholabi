@@ -34,7 +34,7 @@
       >
         El campo admite solo datos numéricos.
       </span>
-      <span *ngIf="parentForm.get(name)?.hasError('pattern')">
+      <span *ngIf="parentForm.get(name)?.hasError('email')">
         {{ 'errors.email-invalid' | translate }}
       </span>
       <span *ngIf="parentForm.get(name)?.hasError('minlength')">
