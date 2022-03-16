@@ -17,7 +17,6 @@ import { ModalService } from '@/app/services/modal/modal.service';
 })
 export class QuoterFeatureComponent implements OnInit {
   formQuoter!: FormGroup;
-  sendQuoter!: FormGroup;
   subject = new Subject();
   term: number = 12;
   isLoading: boolean = false;
@@ -114,10 +113,6 @@ export class QuoterFeatureComponent implements OnInit {
     this.formQuoter = this.formBuilder.group({
       amount: [''],
       term: [12],
-    });
-
-    this.sendQuoter = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
     });
   }
 
