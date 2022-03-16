@@ -43,10 +43,10 @@
     "average": "promedio"
   },
   "send-quoter": {
-    "modal-title": "Enviar formulario por correo electrónico",
-    "modal-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur augue a eros rutrum.",
+    "modal-title": "Enviar cotización por correo",
     "input-placeholder": "Ingresa tu dirección de correo electrónico",
-    "label-input": "Correo electrónico por defecto"
+    "modal-description": "Ingresa tu correo y selecciona el tipo de cotización que deseas recibir",
+    "label-input": "Correo electrónico:"
   },
   "common": {
     "title-table": "¡No hay datos para mostrar!",
@@ -58,6 +58,9 @@
     "title": "Vas a necesitar…."
   },
   "send-email": {
-    "title-interest": "Cuota a interés"
+    "title-interest": "Tipo de cuota:"
+  },
+  "errors": {
+    "email-invalid": "Correo inválido"
   }
 }

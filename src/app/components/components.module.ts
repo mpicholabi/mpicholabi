@@ -6,11 +6,13 @@ import { NavComponent } from '@/app/components/nav/nav.component';
 import { SharedModule } from '@/app/shared/shared.module';
 import { CardRequirementComponent } from '@/app/components/tracking/card-requirement/card-requirement.component';
 import { CheckboxFormComponent } from '@/app/components/form/checkbox/checkbox.form.component';
+import { InputQuoterComponent } from '@/app/components/form/input-quoter/input-quoter.component';
 
 const components = [
   NavComponent,
   CardRequirementComponent,
   CheckboxFormComponent,
+  InputQuoterComponent,
 ];
 
 @NgModule({
