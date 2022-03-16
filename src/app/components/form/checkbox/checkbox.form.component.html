@@ -1,1 +1,17 @@
-<input />
+<label
+  (click)="toggleValue()"
+  [ngClass]="{ 'bg-cyan-450': value }"
+  class="
+    w-5
+    h-5
+    border border-cyan-450
+    cursor-pointer
+    flex
+    justify-center
+    items-center
+    rounded-3px
+    float-left
+  "
+>
+  <img src="/assets/image/bi-check.svg" alt="Icon check" />
+</label>
