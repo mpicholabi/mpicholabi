@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ModalService } from '@/app/services/modal/modal.service';
+
+enum SendEmail {
+  SUCCESS = 'SUCCESS',
+  INIT = 'INIT',
+  ERROR = 'ERROR',
+}
 
 @Component({
   selector: 'app-form-send-email',
   templateUrl: './form-send-email.component.html',
 })
 export class FormSendEmailComponent {
+  status: SendEmail = SendEmail.INIT;
   sendQuoter!: FormGroup;
   _level: boolean = false;
   _both: boolean = false;
@@ -52,7 +60,10 @@ export class FormSendEmailComponent {
     return this._balance;
   }
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private modalService: ModalService
+  ) {
     this.createForm();
   }
 
@@ -60,5 +71,20 @@ export class FormSendEmailComponent {
     this.sendQuoter = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
     });
+  }
+
+  sendEmailQuoter(): void {
+    this.status = SendEmail.SUCCESS;
+  }
+
+  backToTop(): void {
+    this.sendQuoter.reset();
+    this.status = SendEmail.INIT;
+    this.modalService.closeModal();
+  }
+
+  tryAgain(): void {
+    this.sendQuoter.reset();
+    this.status = SendEmail.INIT;
   }
 }

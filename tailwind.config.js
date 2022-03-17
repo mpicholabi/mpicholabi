@@ -76,6 +76,7 @@ module.exports = {
         '138px': '8.625rem',
         '111px': '6.938rem',
         '199px': '12.438rem',
+        '226px': '14.125rem',
         '310px': '19.375rem',
         '379px': '23.688rem',
         '412px': '25.75rem',
@@ -92,6 +93,7 @@ module.exports = {
       height: {
         '5px': '0.313rem',
         '35px': '2.188rem',
+        '50px': '3.125rem',
         '70px': '4.375rem',
         '71px': '4.438rem',
         '191px': '11.938rem',
