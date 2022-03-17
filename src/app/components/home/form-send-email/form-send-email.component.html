@@ -1,4 +1,4 @@
-<div class="pt-12 lg:px-28 xs:px-4 px-0">
+<div class="lg:py-12 xs:py-0 py-4 lg:px-28 xs:px-4 px-0">
   <div *ngIf="status === 'INIT'">
     <h1
       class="
@@ -11,7 +11,17 @@
     >
       {{ 'send-quoter.modal-title' | translate }}
     </h1>
-    <p class="text-18px text-gray-450 font-lato font-normal pt-4 pb-11 xs:pb-7">
+    <p
+      class="
+        text-18px
+        xs:text-16px
+        text-gray-450
+        font-lato font-normal
+        pt-4
+        pb-11
+        xs:pb-7
+      "
+    >
       {{ 'send-quoter.modal-description' | translate }}
     </p>
     <form autocomplete="off" [formGroup]="sendQuoter">
@@ -68,8 +78,9 @@
               : ''
           "
           [disabled]="
-            !sendQuoter.valid && (this.level || this.balance || this.both)
+            !sendQuoter.valid || (!this.level && !this.balance && !this.both)
           "
+          (click)="sendEmailQuoter()"
         >
           {{ 'send-email.btn-send' | translate }}
         </button>
@@ -82,14 +93,32 @@
         text-35px
         xs:text-24px
         xs:font-bold
+        xs:text-center
         font-lato font-medium
         text-cyan-550
       "
     >
       {{ 'send-email.success' | translate }}
     </h1>
-    <button class="text-white bg-cyan-450 h-50px rounded-3xl w-226px">
-      {{ 'send-email.go-to-home' | translate }}
+    <img
+      class="py-14 xs:py-8- w-20"
+      src="/assets/image/bi-success.svg"
+      alt="icon bi exito"
+    />
+    <button
+      class="
+        text-20px text-white
+        bg-cyan-450
+        rounded-3xl
+        h-50px
+        px-7
+        xs:text-16px
+        xs:h-10
+        xs:px-4
+      "
+      (click)="backToTop()"
+    >
+      {{ 'send-email.btn-success' | translate }}
     </button>
   </div>
   <div class="w-full flex flex-col items-center" *ngIf="status === 'ERROR'">
@@ -99,13 +128,31 @@
         xs:text-24px
         xs:font-bold
         font-lato font-medium
-        text-cyan-550
+        text-cyan-550 text-center
       "
+      [innerHTML]="'send-email.error' | translate"
+    ></h1>
+    <img
+      class="py-14 w-20"
+      src="/assets/image/bi-error.svg"
+      alt="icon bi error"
+    />
+    <button
+      class="
+        text-20px
+        font-lato font-bold
+        text-blue-750
+        no-underline
+        hover:underline
+        h-50px
+        px-7
+        xs:text-16px
+        xs:h-10
+        xs:px-4
+      "
+      (click)="tryAgain()"
     >
-      {{ 'send-email.success' | translate }}
-    </h1>
-    <button class="text-white bg-cyan-450 h-50px rounded-3xl w-226px">
-      {{ 'send-email.go-to-home' | translate }}
+      {{ 'send-email.btn-error' | translate }}
     </button>
   </div>
 </div>

@@ -12,7 +12,7 @@
       [placeholder]="placeholder"
       [formControlName]="name"
       [maxlength]="length"
-      [attr.data-test-id]="testId"
+      [attr.id]="testId"
       #inputElement
       (keypress)="validationValue($event)"
       class="
@@ -38,10 +38,10 @@
         absolute
         float-right
         right-0
+        pt-2
         xs:float-left
         xs:left-0
-        pt-2
-        xs:pt-8
+        xs:mt-6
       "
       *ngIf="
         parentForm.get(name)?.errors &&

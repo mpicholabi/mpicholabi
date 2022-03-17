@@ -62,7 +62,9 @@
     "title-interest": "Tipo de cuota:",
     "btn-send": "Enviar",
     "success": "Enviado al correo con éxito",
-    "go-to-home": "Regresar al principal"
+    "btn-success": "Regresar al principal",
+    "error": "¡Lo sentimos! <br/> No pudimos enviar tu cotización",
+    "btn-error": "¿Deseas intentar de nuevo?"
   },
   "errors": {
     "invalid": "{{ label }} inválido",
