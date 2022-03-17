@@ -1,11 +1,18 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+enum SendEmail {
+  SUCCESS = 'SUCCESS',
+  INIT = 'INIT',
+  ERROR = 'ERROR',
+}
+
 @Component({
   selector: 'app-form-send-email',
   templateUrl: './form-send-email.component.html',
 })
 export class FormSendEmailComponent {
+  status: SendEmail = SendEmail.INIT;
   sendQuoter!: FormGroup;
   _level: boolean = false;
   _both: boolean = false;

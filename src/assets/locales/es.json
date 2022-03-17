@@ -60,8 +60,9 @@
   },
   "send-email": {
     "title-interest": "Tipo de cuota:",
-    "btn-send": "Enviar"
-
+    "btn-send": "Enviar",
+    "success": "Enviado al correo con éxito",
+    "go-to-home": "Regresar al principal"
   },
   "errors": {
     "invalid": "{{ label }} inválido",
