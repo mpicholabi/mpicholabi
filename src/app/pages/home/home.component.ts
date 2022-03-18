@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { environment } from '@/environments/environment';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +6,5 @@ import { environment } from '@/environments/environment';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  public version = process.env.NG_APP_HOST_URL;
-
   constructor() {}
 }

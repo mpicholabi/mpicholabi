@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeTrackingPageComponent } from './home-tracking.component';
-import { RequirementPageComponent } from './requirement/requirement.component';
+import { HomeTrackingPageComponent } from './tracking/home-tracking.component';
+import { RequirementPageComponent } from './tracking/requirement/requirement.component';
+import { FaqPageComponent } from '@/app/pages/faq/faq.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
         component: RequirementPageComponent,
       },
     ],
+  },
+  {
+    path: 'faq',
+    component: FaqPageComponent,
   },
 ];
 

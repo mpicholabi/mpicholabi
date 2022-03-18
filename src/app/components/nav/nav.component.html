@@ -30,7 +30,7 @@
       px-10
     "
   >
-    <a href="home"
+    <a class="cursor-pointer" (click)="goTo('/home')" rel="alternate"
       ><img
         class="w-83px xs:w-10 h-71px xs:h-35px"
         src="assets/image/bi-logo.svg"
@@ -38,16 +38,24 @@
     /></a>
     <div class="flex text-rigth justify-center items-center">
       <a
-        class="text-white text-20px xs:text-18px font-lato mr-11"
-        href="#"
+        class="text-white text-20px cursor-pointer xs:text-18px font-lato mr-11"
+        (click)="goTo('/home')"
+        rel="alternate"
         data-test-id="aPrincipal"
       >
         {{ 'navigation.home' | translate }}
       </a>
       <a
-        class="text-white text-20px xs:text-18px font-lato font-bold"
-        href="#"
+        class="
+          text-white
+          cursor-pointer
+          text-20px
+          xs:text-18px
+          font-lato font-bold
+        "
+        (click)="goTo('/faq')"
         id="aFAQS"
+        rel="alternate"
       >
         {{ 'navigation.faqs' | translate }}
       </a>
