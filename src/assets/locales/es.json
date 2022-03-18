@@ -11,14 +11,15 @@
     "title": "Requisitos y políticas"
   },
   "home-quoter": {
-    "link": "Conoce más sobre Bi fácil",
+    "link": "Conoce más sobre tu Bi-fácil",
     "title": "Calcula el valor de <br class=\"lg:hidden block\"/>tus sueños",
     "description": "Los datos que se muestran son únicamente una proyección de la cuota nivelada estimada.",
     "input-description": "Ingresa monto desde Q3,000 hasta Q50,000",
     "label-amount": "Quiero un monto de",
     "label-range": "En cuantos meses lo quiero pagar",
     "fee": "Cuota",
-    "label-fee": "Se hará el débito a tu cuenta monetaria"
+    "label-fee": "Se hará el débito a tu cuenta monetaria",
+    "apply-now": "¡Quiero solicitarlo!"
   },
   "currency": {
     "name": "Quetzal",
@@ -41,7 +42,9 @@
     "send-mail": "Enviar al correo",
     "download": "Descargar",
     "average": "promedio",
-    "both-fee": "Ambas"
+    "both-fee": "Ambas",
+    "apply-now": "¡Quiero solicitar mi Bi Fácil!",
+    "apply-now-short": "Solicitar ahora"
   },
   "send-quoter": {
     "modal-title": "Enviar cotización por correo",
@@ -72,6 +75,7 @@
   },
   "navigation": {
     "faqs": "FAQS",
-    "home": "Principal"
+    "home": "Principal",
+    "apply-now": "Solicitarlo ahora"
   }
 }

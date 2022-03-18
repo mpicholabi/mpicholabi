@@ -13,7 +13,7 @@ enum SendEmail {
   templateUrl: './form-send-email.component.html',
 })
 export class FormSendEmailComponent {
-  status: SendEmail = SendEmail.INIT;
+  status: SendEmail = SendEmail.ERROR;
   sendQuoter!: FormGroup;
   _level: boolean = false;
   _both: boolean = false;

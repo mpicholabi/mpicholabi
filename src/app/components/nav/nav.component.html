@@ -38,7 +38,7 @@
     /></a>
     <div class="flex text-rigth justify-center items-center">
       <a
-        class="text-white text-20px cursor-pointer xs:text-18px font-lato mr-11"
+        class="text-white text-20px cursor-pointer xs:text-16px font-lato"
         (click)="goTo('/home')"
         rel="alternate"
         data-test-id="aPrincipal"
@@ -50,14 +50,37 @@
           text-white
           cursor-pointer
           text-20px
-          xs:text-18px
+          xs:text-16px
           font-lato font-bold
+          ml-11
+          xs:ml-5
         "
         (click)="goTo('/faq')"
         id="aFAQS"
         rel="alternate"
       >
         {{ 'navigation.faqs' | translate }}
+      </a>
+      <a
+        class="
+          text-white
+          cursor-pointer
+          text-20px
+          xs:text-16px
+          font-lato
+          border-white border-2
+          rounded-3xl
+          py-3
+          xs:py-1
+          px-5
+          xs:px-1
+          ml-11
+          xs:ml-5
+        "
+        id="aApplyNow"
+        rel="alternate"
+      >
+        {{ 'navigation.apply-now' | translate }}
       </a>
     </div>
   </div>
