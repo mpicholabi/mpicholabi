@@ -69,5 +69,9 @@
   "errors": {
     "invalid": "{{ label }} inválido",
     "requerid": "Campo requerido"
+  },
+  "navigation": {
+    "faqs": "FAQS",
+    "home": "Principal"
   }
 }

@@ -37,11 +37,20 @@
         alt="Logo BI"
     /></a>
     <div class="flex text-rigth justify-center items-center">
-      <a href="#" data-test-id="aPrincipal"
-        ><h1 class="text-white text-20px xs:text-18px font-lato">
-          Principal
-        </h1></a
+      <a
+        class="text-white text-20px xs:text-18px font-lato mr-11"
+        href="#"
+        data-test-id="aPrincipal"
       >
+        {{ 'navigation.home' | translate }}
+      </a>
+      <a
+        class="text-white text-20px xs:text-18px font-lato font-bold"
+        href="#"
+        id="aFAQS"
+      >
+        {{ 'navigation.faqs' | translate }}
+      </a>
     </div>
   </div>
 </nav>
