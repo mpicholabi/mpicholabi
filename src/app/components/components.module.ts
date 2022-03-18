@@ -9,6 +9,7 @@ import { CheckboxFormComponent } from '@/app/components/form/checkbox/checkbox.f
 import { InputQuoterComponent } from '@/app/components/form/input-quoter/input-quoter.component';
 import { FormSendEmailComponent } from '@/app/components/home/form-send-email/form-send-email.component';
 import { InputComponent } from '@/app/components/form/input/input.component';
+import { GoToRouteDirective } from '@/app/utils/directives/navigation.directive';
 
 const components = [
   NavComponent,
@@ -17,6 +18,7 @@ const components = [
   CheckboxFormComponent,
   InputQuoterComponent,
   FormSendEmailComponent,
+  GoToRouteDirective,
 ];
 
 @NgModule({

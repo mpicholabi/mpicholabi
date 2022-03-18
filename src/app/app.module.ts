@@ -27,30 +27,32 @@ registerLocaleData(guatemala, 'es-guatemala');
 import { HomeComponent } from '@/app/pages/home/home.component';
 import { AppComponent } from '@/app/app.component';
 import { environment } from '@/environments/environment';
-import { CardComponent } from './components/card/card.component';
-import { HomeBenefitComponent } from './components/home/home-benefit/home-benefit.component';
-import { HomeProductComponent } from './components/home/home-product/home-product.component';
-import { ProductFeatureComponent } from './components/home/product-feature/product-feature.component';
-import { HomeRequirementComponent } from './components/home/home-requirement/home-requirement.component';
-import { RequirementFeatureComponent } from './components/home/requirement-feature/requirement-feature.component';
-import { HomeHeaderComponent } from './components/home/home-header/home-header.component';
-import { HomeQuoterComponent } from './components/home/home-quoter/home-quoter.component';
-import { SliderRangeComponent } from './components/form/slider-range/slider-range.component';
-import { ApproximateFeeComponent } from './components/home/approximate-fee/approximate-fee.component';
-import { quoterReducer } from './store/quoter.reducer';
-import { LoadingComponent } from './components/loading/loading.component';
-import { QuoterFeatureComponent } from './components/home/quoter-feature/quoter-feature.component';
-import { TableComponent } from './components/table/table.component';
-import { HomeBalanceComponent } from './components/home/home-balance/home-balance.component';
-import { SwitchComponent } from './components/switch/switch.component';
-import { FormatNumberDirective } from './utils/directives/format-number.directive';
-import { ModalComponent } from './components/modal/modal.component';
+import { CardComponent } from '@/app/components/card/card.component';
+import { HomeBenefitComponent } from '@/app/components/home/home-benefit/home-benefit.component';
+import { HomeProductComponent } from '@/app/components/home/home-product/home-product.component';
+import { ProductFeatureComponent } from '@/app/components/home/product-feature/product-feature.component';
+import { HomeRequirementComponent } from '@/app/components/home/home-requirement/home-requirement.component';
+import { RequirementFeatureComponent } from '@/app/components/home/requirement-feature/requirement-feature.component';
+import { HomeHeaderComponent } from '@/app/components/home/home-header/home-header.component';
+import { HomeQuoterComponent } from '@/app/components/home/home-quoter/home-quoter.component';
+import { SliderRangeComponent } from '@/app/components/form/slider-range/slider-range.component';
+import { ApproximateFeeComponent } from '@/app/components/home/approximate-fee/approximate-fee.component';
+import { quoterReducer } from '@/app/store/quoter.reducer';
+import { LoadingComponent } from '@/app/components/loading/loading.component';
+import { QuoterFeatureComponent } from '@/app/components/home/quoter-feature/quoter-feature.component';
+import { TableComponent } from '@/app/components/table/table.component';
+import { HomeBalanceComponent } from '@/app/components/home/home-balance/home-balance.component';
+import { SwitchComponent } from '@/app/components/switch/switch.component';
+import { FormatNumberDirective } from '@/app/utils/directives/format-number.directive';
+import { GoToRouteDirective } from '@/app/utils/directives/navigation.directive';
+import { ModalComponent } from '@/app/components/modal/modal.component';
 import {
   HttpLoaderFactory,
   TrackingModules,
 } from '@/app/pages/tracking/tracking.modules';
-import { ComponentsModule } from './components/components.module';
-import { SharedModule } from './shared/shared.module';
+import { FaqModules } from '@/app/pages/faq/faq.modules';
+import { ComponentsModule } from '@/app/components/components.module';
+import { SharedModule } from '@/app/shared/shared.module';
 
 registerLocaleData(guatemala, 'es-guatemala');
 
@@ -102,6 +104,7 @@ registerLocaleData(guatemala, 'es-guatemala');
     TrackingModules,
     ComponentsModule,
     SharedModule,
+    FaqModules,
   ],
   exports: [TranslateModule, CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

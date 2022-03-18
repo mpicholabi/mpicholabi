@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { windowWhen } from 'rxjs/operators';
 
 @Component({
@@ -12,11 +13,15 @@ export class NavComponent {
 
   handlerScroll(): void {
     window.addEventListener('scroll', () => {
-      this.isScrolled = window.scrollY > 3;
+      this.isScrolled = window ? window.scrollY > 3 : false;
     });
   }
 
-  constructor() {
+  constructor(private router: Router) {
     this.handlerScroll();
+  }
+
+  goTo(path: string): void {
+    this.router.navigate([path]);
   }
 }

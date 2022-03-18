@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: 'tracking',
     loadChildren: () =>
-      import('./pages/tracking/tracking.modules').then(
+      import('@/app/pages/tracking/tracking.modules').then(
         (m) => m.TrackingModules
       ),
   },
