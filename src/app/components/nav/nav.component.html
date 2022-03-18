@@ -2,6 +2,7 @@
   class="
     flex
     fixed
+    top-0
     justify-center
     z-20
     w-full
@@ -10,11 +11,13 @@
     transition
     duration-500
   "
-  [ngClass]="[
-    isScrolled
-      ? 'bg-blue-750'
-      : 'bg-opacity-0 border-solid border-white border-b-2'
-  ]"
+  [class]="
+    isTransparent
+      ? isScrolled
+        ? 'bg-blue-750'
+        : 'bg-opacity-0 border-solid border-white border-b-2'
+      : 'bg-blue-750'
+  "
 >
   <div
     class="
@@ -27,18 +30,39 @@
       px-10
     "
   >
-    <a href="home"
+    <a
+      class="cursor-pointer"
+      id="page-logo-home"
+      (click)="goTo('/home')"
+      rel="alternate"
       ><img
         class="w-83px xs:w-10 h-71px xs:h-35px"
         src="assets/image/bi-logo.svg"
         alt="Logo BI"
     /></a>
     <div class="flex text-rigth justify-center items-center">
-      <a href="#" data-test-id="aPrincipal"
-        ><h1 class="text-white text-20px xs:text-18px font-lato">
-          Principal
-        </h1></a
+      <a
+        class="text-white text-20px cursor-pointer xs:text-18px font-lato mr-11"
+        (click)="goTo('/home')"
+        rel="alternate"
+        id="page-home"
       >
+        {{ 'navigation.home' | translate }}
+      </a>
+      <a
+        class="
+          text-white
+          cursor-pointer
+          text-20px
+          xs:text-18px
+          font-lato font-bold
+        "
+        (click)="goTo('/faq')"
+        id="page-faqs"
+        rel="alternate"
+      >
+        {{ 'navigation.faq' | translate }}
+      </a>
     </div>
   </div>
 </nav>

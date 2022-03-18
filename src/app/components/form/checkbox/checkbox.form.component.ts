@@ -1,38 +1,22 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-post',
+  selector: 'app-checkbox',
   templateUrl: './checkbox.form.component.html',
 })
 export class CheckboxFormComponent {
   @Input()
-  primary = false;
+  value: boolean = false;
 
-  /**
-   * What background color to use
-   */
   @Input()
-  backgroundColor?: string = '';
+  id: string = '';
 
-  /**
-   * How large should the button be?
-   */
-  @Input()
-  size: 'small' | 'medium' | 'large' = 'medium';
+  @Output() valueChange: EventEmitter<boolean> = new EventEmitter();
 
-  /**
-   * Button contents
-   *
-   * @required
-   */
-  @Input()
-  label = 'Button';
-
-  /**
-   * Optional click handler
-   */
-  @Output()
-  Click = new EventEmitter<Event>();
+  toggleValue(): void {
+    this.value = !this.value;
+    this.valueChange.emit(this.value);
+  }
 
   constructor() {}
 }

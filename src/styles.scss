@@ -6,6 +6,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
 
+
+.modal-open{
+  @apply overflow-hidden;
+}
+
 .title-1 {
   @apply text-45px xs:text-28px font-lato text-blue-750 font-bold;
 }
@@ -30,6 +35,7 @@ button.scrolltop-button {
 .p-slider-range {
   background-color: #00C1D4!important;
   height: 5px!important;
+  left: -2px!important;
   z-index: 1;
 }
 
@@ -44,5 +50,9 @@ button.scrolltop-button {
 
 .animation-touched, .p-slider-handle, .p-slider-range {
   transition: all!important;
-  transition-duration: 0.5s!important;
+  transition-duration: 0.3s!important;
+}
+
+.scrolltop-button{
+  z-index: 5 !important;
 }

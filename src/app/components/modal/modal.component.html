@@ -1,0 +1,32 @@
+<div
+  class="inset-0 fixed z-40 flex justify-center items-center"
+  *ngIf="modalService.showModal"
+>
+  <div
+    class="
+      lg:w-952px
+      min-w-100px min-h-100px
+      max-h-90vh max-w-90vw
+      w-11/12
+      bg-white
+      rounded-35px
+      absolute
+      overflow-auto
+      no-scrollbar
+    "
+  >
+    <img
+      class="sticky cursor-pointer top-0 float-right z-1 px-7 py-7"
+      src="/assets/image/bi-close.svg"
+      alt="bi-close"
+      (click)="modalService.closeModal()"
+    />
+    <div class="h-full relative xs:px-6 px-10 py-10 xs:py-6">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
+<div
+  class="inset-0 bg-cyan-450 fixed z-30 opacity-50 modal-pro-open"
+  *ngIf="modalService.showModal"
+></div>

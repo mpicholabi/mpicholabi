@@ -7,6 +7,7 @@ import { QuoterCalculateInterface } from '@/app/interfaces/quoter/quoterCalculat
 const initialState: QuoterCalculateInterface = {
   amount: '',
   term: 12,
+  fee: 1500,
 };
 
 // 3 - Switch con las funciones puras

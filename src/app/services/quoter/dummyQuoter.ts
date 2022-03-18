@@ -10,6 +10,7 @@ export const dummyQuoter: ResponseApiInterface<
     quotationBalance: {
       quotationProductId: 1,
       quotationType: 0,
+      QuotationMonthlyPayment: 1500,
       quotationDetails: [
         {
           quotationNumber: 1,
@@ -30,6 +31,7 @@ export const dummyQuoter: ResponseApiInterface<
     quotationLeveled: {
       quotationProductId: 1,
       quotationType: 1,
+      QuotationMonthlyPayment: 1500,
       quotationDetails: [
         {
           quotationNumber: 1,

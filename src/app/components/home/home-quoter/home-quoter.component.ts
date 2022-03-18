@@ -17,6 +17,8 @@ export class HomeQuoterComponent {
   subject = new Subject();
   term: number = 12;
   isLoading: boolean = false;
+  isInvalid: boolean = false;
+  fee: number | string = 1500;
 
   goToProduct(): void {
     scrollToTop('#homeProduct', 95);
@@ -41,6 +43,7 @@ export class HomeQuoterComponent {
         this.term = quoter.term;
         this.formQuoter.get('term')?.setValue(quoter.term);
       }
+      this.fee = quoter.fee;
     });
   }
 
@@ -52,12 +55,14 @@ export class HomeQuoterComponent {
   changeFormValue(): void {
     this.formQuoter
       .get('amount')
-      ?.valueChanges.pipe(debounceTime(500), distinctUntilChanged())
+      ?.valueChanges.pipe(debounceTime(3000), distinctUntilChanged())
       .subscribe((value) => {
+        this.isInvalid = (value < 3000 || value > 50000) && value !== '';
         if (!!value && value > 200) {
           this.saveQuoter({
             amount: value,
             term: this.formQuoter.get('term')?.value,
+            fee: this.fee,
           });
         }
       });
@@ -71,6 +76,7 @@ export class HomeQuoterComponent {
             ? this.formQuoter.get('amount')?.value
             : 0,
           term: value,
+          fee: this.fee,
         });
       });
   }

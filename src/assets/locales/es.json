@@ -14,7 +14,7 @@
     "link": "Conoce más sobre Bi fácil",
     "title": "Calcula el valor de <br class=\"lg:hidden block\"/>tus sueños",
     "description": "Los datos que se muestran son únicamente una proyección de la cuota nivelada estimada.",
-    "input-description": "Ingresa monto desde Q3,000 hasta Q500,000",
+    "input-description": "Ingresa monto desde Q3,000 hasta Q50,000",
     "label-amount": "Quiero un monto de",
     "label-range": "En cuantos meses lo quiero pagar",
     "fee": "Cuota",
@@ -22,10 +22,13 @@
   },
   "currency": {
     "name": "Quetzal",
+    "code": "GTQ",
     "symbol": "Q"
   },
   "quoter-feature": {
-    "title": "Plan de pago para crédito Bi-fácil de Q10,200<br class=0\"lg:block hidden\" /> pagando a 10 meses a cuotas de Q1,020",
+    "title-empty-amount": "Ingresa un monto para conocer tu proyección de cuota promedio",
+    "title-level-fee": "Plan de pago para crédito Bi-fácil de <span id='spanAmount'>{{amount}}</span><br class='lg:block hidden'/> pagando a <span id='spanTerm'>{{term}}</span> meses a cuotas de <span id='spanFee'>{{fee}}</span>",
+    "title-balance-fee": "Plan de pago para crédito Bi-fácil de <span id='spanAmount'>{{amount}}</span><br class='lg:block hidden'/> pagando a <span id='spanTerm'>{{term}}</span> meses a cuotas promedio de <span id='spanFee'>{{fee}}</span>",
     "level-fee": "Cuota nivelada",
     "xs-level-fee": "Nivelada",
     "description-level-fee": "Tipo de cuota que se calcula sobre el saldo de capital cada mes, el valor de tu cuota mensual será la misma todos los meses durante la vigencia de tu préstamo.",
@@ -36,11 +39,39 @@
     "remember": "(Te recordamos que las cuotas están basadas únicamente en una proyección)",
     "expires": "Esta oferta expira en…",
     "send-mail": "Enviar al correo",
-    "download": "Descargar"
+    "download": "Descargar",
+    "average": "promedio",
+    "both-fee": "Ambas"
+  },
+  "send-quoter": {
+    "modal-title": "Enviar cotización por correo",
+    "input-placeholder": "Ingresa tu dirección de correo electrónico",
+    "modal-description": "Ingresa tu correo y selecciona el tipo de cotización que deseas recibir",
+    "label-input": "Correo electrónico"
   },
   "common": {
     "title-table": "¡No hay datos para mostrar!",
-    "description-table": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus libero at aliquet aliquam. Quisque placerat lectus et malesuada tincidunt.",
-    "show-more": "Ver más cuotas"
+    "description-table": "Ingresa un monto para conocer tu proyección de cuota promedio.",
+    "show-more": "Ver más cuotas",
+    "start": "Comencemos"
+  },
+  "requirement-page": {
+    "title": "Vas a necesitar…."
+  },
+  "send-email": {
+    "title-interest": "Tipo de cuota:",
+    "btn-send": "Enviar",
+    "success": "Enviado al correo con éxito",
+    "btn-success": "Regresar al principal",
+    "error": "¡Lo sentimos! <br/> No pudimos enviar tu cotización",
+    "btn-error": "¿Deseas intentar de nuevo?"
+  },
+  "errors": {
+    "invalid": "{{ label }} inválido",
+    "requerid": "Campo requerido"
+  },
+  "navigation": {
+    "faq": "FAQS",
+    "home": "Principal"
   }
 }

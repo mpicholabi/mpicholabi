@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AppState } from '@/app/app.state';
 import { Store } from '@ngrx/store';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -7,7 +7,9 @@ import { QuoterCalculateInterface } from '@/app/interfaces/quoter/quoterCalculat
 import * as QuoterAction from '@/app/store/quoter.actions';
 import { Subject } from 'rxjs';
 import { dataDummy } from './dataDummy';
-
+import { CurrencyPipe } from '@angular/common';
+import { jsPDF } from 'jspdf';
+import { ModalService } from '@/app/services/modal/modal.service';
 @Component({
   selector: 'app-quoter-feature',
   templateUrl: './quoter-feature.component.html',
@@ -26,6 +28,8 @@ export class QuoterFeatureComponent implements OnInit {
   totalPage: number = 0;
   perPage: number = 4;
   isQuoterLevel: boolean = true;
+  isInvalid: boolean = false;
+  fee: number | string = '';
 
   changeTerm(event: number): void {
     this.formQuoter.get('term')?.setValue(event);
@@ -53,7 +57,9 @@ export class QuoterFeatureComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    private currencyPipe: CurrencyPipe,
+    private modalService: ModalService
   ) {
     this.createForm();
     this.changeFormValue();
@@ -66,6 +72,7 @@ export class QuoterFeatureComponent implements OnInit {
         this.term = quoter.term;
         this.formQuoter.get('term')?.setValue(quoter.term);
       }
+      this.fee = quoter.fee;
     });
   }
 
@@ -76,12 +83,14 @@ export class QuoterFeatureComponent implements OnInit {
   changeFormValue(): void {
     this.formQuoter
       .get('amount')
-      ?.valueChanges.pipe(debounceTime(500), distinctUntilChanged())
+      ?.valueChanges.pipe(debounceTime(3000), distinctUntilChanged())
       .subscribe((value) => {
+        this.isInvalid = (value < 3000 || value > 50000) && value !== '';
         if (!!value && value > 200) {
           this.saveQuoter({
             amount: value,
             term: this.formQuoter.get('term')?.value,
+            fee: this.fee,
           });
         }
       });
@@ -95,6 +104,7 @@ export class QuoterFeatureComponent implements OnInit {
             ? this.formQuoter.get('amount')?.value
             : 0,
           term: value,
+          fee: this.fee,
         });
       });
   }
@@ -104,6 +114,29 @@ export class QuoterFeatureComponent implements OnInit {
       amount: [''],
       term: [12],
     });
+  }
+
+  formatCurrency(key: number | string): string {
+    return this.currencyPipe.transform(key, 'GTQ', 'symbol') || '';
+  }
+
+  downloadQuoter(): void {
+    const doc = new jsPDF();
+    if (this.isQuoterLevel) {
+      doc.text('¡Cotizacion cuota nivelada!', 10, 10);
+      doc.save('Cuota-nivelada.pdf');
+    } else {
+      doc.text('¡Cotizacion cuota sobre saldos!', 10, 10);
+      doc.save('Cuota-sobre-saldos.pdf');
+    }
+  }
+
+  openModal() {
+    this.modalService.openModal();
+  }
+
+  closeModal() {
+    this.modalService.closeModal();
   }
 
   ngOnInit(): void {

@@ -4,11 +4,18 @@ import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
-  {path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  {
+    path: 'tracking',
+    loadChildren: () =>
+      import('@/app/pages/tracking/tracking.modules').then(
+        (m) => m.TrackingModules
+      ),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

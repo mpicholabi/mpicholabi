@@ -1,18 +1,26 @@
 <div class="flex flex-col w-full pb-1" [formGroup]="parentForm">
-  <label class="text-gray-550 font-light text-sm pb-2 flex items-center"
+  <label
+    class="text-blue-750 font-lato font-medium text-22px pb-2 flex items-center"
     ><img class="pr-3" *ngIf="icon" [src]="icon" />{{ label }}
     <span class="pl-1 pt-1" *ngIf="required">*</span></label
   >
   <input
-    [class]="classCustom"
+    [class]="
+      isValid === 'invalid'
+        ? 'border-b-2 border-red-500'
+        : 'border-b-2 border-cyan-450'
+    "
+    [ngClass]="classCustom"
     [name]="name"
     [type]="type"
+    autocomplete="off"
     [placeholder]="placeholder"
     [formControlName]="name"
     [maxlength]="length"
     [attr.data-test-id]="testId"
     #inputElement
     (keypress)="validationValue($event)"
+    appFormatNumber
   />
   <div
     class="text-red-300 text-xs font-semibold flex flex-col"

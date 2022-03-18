@@ -12,7 +12,27 @@
 >
   <div class="lg:max-w-1194px w-full relative z-1 flex flex-col items-center">
     <h1
-      [innerHTML]="'quoter-feature.title' | translate"
+      id="h1TitleQuoter"
+      [innerHTML]="
+        formQuoter.get('amount')?.value === '' ||
+        formQuoter.get('amount')?.value <= 0
+          ? ('quoter-feature.title-empty-amount' | translate)
+          : isQuoterLevel
+          ? ('quoter-feature.title-level-fee'
+            | translate
+              : {
+                  amount: formatCurrency(formQuoter.get('amount')?.value),
+                  term: formQuoter.get('term')?.value,
+                  fee: formatCurrency(fee)
+                })
+          : ('quoter-feature.title-balance-fee'
+            | translate
+              : {
+                  amount: formatCurrency(formQuoter.get('amount')?.value),
+                  term: formQuoter.get('term')?.value,
+                  fee: formatCurrency(fee)
+                })
+      "
       class="
         font-lato
         w-full
@@ -36,33 +56,29 @@
           >
           <div class="relative">
             <label
-              class="
-                absolute
-                left-0
-                top-2
-                text-cyan-450
-                2xl:text-42px
-                text-24px
-                font-lato
-              "
+              class="absolute left-0 top-2 2xl:text-42px text-24px font-lato"
+              [class]="isInvalid ? 'text-red-500' : 'text-cyan-450'"
               >{{ 'currency.symbol' | translate }}</label
             >
-            <app-input
+            <app-input-quoter
               [parentForm]="formQuoter"
               id="amount"
               [name]="'amount'"
               [rules]="'decimal'"
               [classCustom]="
-                'border-b-2 border-cyan-450 focus:outline-none pl-12 xs:pl-8 2xl:text-42px text-24px w-full text-gray-350'
+                'focus:outline-none pl-12 xs:pl-8 2xl:text-42px text-24px w-full text-gray-350'
               "
               [placeholder]="'0.00'"
-              [length]="'9'"
+              [length]="'7'"
               [testId]="'inumAmount'"
-            ></app-input>
+              [isValid]="isInvalid ? 'invalid' : 'normal'"
+            ></app-input-quoter>
           </div>
-          <span class="font-lato font-semibold text-14px text-cyan-450">{{
-            'home-quoter.input-description' | translate
-          }}</span>
+          <span
+            [class]="isInvalid ? 'text-red-500 animate-shake' : 'text-cyan-450'"
+            class="font-lato font-semibold absolute text-sm"
+            >{{ 'home-quoter.input-description' | translate }}</span
+          >
         </div>
         <div class="flex flex-col lg:w-auto w-full lg:pt-10 xs:pt-1 lg:pr-28">
           <label
@@ -137,8 +153,10 @@
       <div class="flex items-center xs:justify-center">
         <button
           class="
-            inline-flex
-            pr-8
+            lg:inline-flex
+            lg:pr-8
+            md:inline-flex
+            md:pr-8
             xs:flex xs:flex-col
             xs:items-center
             xs:px-4
@@ -148,6 +166,7 @@
           (mouseover)="hoverMail = true"
           (mouseleave)="hoverMail = false"
           id="btnSendMail"
+          (click)="openModal()"
         >
           <img
             [hidden]="hoverMail"
@@ -165,7 +184,8 @@
         </button>
         <button
           class="
-            inline-flex
+            lg:inline-flex
+            md:inline-flex
             xs:flex xs:flex-col
             xs:items-center
             xs:px-4
@@ -175,6 +195,7 @@
           (mouseover)="hoverDownload = true"
           (mouseleave)="hoverDownload = false"
           id="btnDownload"
+          (click)="downloadQuoter()"
         >
           <img
             [hidden]="hoverDownload"
@@ -192,7 +213,7 @@
         </button>
       </div>
     </div>
-    <div [hidden]="!isQuoterLevel" class="w-full lg:mt-12 mt-5 relative z-1">
+    <div [hidden]="!isQuoterLevel" class="w-full mt-12 md:mt-6 xs:mt-5">
       <app-table
         id="level-fee"
         [headers]="[
@@ -215,7 +236,7 @@
         >
       </div>
     </div>
-    <div [hidden]="isQuoterLevel" class="w-full mt-12 xs:mt-5 relative z-1">
+    <div [hidden]="isQuoterLevel" class="w-full mt-12 xs:mt-5">
       <app-table
         id="level-salary"
         [headers]="[
@@ -240,6 +261,10 @@
   <img
     class="absolute w-44 left-9 bottom-3 z-0 2xl:block hidden"
     src="/assets/image/bi-quoter-bg-blue.svg"
-    alt="quarer blue and yellow"
+    alt="quarter blue and yellow"
   />
 </section>
+
+<app-modal>
+  <app-form-send-email></app-form-send-email>
+</app-modal>
