@@ -13,6 +13,7 @@ import { Router, Routes } from '@angular/router';
 import { NavComponent } from './nav.component';
 import { HomeComponent } from '@/app/pages/home/home.component';
 import { FaqPageComponent } from '@/app/pages/faq/faq.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('NavComponent', () => {
   let component: NavComponent;
@@ -33,6 +34,7 @@ describe('NavComponent', () => {
         TranslateModule.forRoot(),
         RouterTestingModule.withRoutes(routes),
       ],
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   });
 
