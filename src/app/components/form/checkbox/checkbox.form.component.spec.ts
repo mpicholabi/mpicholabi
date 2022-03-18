@@ -1,18 +1,25 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 
-import { CheckboxFormComponent } from './checkbox.form.component'
+import { CheckboxFormComponent } from './checkbox.form.component';
 
 describe('CheckboxFormComponent when tested directly', () => {
   let component: CheckboxFormComponent;
   let fixture: ComponentFixture<CheckboxFormComponent>;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [CheckboxFormComponent],
     });
     fixture = TestBed.createComponent(CheckboxFormComponent);
+    component = fixture.componentInstance;
   });
 
   it('Should create component', () => {
     expect(fixture.componentInstance).toBeDefined();
+  });
+
+  it('Should change value', () => {
+    component.toggleValue();
+    expect(component.value).toBe(true);
   });
 });
