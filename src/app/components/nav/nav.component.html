@@ -30,7 +30,11 @@
       px-10
     "
   >
-    <a class="cursor-pointer" (click)="goTo('/home')" rel="alternate"
+    <a
+      class="cursor-pointer"
+      id="page-logo-home"
+      (click)="goTo('/home')"
+      rel="alternate"
       ><img
         class="w-83px xs:w-10 h-71px xs:h-35px"
         src="assets/image/bi-logo.svg"
@@ -41,7 +45,7 @@
         class="text-white text-20px cursor-pointer xs:text-18px font-lato mr-11"
         (click)="goTo('/home')"
         rel="alternate"
-        data-test-id="aPrincipal"
+        id="page-home"
       >
         {{ 'navigation.home' | translate }}
       </a>
@@ -54,10 +58,10 @@
           font-lato font-bold
         "
         (click)="goTo('/faq')"
-        id="aFAQS"
+        id="page-faqs"
         rel="alternate"
       >
-        {{ 'navigation.faqs' | translate }}
+        {{ 'navigation.faq' | translate }}
       </a>
     </div>
   </div>
