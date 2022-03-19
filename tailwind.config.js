@@ -60,8 +60,6 @@ module.exports = {
           },
         ],
       },
-      borderRadius: {
-      },
       width: {
         '50px': '3.125rem',
         '59px': '3.688rem',

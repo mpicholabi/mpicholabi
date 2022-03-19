@@ -13,4 +13,4 @@ const Template: Story<CheckboxFormComponent> = (args: CheckboxFormComponent) => 
   props: args,
 });
 
-export const Primary = Template.bind({});
+export const Primary = () => Template.bind({});
