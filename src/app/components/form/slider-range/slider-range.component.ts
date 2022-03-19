@@ -5,7 +5,6 @@ import {
   EventEmitter,
   ViewChild,
   ElementRef,
-  OnInit,
   AfterViewInit,
 } from '@angular/core';
 import { FormGroup } from '@angular/forms';

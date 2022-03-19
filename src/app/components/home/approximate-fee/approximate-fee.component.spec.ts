@@ -3,7 +3,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LoadingComponent } from '@/app/components/loading/loading.component';
 import { ApproximateFeeComponent } from './approximate-fee.component';
 import { CurrencyPipe } from '@angular/common';
-import { ComponentRef } from '@angular/core';
 
 describe('ApproximateFeeComponent', () => {
   let component: ApproximateFeeComponent;
