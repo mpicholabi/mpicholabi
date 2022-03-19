@@ -1,5 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID } from '@angular/core';
-import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import {
@@ -44,7 +44,6 @@ import { TableComponent } from '@/app/components/table/table.component';
 import { HomeBalanceComponent } from '@/app/components/home/home-balance/home-balance.component';
 import { SwitchComponent } from '@/app/components/switch/switch.component';
 import { FormatNumberDirective } from '@/app/utils/directives/format-number.directive';
-import { GoToRouteDirective } from '@/app/utils/directives/navigation.directive';
 import { ModalComponent } from '@/app/components/modal/modal.component';
 import {
   HttpLoaderFactory,

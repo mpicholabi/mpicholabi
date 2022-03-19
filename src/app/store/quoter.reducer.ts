@@ -1,4 +1,4 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import { createReducer, on } from '@ngrx/store';
 
 import * as quoterCalculate from '@/app/store/quoter.actions';
 import { QuoterCalculateInterface } from '@/app/interfaces/quoter/quoterCalculate';
