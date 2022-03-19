@@ -39,7 +39,7 @@ export class InputComponent implements OnInit {
     const { value } = this.inputElement.nativeElement;
     const valueWord = `${value}${event.key}`;
     if (this.rules === 'string') {
-      const regex = /^(([A-záéíóúñÁÉÍÓÚÑ])|([a-z])+( ))+$/g;
+      const regex = /^(([A-Za-záéíóúñÁÉÍÓÚÑ])|([a-z])+( ))+$/g;
       if (!regex.test(valueWord)) {
         return false;
       } else {
