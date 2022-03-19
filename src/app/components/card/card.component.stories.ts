@@ -10,7 +10,7 @@ const Template: Story<CardComponent> = (args: CardComponent) => ({
   props: args,
 });
 
-export const base = Template.bind({
+export const base = () => Template.bind({
   imagen: 'https://th.bing.com/th/id/OIP.xWj6UEyANz7ZBdW23pSt2wHaHa?pid=ImgDet&rs=1',
   description: 'Logo banco industrial',
 });

@@ -10,7 +10,7 @@ const Template: Story<InputComponent> = (args: InputComponent) => ({
   props: args,
 });
 
-export const base = Template.bind({
+export const base = () => Template.bind({
   label: 'number',
   placeholder: 'amount',
   name: 'amount',

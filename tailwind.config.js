@@ -1,6 +1,4 @@
 const { guessProductionMode } = require('@ngneat/tailwind');
-const { banpais } = require('./tailwind/banpais');
-const { bancoIndustrial } = require('./tailwind/banco-industrial');
 
 process.env.TAILWIND_MODE = guessProductionMode() ? 'build' : 'watch';
 
@@ -61,9 +59,6 @@ module.exports = {
             lineHeight: '85px',
           },
         ],
-      },
-      borderRadius: {
-        '5px': '0.313rem',
       },
       width: {
         '50px': '3.125rem',
@@ -138,9 +133,10 @@ module.exports = {
         cardRequirement: '0px 3px 32px #9999991F',
       },
       borderRadius: {
+        '3px': '0.188rem',
+        '5px': '0.313rem',
         '18px': '1.125rem',
         '35px': '2.188rem',
-        '3px': '0.188rem',
       },
       padding: {
         '44px': '2.75rem',

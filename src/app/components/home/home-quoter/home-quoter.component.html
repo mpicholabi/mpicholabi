@@ -86,16 +86,48 @@
       ></app-slider-range>
     </div>
     <app-approximate-fee [isLoading]="isLoading"></app-approximate-fee>
-    <a
-      class="my-3 cursor-pointer flex flex-col items-center"
-      (click)="goToProduct()"
-      rel="no-refresh"
-    >
-      <label
-        class="2xl:text-xl text-base text-blue-750 font-lato font-medium pb-2"
-        >{{ 'home-quoter.link' | translate }}</label
-      ><img src="assets/image/bi-arrow-yellow.svg" alt=""
-    /></a>
+    <div class="flex justify-center flex-col items-center">
+      <a
+        id="btnApplyNow"
+        class="
+          cursor-pointer
+          text-base
+          2xl:text-22px
+          font-lato font-semibold
+          text-blue-750
+          py-8
+          xs:py-6
+          underline
+          hover:text-yellow-logo
+        "
+        rel="no-refresh"
+      >
+        {{ 'home-quoter.apply-now' | translate }}
+      </a>
+      <a
+        id="btnLearnMore"
+        class="
+          bg-cyan-450
+          hover:bg-blue-750
+          duration-300
+          rounded-3xl
+          cursor-pointer
+          text-base
+          2xl:text-xl
+          text-white
+          font-lato font-medium
+          px-9
+          xs:px-3
+          py-3
+          xs:py-2
+          2xl:mb-3
+        "
+        (click)="goToProduct()"
+        rel="no-refresh"
+      >
+        {{ 'home-quoter.link' | translate }}
+      </a>
+    </div>
   </form>
   <hr class="lg:hidden md:hidden block bg-cyan-450 h-2px px-7" />
 </div>
