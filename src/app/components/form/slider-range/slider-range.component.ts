@@ -12,7 +12,6 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-slider-range',
   templateUrl: './slider-range.component.html',
-  styleUrls: ['./slider-range.component.scss'],
 })
 export class SliderRangeComponent implements AfterViewInit {
   @Input() value: number = 12;
